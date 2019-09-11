@@ -1,0 +1,23 @@
+[user]
+  email = ans.belfodil@gmail.com
+  name = Anes Belfodil
+[credential]
+  helper = /usr/lib/git-core/git-credential-libsecret
+[alias]
+  pushall = !git remote | xargs -L1 git push --all
+  retrack = !git rm -r --cached . && git add .
+  rclone = clone --recurse-submodules
+  logl = log --oneline --decorate --graph
+  pristine = clean -ffxd
+  cleanup = clean -ffXd
+  make-new-repo = filter-branch --prune-empty --subdirectory-filter # [subdir] -- [REF]
+[url "https://github.com/abelfodil/"]
+  insteadOf = me:
+[core]
+  excludesfile = ~/.gitignore_global
+[diff "bin"]
+  textconv = hexdump -v -C
+
+[rerere]
+	enabled = true
+	autoupdate = true

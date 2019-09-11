@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Dependencies:
+# redshift
+# light
+
+current_light=$(printf "%.0f\n" $(light -G))
+
+if [ $current_light -lt 15 ] || [[ $1 = 0 ]]; then
+	redshift -x
+	light -S 100
+else
+	redshift -O 2000
+	light -S 10
+fi    

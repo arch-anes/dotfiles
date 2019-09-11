@@ -1,0 +1,9 @@
+set default-bg                  "#282828" #00
+set default-fg                  "#ebdbb2" #01
+
+set recolor-lightcolor          "#282828" 
+set recolor-darkcolor           "#ebdbb2"
+#set recolor                     "true"
+
+set smooth-scroll true
+set selection-clipboard clipboard
