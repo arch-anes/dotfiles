@@ -27,13 +27,14 @@ set -xg EDITOR "nvim"
 set -xg TERM "xterm"
 set -xg CHROME_BIN "chromium"
 
-set -xg LANG en_US.UTF-8
-set -xg LANGUAGE en_US.UTF-8
+set locale en_US.UTF-8
+set -xg LANG $locale
+set -xg LANGUAGE $locale
 set -xg LC_COLLATE C
-set -xg LC_CTYPE en_US.UTF-8
+set -xg LC_ALL $locale
+set -xg LC_CTYPE $locale
 
 set -xg QEMU_AUDIO_DRV pa
 set -xg SDL_VIDEO_X11_DGAMOUSE 0
 
 set -xg _JAVA_AWT_WM_NONREPARENTING 1
-
