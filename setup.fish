@@ -9,7 +9,9 @@ curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_
 # Pre-setup
 sudo rm -rf /etc/X11
 sudo rm -rf /etc/ssh/sshd_config
-rm -f $HOME/.config/mimeapps.list
+set CONFIG_DIR $HOME/.config
+rm -rf $CONFIG_DIR/mimeapps.list
+rm -rf $CONFIG_DIR/fish
 mkdir -p $HOME/.ssh
 
 # Symlinks
