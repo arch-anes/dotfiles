@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 primary_monitor=$(xrandr | awk '/primary/ {print $1;}')
 primary_mode="--auto"

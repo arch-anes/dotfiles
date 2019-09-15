@@ -8,7 +8,7 @@ User=anes
 Type=forking
 Environment=DISPLAY=:0
 WorkingDirectory=/usr/local/bin
-ExecStart=/bin/bash lock
+ExecStart=/usr/bin/bash lock
 
 [Install]
 WantedBy=sleep.target

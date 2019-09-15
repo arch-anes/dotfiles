@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 cuuid=9103af23-a48b-4740-9069-a370b4dff9ab
 media=/media/key

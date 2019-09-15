@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 if [ -z "$WAYLAND_DISPLAY" ]; then
   B='#00000000' # blank
