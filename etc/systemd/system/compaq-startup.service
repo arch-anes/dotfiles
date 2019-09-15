@@ -3,7 +3,7 @@ Description=Compaq server startup
 
 [Service]
 WorkingDirectory=/etc/systemd/system
-ExecStart=/bin/fish compaq-startup.fish
+ExecStart=/usr/bin/fish compaq-startup.fish
 
 [Install]
 WantedBy=multi-user.target

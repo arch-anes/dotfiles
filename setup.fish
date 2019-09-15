@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/usr/bin/fish
 
 set source_dir (dirname (readlink -m (status --current-filename)))
 

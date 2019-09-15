@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/usr/bin/fish
 # vim:filetype=fish
 
 pkill -9 -x polybar
