@@ -33,6 +33,7 @@ alias du='du -h'
 alias df='df -h'
 alias ls='ls -A'
 alias rm='rm -i'
+alias lspci='lspci -nnk'
 
 alias :q="exit"
 
