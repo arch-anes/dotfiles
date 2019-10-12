@@ -39,18 +39,3 @@ else
     curl -L https://get.oh-my.fish | fish
 end
 omf install
-
-# GPU 
-switch (lspci | grep VGA)
-    case '*AMD*'
-        set gpu amd
-    case '*NVIDIA*'
-        set gpu nvidia
-    case '*Intel*'
-        set gpu intel
-    case '*'
-        echo "Unrecognized GPU."
-end
-
-set xorg_conf $source_dir/etc/X11/xorg.conf.d
-ln -nfs $xorg_conf/$gpu $xorg_conf/10-gpu.conf
