@@ -1,5 +1,4 @@
 #!/usr/bin/bash
 
-monitors all
+autorandr -c
 exec i3
-
