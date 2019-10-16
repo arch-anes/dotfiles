@@ -3,6 +3,7 @@
 set source_dir (dirname (readlink -m (status --current-filename)))
 
 # Git
+stow hooks -t $source_dir/.git/hooks -R -d $source_dir
 git -C $source_dir submodule update --init --recursive
 curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
 
@@ -17,11 +18,9 @@ mkdir -p $HOME/.ssh
 # Symlinks
 stow csgo -t "/games/SteamLibrary/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir ^/dev/null >/dev/null
 stow home -t $HOME -R -d $source_dir
-stow hooks -t $source_dir/.git/hooks -R -d $source_dir
 sudo stow etc -t /etc -R -d $source_dir
 sudo stow scripts -t /usr/local/bin -R -d $source_dir
 
-ln -nfs "$HOME/Documents/Syncthing/Music" "$HOME/Music"
 sudo ln -nfs /usr/bin/nvim /usr/bin/vim
 
 # Spacevim
