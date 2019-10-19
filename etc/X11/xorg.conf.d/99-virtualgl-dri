@@ -1,0 +1,4 @@
+Section "DRI"
+	Mode 0660
+	Group "vglusers"
+EndSection
