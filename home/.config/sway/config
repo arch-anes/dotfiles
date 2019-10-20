@@ -358,7 +358,7 @@ exec --no-startup-id mako
 exec --no-startup-id weather
 exec --no-startup-id udiskie -T
 exec --no-startup-id thunderbird
-exec --no-startup-id swayidle -w timeout 600 'lock' timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'lock'
+exec --no-startup-id swayidle -w before-sleep 'lock'
 
 input "*" {
   tap enabled
