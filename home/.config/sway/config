@@ -351,6 +351,7 @@ bindsym $mod+k exec keepassxc
 ## startup scripts ##
 exec --no-startup-id launch_kitty
 exec --no-startup-id toggle_light 0
+exec --no-startup-id kanshi
 exec --no-startup-id waybar
 exec --no-startup-id wallpaper
 exec --no-startup-id mako
@@ -365,6 +366,3 @@ input "*" {
   xkb_layout us,ca
   xkb_options grp:shifts_toggle
 }
-
-output DP-1 mode 1920x1080@144.001007Hz pos 0,0
-output HDMI-A-1 mode 1920x1080@60.000000Hz pos 1920,0
