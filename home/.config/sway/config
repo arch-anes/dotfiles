@@ -3,7 +3,6 @@
 set $mod Mod4
 set $alt Mod1
 
-# font pango:Roboto Mono, FontAwesome5Free, FontAwesome5Brands 11
 font pango:Roboto Mono 11
 
 floating_modifier $mod
@@ -121,9 +120,6 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
-# Oronos
-for_window [title="^ChipID$"] floating enable
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -176,24 +172,50 @@ client.urgent			$c_red_d		$c_red_d		$c_foreground	$c_red_d	$c_red_d
 client.background		$c_background
 
 hide_edge_borders both
+default_border none
 
 for_window [class="^.*"] border pixel 0
 smart_gaps on
+smart_borders on
+gaps inner 15
+gaps outer 15
 
-gaps inner 10
-gaps outer 10
-
-set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_horiz Horizontal Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_verti Vertical Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_top Top Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_right Right Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_bottom Bottom Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_left Left Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
   bindsym o      mode "$mode_gaps_outer"
     bindsym i      mode "$mode_gaps_inner"
-    bindsym Return mode "default"
+    bindsym h      mode "$mode_gaps_horiz"
+    bindsym v      mode "$mode_gaps_verti"
+    bindsym t      mode "$mode_gaps_top"
+    bindsym r      mode "$mode_gaps_right"
+    bindsym b      mode "$mode_gaps_bottom"
+    bindsym l      mode "$mode_gaps_left"
+    bindsym Return mode "$mode_gaps"
     bindsym Escape mode "default"
 }
 
+mode "$mode_gaps_outer" {
+  bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     gaps outer current set 0
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     gaps outer all set 0
+
+    bindsym Return mode "$mode_gaps"
+    bindsym Escape mode "default"
+}
 mode "$mode_gaps_inner" {
   bindsym plus  gaps inner current plus 5
     bindsym minus gaps inner current minus 5
@@ -203,20 +225,81 @@ mode "$mode_gaps_inner" {
     bindsym Shift+minus gaps inner all minus 5
     bindsym Shift+0     gaps inner all set 0
 
-    bindsym Return mode "default"
+    bindsym Return mode "$mode_gaps"
     bindsym Escape mode "default"
 }
-mode "$mode_gaps_outer" {
-  bindsym plus  gaps outer current plus 5
-    bindsym minus gaps outer current minus 5 bindsym 0     gaps outer current set 0 
-    bindsym Shift+plus  gaps outer all plus 5
-    bindsym Shift+minus gaps outer all minus 5
-    bindsym Shift+0     gaps outer all set 0
+mode "$mode_gaps_horiz" {
+  bindsym plus  gaps horizontal current plus 5
+    bindsym minus gaps horizontal current minus 5
+    bindsym 0     gaps horizontal current set 0
 
-    bindsym Return mode "default"
+    bindsym Shift+plus  gaps horizontal all plus 5
+    bindsym Shift+minus gaps horizontal all minus 5
+    bindsym Shift+0     gaps horizontal all set 0
+
+    bindsym Return mode "$mode_gaps"
     bindsym Escape mode "default"
 }
+mode "$mode_gaps_verti" {
+  bindsym plus  gaps vertical current plus 5
+    bindsym minus gaps vertical current minus 5
+    bindsym 0     gaps vertical current set 0
 
+    bindsym Shift+plus  gaps vertical all plus 5
+    bindsym Shift+minus gaps vertical all minus 5
+    bindsym Shift+0     gaps vertical all set 0
+
+    bindsym Return mode "$mode_gaps"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_top" {
+  bindsym plus  gaps top current plus 5
+    bindsym minus gaps top current minus 5
+    bindsym 0     gaps top current set 0
+
+    bindsym Shift+plus  gaps top all plus 5
+    bindsym Shift+minus gaps top all minus 5
+    bindsym Shift+0     gaps top all set 0
+
+    bindsym Return mode "$mode_gaps"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_right" {
+  bindsym plus  gaps right current plus 5
+    bindsym minus gaps right current minus 5
+    bindsym 0     gaps right current set 0
+
+    bindsym Shift+plus  gaps right all plus 5
+    bindsym Shift+minus gaps right all minus 5
+    bindsym Shift+0     gaps right all set 0
+
+    bindsym Return mode "$mode_gaps"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_bottom" {
+  bindsym plus  gaps bottom current plus 5
+    bindsym minus gaps bottom current minus 5
+    bindsym 0     gaps bottom current set 0
+
+    bindsym Shift+plus  gaps bottom all plus 5
+    bindsym Shift+minus gaps bottom all minus 5
+    bindsym Shift+0     gaps bottom all set 0
+
+    bindsym Return mode "$mode_gaps"
+    bindsym Escape mode "default"
+}
+mode "$mode_gaps_left" {
+  bindsym plus  gaps left current plus 5
+    bindsym minus gaps left current minus 5
+    bindsym 0     gaps left current set 0
+
+    bindsym Shift+plus  gaps left all plus 5
+    bindsym Shift+minus gaps left all minus 5
+    bindsym Shift+0     gaps left all set 0
+
+    bindsym Return mode "$mode_gaps"
+    bindsym Escape mode "default"
+}
 
 set $power_control "[l]og out [s]uspend [r]eboot [p]oweroff"                                                                                                                                             
 mode  $power_control {
@@ -247,10 +330,11 @@ bindsym $mod+equal exec "mpc volume +5"
 
 bindsym $mod+d exec "rofi -terminal 'launch_kitty' -show drun"
 
-for_window [app_id="kitty"] floating enable, move position 0px 26px, resize set height 600px, move scratchpad
-bindsym $mod+Return [app_id="kitty"] scratchpad show
+for_window [app_id="kitty"] floating enable, move position 0px 0px, resize set height 600px, move scratchpad
+bindsym $mod+Return [app_id="kitty"] scratchpad show; exec launch_kitty
 
-bindsym Print exec "grim - | wl-copy" 
+bindsym Print exec grim - | wl-copy
+bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -272,16 +356,15 @@ exec --no-startup-id wallpaper
 exec --no-startup-id mako
 exec --no-startup-id weather
 exec --no-startup-id udiskie -T
-exec --no-startup-id autolock
 exec --no-startup-id thunderbird
+exec --no-startup-id swayidle -w timeout 600 'lock' timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'lock'
 
 input "*" {
   tap enabled
-    accel_profile flat
-    xkb_layout us,ca
-    xkb_options grp:shifts_toggle
+  accel_profile flat
+  xkb_layout us,ca
+  xkb_options grp:shifts_toggle
 }
 
 output DP-1 mode 1920x1080@144.001007Hz pos 0,0
 output HDMI-A-1 mode 1920x1080@60.000000Hz pos 1920,0
-
