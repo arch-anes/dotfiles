@@ -1,13 +1,13 @@
 #!/usr/bin/bash
 
-if [ -z "$WAYLAND_DISPLAY" ]; then
-  B='#00000000' # blank
-  C='#ffffff22' # clear ish
-  D='#282828ff' # default
-  T='#1d2021ff' # text
-  W='#880000ff' # wrong
-  V='#fb4934ff' # verifying
+B='#00000000' # blank
+C='#ffffff22' # clear ish
+D='#282828ff' # default
+T='#1d2021ff' # text
+W='#880000ff' # wrong
+V='#fb4934ff' # verifying
 
+if [ -z "$WAYLAND_DISPLAY" ]; then
   i3lock \
     --insidevercolor=$C \
     --ringvercolor=$V \
@@ -38,6 +38,16 @@ else
   image=$(mktemp)
   grim $image
   convert $image -blur 0x1 $image
-  swaylock -i $image "$@"
+  swaylock -i $image "$@" \
+    --inside-ver-color $C \
+    --ring-ver-color $V \
+    --inside-wrong-color $C \
+    --ring-wrong-color $W \
+    --inside-color $B \
+    --ring-color $D \
+    --line-color $B \
+    --separator-color $D \
+    --text-ver-color $T \
+    --text-wrong-color $T
   rm -f $image
 fi
