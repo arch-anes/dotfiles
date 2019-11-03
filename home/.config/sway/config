@@ -333,8 +333,8 @@ bindsym $mod+d exec "rofi -terminal 'launch_kitty' -show drun"
 for_window [app_id="kitty"] floating enable, move position 0px 0px, resize set height 600px, move scratchpad
 bindsym $mod+Return [app_id="kitty"] scratchpad show; exec launch_kitty
 
-bindsym Print exec grim - | tee "$(mktemp).png" | wl-copy
-bindsym Shift+Print exec grim -g "$(slurp)" - | tee "$(mktemp).png" | wl-copy
+bindsym Print exec grim - | tee /tmp/$(date +"%Y_%m_%d_%I_%M_%S_%p").png | wl-copy
+bindsym Shift+Print exec grim -g "$(slurp)" - | tee /tmp/$(date +"%Y_%m_%d_%I_%M_%S_%p").png | wl-copy
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
