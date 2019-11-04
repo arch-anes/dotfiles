@@ -33,6 +33,7 @@ alias update-node='yarn global upgrade'
 # Workarounds
 alias minecraft-launcher='env GDK_BACKEND=x11 minecraft-launcher'
 
+alias e='emacs -nw'
 alias du='du -h'
 alias df='df -h'
 alias ls='ls -A'
