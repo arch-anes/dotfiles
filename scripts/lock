@@ -38,7 +38,7 @@ else
   image=$(mktemp)
   grim $image
   convert $image -blur 0x1 $image
-  swaylock -i $image "$@" \
+  swaylock -f -i $image "$@" \
     --inside-ver-color $C \
     --ring-ver-color $V \
     --inside-wrong-color $C \
