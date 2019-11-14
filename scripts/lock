@@ -37,7 +37,7 @@ if [ -z "$WAYLAND_DISPLAY" ]; then
 else
   image=$(mktemp)
   grim $image
-  convert $image -blur 0x1 $image
+  convert $image -blur 5x4 $image
   swaylock -e -f -i $image "$@" \
     --inside-ver-color $C \
     --ring-ver-color $V \
