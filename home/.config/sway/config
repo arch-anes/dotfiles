@@ -122,10 +122,8 @@ for_window [title="^Steam Keyboard$"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart sway inplace (preserves your layout/session, can be used to upgrade sway)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -303,7 +301,7 @@ mode "$mode_gaps_left" {
 
 set $power_control "[l]og out [s]uspend [r]eboot [p]oweroff"                                                                                                                                             
 mode  $power_control {
-  bindsym l exec i3-msg exit; mode "default"
+    bindsym l exec swaymsg exit; mode "default"
     bindsym s exec systemctl suspend; mode "default"
     bindsym r exec systemctl reboot; mode "default"
     bindsym p exec systemctl poweroff; mode "default"
