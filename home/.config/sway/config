@@ -360,6 +360,7 @@ exec --no-startup-id swayidle -w before-sleep 'lock'
 
 input "*" {
   tap enabled
+  scroll_factor 0.5
   accel_profile flat
   xkb_layout us,ca
   xkb_options grp:shifts_toggle
