@@ -2,13 +2,12 @@
 
 from time import sleep
 from urllib import request
-from json import loads, dumps
+from json import loads
 from pathlib import Path
+from os import environ
 
 # https://darksky.net/dev/account
-weather_api_key_path = f"{str(Path.home())}/weather.key"
-with open(weather_api_key_path, 'r') as file:
-    api_key = file.read().strip()
+api_key = environ['DARKSKY_API_KEY']
 
 location = request.urlopen("https://ipinfo.io/loc", timeout=1).read().decode("utf-8").strip()
 query = f"https://api.darksky.net/forecast/{api_key}/{location}?units=ca&exclude=minutely,hourly,daily,flags"
@@ -18,7 +17,4 @@ current_weather_info = raw_weather_info["currently"]
 temperature = f'{current_weather_info["temperature"]:3.1f}°C'
 feels_like = f'{current_weather_info["apparentTemperature"]:3.1f}°C'
 
-print(dumps({
-    'text': f"{temperature}/{feels_like}",
-    'tooltip': ''
-}))
+print(f"{temperature}/{feels_like}")
