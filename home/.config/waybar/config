@@ -8,8 +8,8 @@
         "custom/packages",
         "custom/package-updates",
         "clock",
-        "custom/weather",
-        "mpd"
+        "mpd",
+        "custom/weather"
     ],
     "modules-right": [
         "backlight",
@@ -83,7 +83,7 @@
         "format": "{} ",
         "interval": 600,
         "exec": "~/.config/waybar/modules/weather",
-        "exec-if": "ping darksky.net -c1"
+        "exec-if": "ping goo.gle -c1"
     },
     "custom/packages": {
         "format": "{} ",
