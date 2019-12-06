@@ -9,8 +9,7 @@ swaymsg \
           select(.type == "keyboard") |
           .xkb_active_layout_name |
           select(contains("English (US)") | not)
-      ] |
-        first // "English"
+      ] | first // "US" | sub("French \\(Canada\\)"; "CA")
     '
 
 swaymsg \
@@ -23,5 +22,6 @@ swaymsg \
         --unbuffered \ '
       select(.change == "xkb_layout") |
         .input.xkb_active_layout_name |
-        sub(" \\(US\\)"; "")
+        sub("English \\(US\\)"; "US") |
+        sub("French \\(Canada\\)"; "CA")
     '
