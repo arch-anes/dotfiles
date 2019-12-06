@@ -12,6 +12,7 @@
         "custom/weather"
     ],
     "modules-right": [
+        "custom/keyboard-layout",
         "backlight",
         "pulseaudio",
         "network",
@@ -28,6 +29,7 @@
     },
     "clock": {
         "tooltip": false,
+        "interval": 1,
         "format": "{:%A, %B %d %Y %T}"
     },
     "battery": {
@@ -72,6 +74,7 @@
         "on-click": "pavucontrol"
     },
     "backlight": {
+        "tooltip": false,
         "format": "{percent}% {icon}",
         "format-icons": [
             ""
@@ -80,23 +83,30 @@
         "on-scroll-up": "light -U 5"
     },
     "custom/weather": {
+        "tooltip": false,
         "format": "{} ",
         "interval": 600,
         "exec": "~/.config/waybar/modules/weather",
         "exec-if": "ping goo.gle -c1"
     },
     "custom/packages": {
+        "tooltip": false,
         "format": "{} ",
         "interval": 600,
         "exec": "yay -Qq | wc -l "
     },
     "custom/package-updates": {
+        "tooltip": false,
         "format": "{} ",
         "interval": 600,
         "exec": "checkupdates 2> /dev/null | wc -l",
         "exec-if": "ping archlinux.org -c1"
     },
-    // TODO: add lang
+    "custom/keyboard-layout": {
+        "tooltip": false,
+        "format": "{} ",
+        "exec": "~/.config/waybar/modules/keyboard_layout_monitor"
+    },
     "mpd": {
         "format": "{stateIcon}",
         "state-icons": {
@@ -107,11 +117,11 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
+        "tooltip": false,
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        },
-        "tooltip": false
+        }
     }
 }
