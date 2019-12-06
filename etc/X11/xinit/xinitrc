@@ -1,4 +1,0 @@
-#!/usr/bin/bash
-
-autorandr -c
-exec i3
