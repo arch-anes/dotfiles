@@ -46,6 +46,9 @@ window#waybar.solo {
 #pulseaudio,
 #idle_inhibitor,
 #backlight,
+#mpd,
+#custom-packages,
+#custom-package-updates,
 #custom-weather {
     margin: 0px 6px 0px 10px;
     min-width: 25px;
