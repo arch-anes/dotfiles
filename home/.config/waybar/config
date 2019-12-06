@@ -12,7 +12,6 @@
         "custom/weather"
     ],
     "modules-right": [
-        "custom/weather",
         "backlight",
         "pulseaudio",
         "network",
@@ -81,13 +80,32 @@
         "on-scroll-up": "light -U 5"
     },
     "custom/weather": {
-        "format": "{}",
+        "format": "{} ",
         "interval": 600,
-        "return-type": "json",
         "exec": "weather",
         "exec-if": "ping goo.gle -c1"
     },
-    // TODO: add lang, packages
+    "custom/packages": {
+        "format": "{} ",
+        "interval": 600,
+        "exec": "yay -Qq | wc -l "
+    },
+    "custom/package-updates": {
+        "format": "{} ",
+        "interval": 600,
+        "exec": "checkupdates 2> /dev/null | wc -l",
+        "exec-if": "ping archlinux.org -c1"
+    },
+    // TODO: add lang
+    "mpd": {
+        "format": "{stateIcon}",
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
