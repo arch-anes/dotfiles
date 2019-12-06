@@ -1,3 +1,7 @@
+@define-color primary #d9d8d8;
+@define-color accent #ffd204;
+@define-color urgent #ee2e24;
+
 * {
     border: none;
     border-radius: 0;
@@ -9,12 +13,12 @@
 }
 
 window {
-    color: rgba(217, 216, 216, 1);
+    color: @primary;
     background: rgba(35, 31, 32, 0.75);
 }
 
-window#waybar.solo {
-    color: rgba(217, 216, 216, 1);
+window#waybar {
+    color: @primary;
     background: rgba(35, 31, 32, 0.85);
 }
 
@@ -24,20 +28,19 @@ window#waybar.solo {
 
 #workspaces button {
     padding: 0 5px;
-    color: rgba(217, 216, 216, 0.4);
+    color: rgba(217, 216, 216, 0.5);
 }
 
 #workspaces button.visible {
-    color: rgba(217, 216, 216, 1);
+    color: @primary;
 }
 
 #workspaces button.focused {
-    border-top: 3px solid rgba(217, 216, 216, 1);
-    border-bottom: 3px solid rgba(217, 216, 216, 0);
+    border-top: 1px solid @primary;
 }
 
 #workspaces button.urgent {
-    color: rgba(238, 46, 36, 1);
+    color: @urgent;
 }
 
 #mode,
@@ -47,26 +50,27 @@ window#waybar.solo {
 #idle_inhibitor,
 #backlight,
 #mpd,
+#clock,
 #custom-packages,
 #custom-package-updates,
 #custom-weather {
     margin: 0px 6px 0px 10px;
     min-width: 25px;
+    border-bottom: 1px solid @primary;
 }
 
 #clock {
-    margin: 0px 16px 0px 10px;
     min-width: 140px;
 }
 
 #battery.warning {
-    color: rgba(255, 210, 4, 1);
+    color: @accent;
 }
 
 #battery.critical {
-    color: rgba(238, 46, 36, 1);
+    color: @urgent;
 }
 
 #battery.charging {
-    color: rgba(217, 216, 216, 1);
+    color: @primary;
 }

@@ -1,5 +1,5 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "modules-left": [
         "sway/workspaces",
         "sway/mode"
@@ -28,7 +28,7 @@
     },
     "clock": {
         "tooltip": false,
-        "format": "{:%a, %b %d %Y %I:%M%P}"
+        "format": "{:%A, %B %d %Y %T}"
     },
     "battery": {
         "tooltip": false,
