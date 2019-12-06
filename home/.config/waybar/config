@@ -21,7 +21,7 @@
     ],
     "sway/mode": {
         "tooltip": false,
-        "format": "<span weight=\"bold\">{}</span>"
+        "format": " {}"
     },
     "tray": {
         "tooltip": false,
