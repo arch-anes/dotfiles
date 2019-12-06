@@ -20,32 +20,31 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    background: #64727D;
+    background: #64727d;
     border-bottom: 3px solid white;
 }
 
 #mode {
-    background: #64727D;
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#tray,
+#mode {
+    background: #64727d;
     padding: 0 10px;
     margin: 0 5px;
 }
 
-#clock {
-    background-color: #64727D;
-}
-
 #battery {
-    background-color: #ffffff;
     color: black;
 }
 
 #battery.charging {
     color: white;
-    background-color: #26A65B;
 }
 
 @keyframes blink {
@@ -65,38 +64,14 @@ window#waybar {
     animation-direction: alternate;
 }
 
-#cpu {
-    background: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background: #9b59b6;
-}
-
-#network {
-    background: #2980b9;
-}
-
 #network.disconnected {
     background: #f53c3c;
 }
 
 #pulseaudio {
-    background: #f1c40f;
-    color: black;
+    color: white;
 }
 
 #pulseaudio.muted {
-    background: #90b1b1;
-    color: #2a5c45;
-}
-
-#custom-spotify {
-    background: #66cc99;
-    color: #2a5c45;
-}
-
-#tray {
-    background-color: #2980b9;
+    color: #f53c3c;
 }
