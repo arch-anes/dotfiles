@@ -22,7 +22,6 @@ alias microscope='mpv av://v4l2:/dev/v4l/by-id/usb-GenesysLogic_Technology_Co.__
 alias broken-ln='find -xtype l -print'
 alias btc='bluetoothctl'
 alias docker-prune='docker system prune --all --volumes'
-alias id-key='xev | awk -F'"'"'[ )]+'"'"' '"'"'/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'"'"
 alias fixradio='sudo rfkill unblock all'
 alias listmon='swaymsg -t get_outputs'
 alias lvl='echo $SHLVL'
