@@ -353,7 +353,6 @@ exec --no-startup-id kanshi
 exec --no-startup-id waybar
 exec --no-startup-id wallpaper
 exec --no-startup-id mako
-exec --no-startup-id weather
 exec --no-startup-id udiskie -T
 exec --no-startup-id thunderbird
 exec --no-startup-id swayidle -w before-sleep 'lock'
