@@ -365,3 +365,6 @@ input "*" {
   xkb_layout us,ca
   xkb_options grp:shifts_toggle
 }
+
+include ~/.config/sway/hosts/$(hostname)
+
