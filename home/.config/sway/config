@@ -83,7 +83,7 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
-assign [class="Thunderbird"] $workspace7
+assign [app_id="thunderbird"] $workspace7
 assign [class="keepassxc"] $workspace8
 
 for_window [class="^Pavucontrol$"] floating enable
