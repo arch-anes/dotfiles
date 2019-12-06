@@ -8,7 +8,7 @@
         "custom/packages",
         "custom/package-updates",
         "clock",
-        "mpd",
+        // "mpd",
         "custom/weather"
     ],
     "modules-right": [
