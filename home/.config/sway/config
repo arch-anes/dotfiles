@@ -318,7 +318,7 @@ bindsym --release $mod+Shift+x exec xkill
 
 bindsym $mod+p exec monitors
 bindsym $mod+t exec toggle_light
-bindsym $mod+$alt+l exec lock
+bindsym $mod+l exec lock
 
 bindsym $mod+period exec "mpc next"
 bindsym $mod+comma exec "mpc prev"
