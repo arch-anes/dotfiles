@@ -1,16 +1,25 @@
 #!/usr/bin/bash
 
-B='#00000000' # blank
-C='#ffffff22' # clear ish
-D='#282828ff' # default
-T='#1d2021ff' # text
-W='#880000ff' # wrong
-V='#fb4934ff' # verifying
+# dependencies:
+# https://github.com/mortie/swaylock-effects
 
-image=$(mktemp)
-grim $image
-convert $image -blur 5x4 $image
-swaylock -e -f -i $image "$@" \
+B='#00000000'
+C='#ffffff22'
+D='#282828ff'
+T='#1d2021ff'
+W='#880000ff'
+V='#fb4934ff'
+
+swaylock \
+  --ignore-empty-password \
+  --daemonize \
+  --screenshots \
+  --clock \
+  --indicator \
+  --indicator-radius 100 \
+  --indicator-thickness 7 \
+  --effect-blur 7x5 \
+  --key-hl-color $W \
   --inside-ver-color $C \
   --ring-ver-color $V \
   --inside-wrong-color $C \
@@ -18,7 +27,8 @@ swaylock -e -f -i $image "$@" \
   --inside-color $B \
   --ring-color $D \
   --line-color $B \
+  --key-hl-color $W \
+  --bs-hl-color $W \
   --separator-color $D \
   --text-ver-color $T \
   --text-wrong-color $T
-rm -f $image
