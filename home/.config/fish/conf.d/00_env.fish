@@ -44,3 +44,7 @@ set -xg SDL_VIDEO_X11_DGAMOUSE 0
 
 # Wayland
 set -xg _JAVA_AWT_WM_NONREPARENTING 1
+set -xg MOZ_ENABLE_WAYLAND 1
+# set -xg GDK_BACKEND wayland
+set -xg QT_QPA_PLATFORM wayland
+set -xg XDG_CURRENT_DESKTOP Unity
