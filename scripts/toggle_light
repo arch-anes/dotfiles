@@ -1,15 +1,13 @@
-#!/usr/bin/bash
+#!/usr/bin/env fish
 
 # Dependencies:
 # redshift
 # light
 
-current_light=$(printf "%.0f\n" $(light -G))
-
-if [ $current_light -lt 15 ] || [[ $1 = 0 ]]; then
+if test (light -G) -lt 15
 	light -S 100
-	redshift -x
+	pkill -x redshift
 else
-	light -S 10
-	redshift -O 2000
-fi    
+	light -S 2
+	redshift -xPO 2000
+end
