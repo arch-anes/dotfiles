@@ -11,7 +11,7 @@ alias updatel='update --ignore=linux-lts,linux-lts-headers,linux,linux-headers'
 
 # Git
 alias swag='gaa && yolo && gl && gp'
-alias yolo='gc -m (shuf -n 1 $CACHE/commit_messages.txt)'
+alias yolo='gc -m (shuf -n 1 $HOME/.cache/commit_messages.txt)'
 
 # Embedded dev
 alias listports='dmesg | grep tty'
