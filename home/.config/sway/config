@@ -318,7 +318,7 @@ bindsym $mod+Shift+x exec xkill
 
 bindsym $mod+p exec monitors
 bindsym $mod+t exec toggle_light
-bindsym $mod+l exec lock
+bindsym $mod+l exec swaylock
 
 bindsym $mod+period exec "mpc next"
 bindsym $mod+comma exec "mpc prev"
@@ -355,7 +355,7 @@ exec wallpaper
 exec mako
 exec udiskie -T
 exec thunderbird
-exec swayidle -w before-sleep 'lock'
+exec swayidle -w before-sleep swaylock
 
 input "*" {
   tap enabled
