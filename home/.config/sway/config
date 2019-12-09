@@ -314,7 +314,7 @@ bindsym $mod+g exec gaps
 
 ### custom keybinds ###
 bindsym $alt+F4 kill
-bindsym --release $mod+Shift+x exec xkill
+bindsym $mod+Shift+x exec xkill
 
 bindsym $mod+p exec monitors
 bindsym $mod+t exec toggle_light
@@ -334,10 +334,10 @@ bindsym $mod+Return [app_id="kitty"] scratchpad show; exec launch_kitty
 bindsym Print exec grim - | tee /tmp/$(date +"%Y_%m_%d_%I_%M_%S_%p").png | wl-copy
 bindsym Shift+Print exec grim -g "$(slurp)" - | tee /tmp/$(date +"%Y_%m_%d_%I_%M_%S_%p").png | wl-copy
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
@@ -347,15 +347,15 @@ bindsym $mod+m exec thunderbird
 bindsym $mod+k exec keepassxc
 
 ## startup scripts ##
-exec --no-startup-id launch_kitty
-exec --no-startup-id toggle_light 0
-exec --no-startup-id kanshi
-exec --no-startup-id waybar
-exec --no-startup-id wallpaper
-exec --no-startup-id mako
-exec --no-startup-id udiskie -T
-exec --no-startup-id thunderbird
-exec --no-startup-id swayidle -w before-sleep 'lock'
+exec launch_kitty
+exec toggle_light 0
+exec kanshi
+exec waybar
+exec wallpaper
+exec mako
+exec udiskie -T
+exec thunderbird
+exec swayidle -w before-sleep 'lock'
 
 input "*" {
   tap enabled
