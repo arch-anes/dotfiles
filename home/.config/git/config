@@ -17,7 +17,8 @@
   excludesfile = ~/.gitignore_global
 [diff "bin"]
   textconv = hexdump -v -C
-
 [rerere]
 	enabled = true
 	autoupdate = true
+[pull]
+	rebase = merges
