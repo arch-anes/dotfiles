@@ -320,12 +320,6 @@ bindsym $mod+p exec monitors
 bindsym $mod+t exec toggle_light
 bindsym $mod+l exec swaylock
 
-bindsym $mod+period exec "mpc next"
-bindsym $mod+comma exec "mpc prev"
-bindsym $mod+slash exec "mpc toggle"
-bindsym $mod+minus exec "mpc volume -5"
-bindsym $mod+equal exec "mpc volume +5"
-
 bindsym $mod+d exec "rofi -terminal 'launch_kitty' -show drun"
 
 for_window [app_id="kitty"] floating enable, move position 0px 0px, resize set height 600px, move scratchpad
@@ -338,6 +332,15 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym XF86AudioPlay exec mpc toggle
+bindsym $mod+slash exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym $mod+period exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym $mod+comma exec mpc prev
+bindsym $mod+minus exec mpc volume -5
+bindsym $mod+equal exec mpc volume +5
 
 bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
