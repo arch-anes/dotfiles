@@ -3,11 +3,12 @@ alias add-key='gpg --recv-keys'
 alias cleanup='yay -Yc && yay -Sc'
 alias fulllistpkg='expac --timefmt="%Y-%m-%d %T" "%l  %w\t%-20n\t%10d" (pacman -Qq) | sort -n'
 alias fix-pacman-db='sudo rm /var/lib/pacman/db.lck'
+alias gensrcinfo='makepkg --printsrcinfo > .SRCINFO'
 alias listpkg='expac --timefmt="%Y-%m-%d %T" "%l  %w\t%-20n\t%10d" (comm -23 (pacman -Qq | sort | psub) (pacman -Qqg base base-devel xorg xorg-apps | sort | psub)) | sort -n'
 alias rankmirrors-top="curl -s 'https://www.archlinux.org/mirrorlist/?country=CA&country=US&use_mirror_status=on' | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 10 - | sudo tee /etc/pacman.d/mirrorlist"
 alias remove='yay -Rsn'
 alias update='yay -Syu --needed --noeditmenu --nodiffmenu'
-alias updatel='update --ignore=linux-lts,linux-lts-headers,linux,linux-headers' 
+alias updatel='update --ignore=linux-lts,linux-lts-headers,linux,linux-headers'
 
 # Git
 alias swag='gaa && yolo && gl && gp'
