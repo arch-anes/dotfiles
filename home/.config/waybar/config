@@ -16,6 +16,7 @@
         "backlight",
         "pulseaudio",
         "network",
+        "network#vpn",
         "battery",
         "tray"
     ],
@@ -53,6 +54,10 @@
         "format-wifi": "{essid} ",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "Disconnected ⚠"
+    },
+    "network#vpn": {
+        "interface": "tun0",
+        "format": ""
     },
     "pulseaudio": {
         "tooltip": false,
