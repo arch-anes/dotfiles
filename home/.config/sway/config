@@ -83,42 +83,26 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
-assign [app_id="thunderbird"] $workspace7
-assign [class="keepassxc"] $workspace8
-
-for_window [class="^Pavucontrol$"] floating enable
+# Misc
+for_window [app_id="pavucontrol"] floating enable
 for_window [title="Discord Updater"] floating enable
-
-for_window [title="Guake Preferences"] floating enable
-
-# The Chrome "Page Unresponsive" dialog is not floating...
 for_window [title="Page Unresponsive"] floating enable
-# Android Device Monitor startup window
 for_window [class="^Monitor$" instance="^Monitor$" title="^Monitor$"] floating enable
-# Android emulator
 for_window [title="Android Emulator"] floating enable
 
 # Jetbrains
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
 
-# Unity
-for_window [class="^Unity$" title="^Starting Unity...$"] floating enable
-for_window [class="^Unity$" title="^Hold On$"] floating enable
-for_window [class="^Unity$" title="^Preparing Package$"] floating enable
-for_window [class="^Unity$" title="^Importing Package$"] floating enable
-
+# Steam
 # https://github.com/ValveSoftware/steam-for-linux/issues/1040
-for_window [class="^Steam$" title="^Friends$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
+for_window [class="^Steam$"] floating enable
+for_window [class="^Steam$" title="^Steam$"] floating disable
+
+# Workspaces assignations
+assign [class="^Steam$"] $workspace3
+assign [app_id="thunderbird"] $workspace7
+assign [app_id="keepassxc"] $workspace8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
