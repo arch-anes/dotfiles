@@ -16,7 +16,7 @@
         "backlight",
         "pulseaudio",
         "network",
-        "network#vpn",
+        // "network#vpn",
         "battery",
         "tray"
     ],
