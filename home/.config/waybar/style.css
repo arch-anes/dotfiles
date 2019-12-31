@@ -68,7 +68,8 @@ window#waybar {
     color: @accent;
 }
 
-#battery.critical {
+#battery.critical,
+#network.vpn.disconnected {
     color: @urgent;
 }
 
