@@ -282,7 +282,7 @@ filetype *.jar java -jar %f
 " Archive
 filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz,*.zip,*.rar,*.7z
        \ {extract with script}
-	   \ 7z x -o"%c:r" "%c" 
+	   \ 7z x -o%"c:r %"c 
 
 fileviewer *.tgz,*.tar.gz tar -tzf %c
 fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
