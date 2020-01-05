@@ -63,18 +63,15 @@
         "tooltip": false,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
+        "format-muted": "",
         "format-icons": {
-            "headphones": "",
+            "headphones": "",
             "handsfree": "",
             "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [
-                "",
-                ""
-            ]
+            "default": ["", ""]
         },
         "on-click": "pavucontrol"
     },
