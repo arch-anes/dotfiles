@@ -90,6 +90,8 @@ for_window [title="Page Unresponsive"] floating enable
 for_window [class="^Monitor$" instance="^Monitor$" title="^Monitor$"] floating enable
 for_window [title="Android Emulator"] floating enable
 
+for_window [title="Firefox - Sharing Indicator"] kill
+
 # Jetbrains
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
