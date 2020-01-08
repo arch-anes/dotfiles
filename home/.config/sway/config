@@ -90,7 +90,9 @@ for_window [title="Page Unresponsive"] floating enable
 for_window [class="^Monitor$" instance="^Monitor$" title="^Monitor$"] floating enable
 for_window [title="Android Emulator"] floating enable
 
-for_window [title="Firefox - Sharing Indicator"] kill
+# Firefox
+for_window [title="^Firefox - Sharing Indicator$"] kill
+for_window [title="^Picture-in-Picture$"] floating enable
 
 # Jetbrains
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
