@@ -1,9 +1,6 @@
 {
     "layer": "top",
-    "modules-left": [
-        "sway/workspaces",
-        "sway/mode"
-    ],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": [
         "custom/packages",
         "custom/package-updates",
@@ -41,13 +38,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        "format-icons": ["", "", "", "", ""]
     },
     "network": {
         "tooltip": false,
@@ -78,9 +69,7 @@
     "backlight": {
         "tooltip": false,
         "format": "{percent}% {icon}",
-        "format-icons": [
-            ""
-        ],
+        "format-icons": [""],
         "on-scroll-down": "light -A 5",
         "on-scroll-up": "light -U 5"
     },
