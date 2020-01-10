@@ -347,6 +347,8 @@ bindsym $mod+b exec firefox
 bindsym $mod+m exec thunderbird
 bindsym $mod+k exec keepassxc
 
+set $wallpaper while true; do setrandom -r ~/Documents/Syncthing/WP/image ; sleep 30; done
+
 ## startup scripts ##
 exec --no-startup-id launch_kitty
 exec --no-startup-id compton -b -CG
@@ -354,6 +356,6 @@ exec --no-startup-id launch_polybar
 exec --no-startup-id weather
 exec --no-startup-id udiskie -T
 exec --no-startup-id dunst
-exec --no-startup-id wallpaper
+exec --no-startup-id $wallpaper
 exec --no-startup-id thunderbird
 exec --no-startup-id xss-lock lock

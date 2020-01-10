@@ -349,11 +349,13 @@ bindsym $mod+b exec firefox
 bindsym $mod+m exec thunderbird
 bindsym $mod+k exec keepassxc
 
+set $wallpaper while true; do setrandom -r ~/Documents/Syncthing/WP/image ; sleep 30; done
+
 ## startup scripts ##
 exec launch_kitty
 exec kanshi
 exec waybar
-exec wallpaper
+exec $wallpaper
 exec mako
 exec udiskie -T
 exec thunderbird
