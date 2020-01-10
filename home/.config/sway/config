@@ -7,7 +7,7 @@ font pango:Roboto Mono 11
 
 floating_modifier $mod
 
-#focus_follows_mouse no
+focus_follows_mouse yes
 
 bindsym $alt+Tab focus right
 bindsym $alt+Shift+Tab focus left
