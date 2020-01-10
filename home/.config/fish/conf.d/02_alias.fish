@@ -8,7 +8,7 @@ alias listpkg='expac --timefmt="%Y-%m-%d %T" "%l  %w\t%-20n\t%10d" (comm -23 (pa
 alias rankmirrors-top="curl -s 'https://www.archlinux.org/mirrorlist/?country=CA&country=US&use_mirror_status=on' | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 10 - | sudo tee /etc/pacman.d/mirrorlist"
 alias remove='yay -Rsn'
 alias update='yay -Syu --needed --noeditmenu --nodiffmenu'
-alias updatel='update --ignore=linux-lts,linux-lts-headers,linux,linux-headers'
+alias updatel='update --ignore="linux*"'
 
 # Git
 alias swag='gaa && yolo && gl && gp'
