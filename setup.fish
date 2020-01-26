@@ -16,7 +16,7 @@ rm -rf $CONFIG_DIR/fish
 mkdir -p $HOME/.ssh
 
 # Symlinks
-stow csgo -t "/games/SteamLibrary/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir ^/dev/null >/dev/null
+stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir ^/dev/null >/dev/null
 stow home -t $HOME -R -d $source_dir
 sudo stow etc -t /etc -R -d $source_dir
 sudo stow scripts -t /usr/local/bin -R -d $source_dir
