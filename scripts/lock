@@ -7,47 +7,27 @@ T='#1d2021ff' # text
 W='#880000ff' # wrong
 V='#fb4934ff' # verifying
 
-if [ -z "$WAYLAND_DISPLAY" ]; then
-  i3lock \
-    --insidevercolor=$C \
-    --ringvercolor=$V \
-    --insidewrongcolor=$C \
-    --ringwrongcolor=$W \
-    --insidecolor=$B \
-    --ringcolor=$D \
-    --linecolor=$B \
-    --separatorcolor=$D \
-    --verifcolor=$T \
-    --wrongcolor=$T \
-    --timecolor=$T \
-    --datecolor=$T \
-    --layoutcolor=$T \
-    --keyhlcolor=$W \
-    --bshlcolor=$W \
-    --screen \
-    1 \
-    --blur \
-    3 \
-    --clock \
-    --indicator \
-    --timestr="%H:%M:%S" \
-    --datestr="%A, %m %Y" \
-    --veriftext="hmmm..." \
-    --wrongtext="lolnope"
-else
-  image=$(mktemp)
-  grim $image
-  convert $image -blur 0x1 $image
-  swaylock -e -f -i $image "$@" \
-    --inside-ver-color $C \
-    --ring-ver-color $V \
-    --inside-wrong-color $C \
-    --ring-wrong-color $W \
-    --inside-color $B \
-    --ring-color $D \
-    --line-color $B \
-    --separator-color $D \
-    --text-ver-color $T \
-    --text-wrong-color $T
-  rm -f $image
-fi
+i3lock \
+  --insidevercolor=$C \
+  --ringvercolor=$V \
+  --insidewrongcolor=$C \
+  --ringwrongcolor=$W \
+  --insidecolor=$B \
+  --ringcolor=$D \
+  --linecolor=$B \
+  --separatorcolor=$D \
+  --verifcolor=$T \
+  --wrongcolor=$T \
+  --timecolor=$T \
+  --datecolor=$T \
+  --layoutcolor=$T \
+  --keyhlcolor=$W \
+  --bshlcolor=$W \
+  --screen 1 \
+  --blur 3 \
+  --clock \
+  --indicator \
+  --timestr="%H:%M:%S" \
+  --datestr="%A, %m %Y" \
+  --veriftext="hmmm..." \
+  --wrongtext="lolnope"
