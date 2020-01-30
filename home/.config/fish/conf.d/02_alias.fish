@@ -25,14 +25,15 @@ alias btc='bluetoothctl'
 alias docker-prune='docker system prune --all --volumes'
 alias id-key='xev | awk -F'"'"'[ )]+'"'"' '"'"'/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'"'"
 alias fixradio='sudo rfkill unblock all'
-alias listmon='swaymsg -t get_outputs'
 alias lvl='echo $SHLVL'
 alias music='mpc update && ncmpcpp'
 alias unmount='udiskie-umount'
 alias update-node='yarn global upgrade'
 
-# Workarounds
-alias minecraft-launcher='env GDK_BACKEND=x11 minecraft-launcher'
+if test "$USE_WAYLAND" = 1
+    alias listmon='swaymsg -t get_outputs'
+    alias minecraft-launcher='env GDK_BACKEND=x11 minecraft-launcher'
+end
 
 alias e='emacsclient -nw'
 alias ee='emacs -nw'

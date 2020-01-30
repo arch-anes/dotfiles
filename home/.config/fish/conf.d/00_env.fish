@@ -35,11 +35,17 @@ set -xg LC_CTYPE $locale
 
 # QEMU
 set -xg QEMU_AUDIO_DRV pa
-set -xg SDL_VIDEO_X11_DGAMOUSE 0
 
-# Wayland
-set -xg _JAVA_AWT_WM_NONREPARENTING 1
-set -xg MOZ_ENABLE_WAYLAND 1
-# set -xg GDK_BACKEND wayland
-set -xg QT_QPA_PLATFORM wayland
-set -xg XDG_CURRENT_DESKTOP Unity
+if test "$XDG_VTNR" = 1
+    set -xg USE_WAYLAND 1
+
+    set -xg _JAVA_AWT_WM_NONREPARENTING 1
+    set -xg MOZ_ENABLE_WAYLAND 1
+    # set -xg GDK_BACKEND wayland
+    set -xg QT_QPA_PLATFORM wayland
+    set -xg XDG_CURRENT_DESKTOP Unity
+else if test "$XDG_VTNR" = 2
+    set -xg USE_X11 1
+
+    set -xg SDL_VIDEO_X11_DGAMOUSE 0
+end
