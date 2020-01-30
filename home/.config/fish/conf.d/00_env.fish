@@ -27,6 +27,9 @@ set -xg EDITOR "nvim"
 set -xg TERM "xterm"
 set -xg CHROME_BIN "chromium"
 
+# Weather
+set -xg DARKSKY_API_KEY (cat $HOME/weather.key)
+
 # Locale
 set locale en_US.UTF-8
 set -xg LANG $locale

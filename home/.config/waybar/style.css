@@ -1,77 +1,69 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: Sans;
     font-size: 13px;
-    min-height: 0;
+    box-shadow: none;
+    text-shadow: none;
+    transition-duration: 0s;
 }
 
-window#waybar {
-    background: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: white;
+window {
+    color: rgba(217, 216, 216, 1);
+    background: rgba(35, 31, 32, 0.5);
+}
+
+window#waybar.solo {
+    color: rgba(217, 216, 216, 1);
+    background: rgba(35, 31, 32, 0.85);
+}
+
+#workspaces {
+    margin: 0 5px;
 }
 
 #workspaces button {
     padding: 0 5px;
-    background: transparent;
-    color: white;
-    border-bottom: 3px solid transparent;
+    color: rgba(217, 216, 216, 0.4);
+}
+
+#workspaces button.visible {
+    color: rgba(217, 216, 216, 1);
 }
 
 #workspaces button.focused {
-    background: #64727d;
-    border-bottom: 3px solid white;
+    border-top: 3px solid rgba(217, 216, 216, 1);
+    border-bottom: 3px solid rgba(217, 216, 216, 0);
 }
 
-#mode {
-    border-bottom: 3px solid white;
+#workspaces button.urgent {
+    color: rgba(238, 46, 36, 1);
 }
 
-#clock,
+#mode,
 #battery,
 #network,
 #pulseaudio,
-#tray,
-#mode {
-    background: #64727d;
-    padding: 0 10px;
-    margin: 0 5px;
+#idle_inhibitor,
+#backlight,
+#custom-weather {
+    margin: 0px 6px 0px 10px;
+    min-width: 25px;
 }
 
-#battery {
-    color: black;
+#clock {
+    margin: 0px 16px 0px 10px;
+    min-width: 140px;
+}
+
+#battery.warning {
+    color: rgba(255, 210, 4, 1);
+}
+
+#battery.critical {
+    color: rgba(238, 46, 36, 1);
 }
 
 #battery.charging {
-    color: white;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background: #f53c3c;
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#network.disconnected {
-    background: #f53c3c;
-}
-
-#pulseaudio {
-    color: white;
-}
-
-#pulseaudio.muted {
-    color: #f53c3c;
+    color: rgba(217, 216, 216, 1);
 }

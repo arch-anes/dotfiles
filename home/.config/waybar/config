@@ -1,22 +1,26 @@
 {
-    "layer": "top", // Waybar at top layer
+    "layer": "bottom",
     "modules-left": [
         "sway/workspaces",
         "sway/mode"
     ],
     "modules-center": [
-        "sway/window"
+        "custom/packages",
+        "custom/package-updates",
+        "clock",
+        "mpd",
+        "custom/weather"
     ],
     "modules-right": [
+        "custom/weather",
+        "backlight",
         "pulseaudio",
         "network",
         "battery",
-        "clock",
         "tray"
     ],
     "sway/mode": {
         "tooltip": false,
-        // "format": "<span style=\"italic\">{}</span>"
         "format": "<span weight=\"bold\">{}</span>"
     },
     "tray": {
@@ -67,5 +71,29 @@
             ]
         },
         "on-click": "pavucontrol"
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            ""
+        ],
+        "on-scroll-down": "light -A 5",
+        "on-scroll-up": "light -U 5"
+    },
+    "custom/weather": {
+        "format": "{}",
+        "interval": 600,
+        "return-type": "json",
+        "exec": "weather",
+        "exec-if": "ping goo.gle -c1"
+    },
+    // TODO: add lang, packages
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false
     }
 }

@@ -222,7 +222,7 @@ exec = yay -Qq | wc -l
 
 [module/weather]
 type = custom/script
-exec = cat /tmp/weather
+exec = weather
 
 click-left=xdg-open 'https://www.google.com/search?q=weather' &
 

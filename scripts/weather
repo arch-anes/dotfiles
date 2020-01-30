@@ -4,35 +4,17 @@ from time import sleep
 from urllib import request
 from json import loads
 from pathlib import Path
+from os import environ
 
 # https://darksky.net/dev/account
-weather_api_key_path = f"{str(Path.home())}/weather.key"
-with open(weather_api_key_path, 'r') as file:
-    api_key = file.read().strip()
+api_key = environ['DARKSKY_API_KEY']
 
-weather_file = "/tmp/weather"
-with open(weather_file, "w") as f:
-    f.write("")
+location = request.urlopen("https://ipinfo.io/loc", timeout=1).read().decode("utf-8").strip()
+query = f"https://api.darksky.net/forecast/{api_key}/{location}?units=ca&exclude=minutely,hourly,daily,flags"
+raw_weather_info = loads(request.urlopen(query).read())
+current_weather_info = raw_weather_info["currently"]
 
-while True:
-    while True:
-        try:
-            location = request.urlopen("https://ipinfo.io/loc", timeout=1).read().decode("utf-8").strip()
-            break
-        except:
-            print("Could not connect. Retrying in 5s...")
-            sleep(5)
+temperature = f'{current_weather_info["temperature"]:3.1f}°C'
+feels_like = f'{current_weather_info["apparentTemperature"]:3.1f}°C'
 
-    query = f"https://api.darksky.net/forecast/{api_key}/{location}?units=ca&exclude=minutely,hourly,daily,flags"
-    raw_weather_info = loads(request.urlopen(query).read())
-    current_weather_info = raw_weather_info["currently"]
-
-    temperature = f'{current_weather_info["temperature"]:3.1f}°C'
-    feels_like = f'{current_weather_info["apparentTemperature"]:3.1f}°C'
-
-    file_content = f"{temperature}/{feels_like}"
-    with open(weather_file, "w") as f:
-        f.write(file_content)
-
-    print("Updated weather information!")
-    sleep(600)
+print(f"{temperature}/{feels_like}")
