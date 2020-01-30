@@ -349,7 +349,6 @@ bindsym $mod+k exec keepassxc
 
 ## startup scripts ##
 exec --no-startup-id launch_kitty
-exec --no-startup-id toggle_light 0
 exec --no-startup-id compton -b -CG
 exec --no-startup-id launch_polybar 
 exec --no-startup-id weather

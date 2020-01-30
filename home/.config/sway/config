@@ -351,7 +351,6 @@ bindsym $mod+k exec keepassxc
 
 ## startup scripts ##
 exec launch_kitty
-exec toggle_light 0
 exec kanshi
 exec waybar
 exec wallpaper
