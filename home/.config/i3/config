@@ -351,7 +351,7 @@ set $wallpaper while true; do setrandom -r ~/Documents/Syncthing/WP/image ; slee
 
 ## startup scripts ##
 exec --no-startup-id launch_kitty
-exec --no-startup-id compton -b -CG
+exec --no-startup-id picom -b -CG
 exec --no-startup-id launch_polybar 
 exec --no-startup-id weather
 exec --no-startup-id udiskie -T
