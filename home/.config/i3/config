@@ -7,7 +7,7 @@ font pango:Roboto Mono 11
 
 floating_modifier $mod
 
-#focus_follows_mouse no
+focus_follows_mouse yes
 
 bindsym $alt+Tab focus right
 bindsym $alt+Shift+Tab focus left
@@ -83,42 +83,30 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
-assign [class="Thunderbird"] $workspace7
-assign [class="keepassxc"] $workspace8
-
-for_window [class="^Pavucontrol$"] floating enable
+# Misc
+for_window [class="Pavucontrol"] floating enable
 for_window [title="Discord Updater"] floating enable
-
-for_window [title="Guake Preferences"] floating enable
-
-# The Chrome "Page Unresponsive" dialog is not floating...
 for_window [title="Page Unresponsive"] floating enable
-# Android Device Monitor startup window
 for_window [class="^Monitor$" instance="^Monitor$" title="^Monitor$"] floating enable
-# Android emulator
 for_window [title="Android Emulator"] floating enable
+
+# Firefox
+for_window [title="^Firefox - Sharing Indicator$"] kill
+for_window [title="^Picture-in-Picture$"] floating enable
 
 # Jetbrains
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
 
-# Unity
-for_window [class="^Unity$" title="^Starting Unity...$"] floating enable
-for_window [class="^Unity$" title="^Hold On$"] floating enable
-for_window [class="^Unity$" title="^Preparing Package$"] floating enable
-for_window [class="^Unity$" title="^Importing Package$"] floating enable
-
+# Steam
 # https://github.com/ValveSoftware/steam-for-linux/issues/1040
-for_window [class="^Steam$" title="^Friends$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
+for_window [class="^Steam$"] floating enable
+for_window [class="^Steam$" title="^Steam$"] floating disable
+
+# Workspaces assignations
+assign [class="^Steam$"] $workspace3
+assign [class="Thunderbird"] $workspace7
+assign [class="keepassxc"] $workspace8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -165,13 +153,14 @@ set $c_red_d #cc241d
 set $c_red_l #fb4934
 
 #class					background?		border			text			split
-client.focused			$c_black_l		$c_black_l		$c_white_d		$c_white_d
-client.focused_inactive	$c_background	$c_background	$c_black_l		$c_black_d
-client.unfocused		$c_black_d		$c_background	$c_white_d		$c_black_d
-client.urgent			$c_red_d		$c_red_d		$c_foreground	$c_red_d
+client.focused			$c_black_l		$c_black_l		$c_white_d		$c_white_d $c_black_l 
+client.focused_inactive	$c_background	$c_background	$c_black_l		$c_black_d $c_background
+client.unfocused		$c_black_d		$c_background	$c_white_d		$c_black_d	$c_black_d
+client.urgent			$c_red_d		$c_red_d		$c_foreground	$c_red_d	$c_red_d
 client.background		$c_background
 
 hide_edge_borders both
+default_border none
 
 for_window [class="^.*"] border pixel 0
 smart_gaps on
@@ -300,10 +289,10 @@ mode "$mode_gaps_left" {
     bindsym Escape mode "default"
 }
 
-set $power_control "[l]og out [s]leep [r]eboot [p]oweroff"                                                                                                                                             
+set $power_control "[l]og out [s]uspend [r]eboot [p]oweroff"                                                                                                                                             
 mode  $power_control {
-    bindsym l exec i3-msg exit; mode "default"
-    bindsym s exec systemctl sleep; mode "default"
+    bindsym l exec swaymsg exit; mode "default"
+    bindsym s exec systemctl suspend; mode "default"
     bindsym r exec systemctl reboot; mode "default"
     bindsym p exec systemctl poweroff; mode "default"
     bindsym Return mode "default"
@@ -311,20 +300,14 @@ mode  $power_control {
 }
 
 bindsym $mod+n mode $power_control
+bindsym $mod+g exec gaps
 
 ### custom keybinds ###
 bindsym $alt+F4 kill
 bindsym --release $mod+Shift+x exec xkill
 
-bindsym $mod+p exec monitors
 bindsym $mod+t exec toggle_light
-bindsym $mod+$alt+l exec lock
-
-bindsym $mod+period exec "mpc next"
-bindsym $mod+comma exec "mpc prev"
-bindsym $mod+slash exec "mpc toggle"
-bindsym $mod+minus exec "mpc volume -5"
-bindsym $mod+equal exec "mpc volume +5"
+bindsym $mod+l exec lock
 
 bindsym $mod+d exec "rofi -terminal 'launch_kitty' -show drun"
 
@@ -332,13 +315,19 @@ for_window [instance="kitty"] floating enable;
 for_window [instance="kitty"] move scratchpad; [instance="kitty"] scratchpad show; move position 0px 17px; resize set height 600px; move scratchpad
 bindsym $mod+Return exec launch_kitty; [instance="kitty"] scratchpad show
 
-bindsym Print exec screenshot
-bindsym Shift+Print exec screenshot snip
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioPlay exec mpc toggle
+bindsym $mod+slash exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym $mod+period exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym $mod+comma exec mpc prev
+bindsym $mod+minus exec mpc volume -5
+bindsym $mod+equal exec mpc volume +5
 
 bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
