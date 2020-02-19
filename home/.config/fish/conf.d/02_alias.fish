@@ -27,6 +27,7 @@ alias id-key='xev | awk -F'"'"'[ )]+'"'"' '"'"'/^KeyPress/ { a[NR+2] } NR in a {
 alias fixradio='sudo rfkill unblock all'
 alias lvl='echo $SHLVL'
 alias music='mpc update && ncmpcpp'
+alias sort-dir='find ./ -type f -exec sort -o {} {} \;'
 alias unmount='udiskie-umount'
 alias update-node='yarn global upgrade'
 
