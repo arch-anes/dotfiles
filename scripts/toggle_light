@@ -6,6 +6,7 @@
 
 if test (light -G) -lt 15
 	light -S 100
+	redshift -ox
 	pkill -x redshift
 else
 	light -S 2
