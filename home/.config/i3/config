@@ -306,8 +306,10 @@ bindsym $mod+g exec gaps
 bindsym $alt+F4 kill
 bindsym --release $mod+Shift+x exec xkill
 
+set $lock "i3lock --insidevercolor='#ffffff22' --ringvercolor='#fb4934ff' --insidewrongcolor='#ffffff22' --ringwrongcolor='#880000ff' --insidecolor='#00000000' --ringcolor='#282828ff' --linecolor='#00000000' --separatorcolor='#282828ff' --verifcolor='#1d2021ff' --wrongcolor='#1d2021ff' --timecolor='#1d2021ff' --datecolor='#1d2021ff' --layoutcolor='#1d2021ff' --keyhlcolor='#880000ff' --bshlcolor='#880000ff' --screen 1 --blur 3 --clock --indicator --timestr='%H:%M:%S' --datestr='%A, %m %Y' --veriftext='hmmm...' --wrongtext='lolnope'"
+
 bindsym $mod+t exec toggle_light
-bindsym $mod+l exec lock
+bindsym $mod+l exec $lock
 
 bindsym $mod+d exec "rofi -terminal 'launch_kitty' -show drun"
 
@@ -347,4 +349,4 @@ exec --no-startup-id udiskie -T
 exec --no-startup-id dunst
 exec --no-startup-id $wallpaper
 exec --no-startup-id thunderbird
-exec --no-startup-id xss-lock lock
+exec --no-startup-id xss-lock $lock
