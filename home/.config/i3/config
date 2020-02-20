@@ -346,10 +346,11 @@ set $wallpaper while true; do setrandom -r ~/Documents/Syncthing/WP/image ; slee
 ## startup scripts ##
 exec --no-startup-id launch_kitty
 exec --no-startup-id picom -b -CG
-exec --no-startup-id launch_polybar 
 exec --no-startup-id weather
 exec --no-startup-id udiskie -T
 exec --no-startup-id dunst
 exec --no-startup-id $wallpaper
 exec --no-startup-id thunderbird
 exec --no-startup-id xss-lock $lock
+
+exec_always --no-startup-id pkill -x polybar; for m in $(polybar --list-monitors | cut -d":" -f1); do WIFI=$(ls /sys/class/net | grep wl) ETHERNET=$(ls /sys/class/net | grep en) MONITOR=$m polybar top & done 
