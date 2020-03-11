@@ -311,8 +311,6 @@ set $lock "i3lock --insidevercolor='#ffffff22' --ringvercolor='#fb4934ff' --insi
 bindsym $mod+t exec toggle_light
 bindsym $mod+l exec $lock
 
-bindsym $mod+d exec "rofi -terminal 'launch_kitty' -show drun"
-
 for_window [instance="kitty"] floating enable;
 for_window [instance="kitty"] move scratchpad; [instance="kitty"] scratchpad show; move position 0px 17px; resize set height 600px; move scratchpad
 bindsym $mod+Return exec launch_kitty; [instance="kitty"] scratchpad show
@@ -349,6 +347,7 @@ exec --no-startup-id picom -b -CG
 exec --no-startup-id weather
 exec --no-startup-id udiskie -T
 exec --no-startup-id dunst
+exec --no-startup-id QT_QPA_PLATFORM=xcb albert
 exec --no-startup-id $wallpaper
 exec --no-startup-id thunderbird
 exec --no-startup-id xss-lock $lock
