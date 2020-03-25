@@ -17,9 +17,6 @@ set -xg PATH $PATH $HOME/.SpaceVim/bin
 set -xg VISUAL nvim
 set -xg EDITOR nvim
 
-# Ansible
-set -xg ANSIBLE_NOCOWS 1
-
 # Node
 set -xg CHROME_BIN chromium
 set -xg PATH $PATH $HOME/.yarn/bin
