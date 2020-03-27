@@ -30,6 +30,7 @@ alias music='mpc update && ncmpcpp'
 alias sort-dir='find ./ -type f -exec sort -o {} {} \;'
 alias unmount='udiskie-umount'
 alias update-node='yarn global upgrade'
+alias watchdir='inotifywait -r -m . --format "%w%f %e"'
 
 if test "$USE_WAYLAND" = 1
     alias listmon='swaymsg -t get_outputs'
