@@ -9,7 +9,6 @@
   rclone = clone --recurse-submodules
   logl = log --oneline --decorate --graph
   pristine = clean -ffxd
-  cleanup = clean -ffXd
   make-new-repo = filter-branch --prune-empty --subdirectory-filter # [subdir] -- [REF]
 [url "https://github.com/abelfodil/"]
   insteadOf = me:
