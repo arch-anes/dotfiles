@@ -24,7 +24,7 @@ sudo stow scripts -t /usr/local/bin -R -d $source_dir
 sudo ln -nfs /usr/bin/nvim /usr/bin/vim
 
 # Gnome
-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Darker'  
+gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Darker'
 gsettings set org.gnome.desktop.interface icon-theme 'Arc'
 
 # Spacevim
@@ -33,6 +33,15 @@ if test -e $spacevim
     git -C $spacevim pull
 else
     curl -sLf https://spacevim.org/install.sh | bash
+end
+
+# Spacemacs
+set spacemacs "$HOME/.emacs.d"
+if test -e $spacemacs
+    git -C $spacemacs pull
+else
+    git clone https://github.com/syl20bnr/spacemacs $spacemacs
+    systemctl --user enable emacs
 end
 
 # OMF
