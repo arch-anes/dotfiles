@@ -41,6 +41,9 @@ modules-right = pulseaudio xkeyboard eth wlan battery
 override-redirect = false
 enable-ipc = true
 
+tray-position = right
+tray-padding = 4
+
 [module/mpd]
 type = internal/mpd
 
