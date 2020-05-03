@@ -6,7 +6,6 @@ base-devel
 clang
 cmake
 docker-compose
-dotnet-sdk
 firefox-developer-edition
 gcc-arm-none-eabi-bin
 gdb
@@ -16,14 +15,14 @@ gitkraken
 jdk-openjdk
 jetbrains-toolbox
 lazydocker
-mono
+lldb
 ninja
 openocd
+perf
 picocom
 python-pip
 saleae-logic
 stm32cubemx
 valgrind
 visual-studio-code-bin
-words
 yarn
