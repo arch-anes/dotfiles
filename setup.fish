@@ -8,10 +8,8 @@ git -C $source_dir submodule update --init --recursive
 curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
 
 # Pre-setup
-sudo rm -rf /etc/X11
 sudo rm -rf /etc/ssh/sshd_config
 set CONFIG_DIR $HOME/.config
-rm -rf $CONFIG_DIR/mimeapps.list
 rm -rf $CONFIG_DIR/fish
 mkdir -p $HOME/.ssh
 
@@ -22,10 +20,6 @@ sudo stow etc -t /etc -R -d $source_dir
 sudo stow scripts -t /usr/local/bin -R -d $source_dir
 
 sudo ln -nfs /usr/bin/nvim /usr/bin/vim
-
-# Gnome
-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Darker'
-gsettings set org.gnome.desktop.interface icon-theme 'Arc'
 
 # Spacevim
 set spacevim "$HOME/.SpaceVim"
