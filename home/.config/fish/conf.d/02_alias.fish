@@ -17,7 +17,6 @@ alias yolo='gc -m (shuf -n 1 $HOME/.cache/commit_messages.txt)'
 # Embedded dev
 alias listports='dmesg | grep tty'
 alias pcbcom='picocom /dev/ttyACM0 -b 921600 --imap lfcrlf'
-alias microscope='mpv av://v4l2:/dev/v4l/by-id/usb-GenesysLogic_Technology_Co.__Ltd._USB2.0_UVC_PC_Camera-video-index0'
 
 # Other
 alias broken-ln='find -xtype l -print'
@@ -32,11 +31,6 @@ alias sort-dir='find ./ -type f -exec sort -o {} {} \;'
 alias unmount='udiskie-umount'
 alias update-node='yarn global upgrade'
 alias watchdir='inotifywait -r -m . --format "%w%f %e"'
-
-if test "$USE_WAYLAND" = 1
-    alias listmon='swaymsg -t get_outputs'
-    alias minecraft-launcher='env GDK_BACKEND=x11 minecraft-launcher'
-end
 
 alias e='emacsclient -nw'
 alias ee='emacs -nw'
