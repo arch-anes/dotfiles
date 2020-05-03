@@ -32,6 +32,7 @@ end
 $enable_services syncthing@$USER.service
 $enable_services docker.service
 $enable_services --user mpd.service
+$enable_services --user onedrive.service
 
 sudo ufw enable
 
