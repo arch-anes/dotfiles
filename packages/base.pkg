@@ -15,6 +15,7 @@ mkinitcpio-netconf
 mkinitcpio-tinyssh
 mkinitcpio-utils
 neovim
+neovim-symlinks
 onedrive-abraunegg
 openssh
 p7zip

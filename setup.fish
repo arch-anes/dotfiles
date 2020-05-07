@@ -49,8 +49,6 @@ stow home -t $HOME -R -d $source_dir
 sudo stow etc -t /etc -R -d $source_dir
 sudo stow scripts -t /usr/local/bin -R -d $source_dir
 
-sudo ln -nfs /usr/bin/nvim /usr/bin/vim
-
 # Spacevim
 set spacevim "$HOME/.SpaceVim"
 if test -e $spacevim
