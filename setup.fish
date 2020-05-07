@@ -40,7 +40,6 @@ sudo gpasswd -a $USER docker
 # Symlinks
 
 sudo rm -rf /etc/ssh/sshd_config
-sudo rm -rf /etc/ansible
 set CONFIG_DIR $HOME/.config
 rm -rf $CONFIG_DIR/fish
 mkdir -p $HOME/.ssh
