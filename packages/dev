@@ -17,6 +17,7 @@ gitkraken
 jdk-openjdk
 jetbrains-toolbox
 lazydocker
+lld
 lldb
 ninja
 nmap
