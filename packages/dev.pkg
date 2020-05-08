@@ -3,9 +3,12 @@ arduino-avr-core
 arm-none-eabi-gdb
 aspnet-runtime
 base-devel
+bfg
 clang
 cmake
+cowsay
 docker-compose
+emacs
 firefox-developer-edition
 gcc-arm-none-eabi-bin
 gdb
@@ -17,11 +20,14 @@ jetbrains-toolbox
 lazydocker
 lldb
 ninja
+nmap
 openocd
 perf
 picocom
+plantuml
 python-pip
 saleae-logic
+sourcetrail
 stm32cubemx
 valgrind
 visual-studio-code-bin
