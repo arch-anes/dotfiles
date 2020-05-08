@@ -14,7 +14,7 @@ curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_
 
 sudo pacman -Syu --needed --noconfirm yay
 
-$install_packages (cat packages/*.pkg)
+$install_packages (cat packages/*)
 
 set VGA (lspci | grep VGA)
 switch $VGA
