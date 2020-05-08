@@ -6,7 +6,6 @@ base-devel
 bfg
 clang
 cmake
-cowsay
 docker-compose
 emacs
 firefox-developer-edition
