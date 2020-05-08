@@ -19,7 +19,7 @@ $install_packages (cat packages/*)
 set VGA (lspci | grep VGA)
 switch $VGA
     case "*AMD*"
-        $install_packages amdgpu-fan radeon-profile-daemon-git
+        $install_packages amdgpu-fan radeon-profile-daemon-git amdvlk
         $enable_services amdgpu-fan.service radeon-profile-daemon.service
     case "*NVIDIA*"
         $install_packages nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
