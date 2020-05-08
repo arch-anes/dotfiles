@@ -19,10 +19,10 @@ $install_packages (cat packages/*)
 set VGA (lspci | grep VGA)
 switch $VGA
     case "*AMD*"
-        $install_packages amdgpu-fan radeon-profile-daemon-git amdvlk
+        $install_packages amdgpu-fan radeon-profile-daemon-git amdvlk lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
         $enable_services amdgpu-fan.service radeon-profile-daemon.service
     case "*NVIDIA*"
-        $install_packages nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
+        $install_packages nvidia nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
     case '*'
         echo -n "Unknown graphics card"
 end
