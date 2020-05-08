@@ -27,15 +27,9 @@ switch $VGA
         echo -n "Unknown graphics card"
 end
 
-# Services
+# Shell
 
-$enable_services syncthing@$USER.service
-$enable_services docker.service
-$enable_services --user onedrive.service
-
-sudo ufw enable
-
-sudo gpasswd -a $USER docker
+chsh -s /usr/bin/fish 
 
 # Symlinks
 
@@ -48,6 +42,16 @@ stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Of
 stow home -t $HOME -R -d $source_dir
 sudo stow etc -t /etc -R -d $source_dir
 sudo stow scripts -t /usr/local/bin -R -d $source_dir
+
+# Services
+
+$enable_services syncthing@$USER.service
+$enable_services docker.service
+$enable_services --user onedrive.service
+
+sudo ufw enable
+
+sudo gpasswd -a $USER docker
 
 # Spacevim
 set spacevim "$HOME/.SpaceVim"
