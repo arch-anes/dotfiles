@@ -19,10 +19,8 @@ alias pcbcom='picocom /dev/ttyACM0 -b 921600 --imap lfcrlf'
 # Other
 alias broken-ln='find -xtype l -print'
 alias docker-prune='docker system prune --all --volumes'
-alias id-key='xev | awk -F'"'"'[ )]+'"'"' '"'"'/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'"'"
 alias lvl='echo $SHLVL'
 alias sort-dir='find ./ -type f -exec sort -o {} {} \;'
-alias unmount='udiskie-umount'
 alias update-node='yarn global upgrade'
 alias watchdir='inotifywait -r -m . --format "%w%f %e"'
 
