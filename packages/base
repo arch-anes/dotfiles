@@ -15,6 +15,7 @@ megatools
 mkinitcpio-netconf
 mkinitcpio-tinyssh
 mkinitcpio-utils
+muparser
 neovim
 neovim-symlinks
 onedrive-abraunegg
