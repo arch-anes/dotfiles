@@ -31,7 +31,7 @@ end
 
 chsh -s /usr/bin/fish 
 
-# Symlinks
+# Config
 
 sudo rm -rf /etc/ssh/sshd_config
 set CONFIG_DIR $HOME/.config
@@ -41,6 +41,8 @@ mkdir -p $HOME/.ssh
 stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir ^/dev/null >/dev/null
 stow home -t $HOME -R -d $source_dir
 sudo stow etc -t /etc -R -d $source_dir
+
+cat $source_dir/gnome-settings.ini | dconf load /
 
 # Services
 
