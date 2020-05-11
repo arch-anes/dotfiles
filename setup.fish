@@ -5,19 +5,22 @@ set source_dir (dirname (readlink -m (status --current-filename)))
 set enable_services systemctl --now enable
 set install_packages yay -Syu --needed --noeditmenu --nodiffmenu --noconfirm
 
-# Git
+###########
+### Git ###
+###########
 stow hooks -t $source_dir/.git/hooks -R -d $source_dir
 git -C $source_dir submodule update --init --recursive
 curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
 
-# Packages
-
+################
+### Packages ###
+################
 sudo pacman -Syu --needed --noconfirm yay
 
-$install_packages (cat $source_dir/packages/base $source_dir/packages/dev)
+$install_packages (cat $source_dir/packages/base)
 
 if test -n "$DISPLAY"
-    $install_packages (cat $source_dir/packages/gui)
+    $install_packages (cat $source_dir/packages/gui  $source_dir/packages/dev)
 
     set VGA (lspci | grep VGA)
     switch $VGA
@@ -31,12 +34,21 @@ if test -n "$DISPLAY"
     end
 end
 
-# Shell
-
+#############
+### Shell ###
+#############
 chsh -s /usr/bin/fish
 
-# Config
+if test -e "$HOME/.local/share/omf"
+    omf update
+else
+    curl -L https://get.oh-my.fish | fish
+end
+omf install
 
+##############
+### Config ###
+##############
 sudo rm -rf /etc/ssh/sshd_config
 set CONFIG_DIR $HOME/.config
 rm -rf $CONFIG_DIR/fish
@@ -48,7 +60,10 @@ sudo stow etc -t /etc -R -d $source_dir
 
 cat $source_dir/gnome-settings.ini | dconf load /
 
-# Services
+################
+### Services ###
+################
+sudo gpasswd -a $USER docker
 
 $enable_services syncthing@$USER.service
 $enable_services docker.service
@@ -56,9 +71,9 @@ $enable_services --user onedrive.service
 
 sudo ufw enable
 
-sudo gpasswd -a $USER docker
-
-# Spacevim
+################
+### Spacevim ###
+################
 set spacevim "$HOME/.SpaceVim"
 if test -e $spacevim
     git -C $spacevim pull
@@ -66,7 +81,9 @@ else
     curl -sLf https://spacevim.org/install.sh | bash
 end
 
-# Spacemacs
+#################
+### Spacemacs ###
+#################
 set spacemacs "$HOME/.emacs.d"
 if test -e $spacemacs
     git -C $spacemacs pull
@@ -74,11 +91,3 @@ else
     git clone https://github.com/syl20bnr/spacemacs $spacemacs
     systemctl --user enable emacs
 end
-
-# OMF
-if test -e "$HOME/.local/share/omf"
-    omf update
-else
-    curl -L https://get.oh-my.fish | fish
-end
-omf install
