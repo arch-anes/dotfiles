@@ -1,2 +1,0 @@
-exec discord --start-minimized
-exec steam -silent
