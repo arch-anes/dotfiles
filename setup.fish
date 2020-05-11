@@ -14,22 +14,26 @@ curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_
 
 sudo pacman -Syu --needed --noconfirm yay
 
-$install_packages (cat packages/*)
+$install_packages (cat $source_dir/packages/base $source_dir/packages/dev)
 
-set VGA (lspci | grep VGA)
-switch $VGA
-    case "*AMD*"
-        $install_packages amdgpu-fan radeon-profile-daemon-git amdvlk lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
-        $enable_services amdgpu-fan.service radeon-profile-daemon.service
-    case "*NVIDIA*"
-        $install_packages nvidia nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
-    case '*'
-        echo -n "Unknown graphics card"
+if test -n "$DISPLAY"
+    $install_packages (cat $source_dir/packages/gui)
+
+    set VGA (lspci | grep VGA)
+    switch $VGA
+        case "*AMD*"
+            $install_packages amdgpu-fan radeon-profile-daemon-git amdvlk lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+            $enable_services amdgpu-fan.service radeon-profile-daemon.service
+        case "*NVIDIA*"
+            $install_packages nvidia nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+        case '*'
+            echo -n "Unknown graphics card"
+    end
 end
 
 # Shell
 
-chsh -s /usr/bin/fish 
+chsh -s /usr/bin/fish
 
 # Config
 
