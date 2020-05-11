@@ -6,17 +6,14 @@ base-devel
 bfg
 clang
 cmake
-docker-compose
 emacs
 firefox-developer-edition
 gcc-arm-none-eabi-bin
 gdb
 ghidra
-git
 gitkraken
 jdk-openjdk
 jetbrains-toolbox
-lazydocker
 lld
 lldb
 ninja

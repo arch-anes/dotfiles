@@ -2,12 +2,15 @@ android-tools
 android-udev
 bind-tools
 cowsay
+docker-compose
 dos2unix
 epub2txt
 fish
+git
 gnome-keyring
 htop
 inotify-tools
+lazydocker
 lsof
 man
 mediainfo
