@@ -64,10 +64,12 @@ cat $source_dir/gnome-settings.ini | dconf load /
 ### Services ###
 ################
 sudo gpasswd -a $USER docker
-
-$enable_services syncthing@$USER.service
 $enable_services docker.service
-$enable_services --user onedrive.service
+
+if test -n "$DISPLAY"
+    $enable_services syncthing@$USER.service
+    $enable_services --user onedrive.service
+end
 
 sudo ufw enable
 
