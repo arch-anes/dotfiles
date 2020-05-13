@@ -66,6 +66,8 @@ cat $source_dir/gnome-settings.ini | dconf load /
 sudo gpasswd -a $USER docker
 $enable_services docker.service
 
+$enable_services sshd.service
+
 if test -n "$DISPLAY"
     $enable_services syncthing@$USER.service
     $enable_services --user onedrive.service
