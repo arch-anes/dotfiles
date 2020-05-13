@@ -73,6 +73,7 @@ if test -n "$DISPLAY"
     $enable_services --user onedrive.service
 end
 
+sudo ufw limit ssh
 sudo ufw enable
 
 ################
