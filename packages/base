@@ -1,6 +1,7 @@
 android-tools
 android-udev
 bind-tools
+busybox
 cowsay
 docker-compose
 dos2unix
@@ -15,9 +16,7 @@ lsof
 man
 mediainfo
 megatools
-mkinitcpio-netconf
-mkinitcpio-tinyssh
-mkinitcpio-utils
+mkinitcpio-systemd-tool
 muparser
 neovim
 neovim-symlinks
@@ -29,6 +28,8 @@ sshfs
 stow
 syncthing
 thefuck
+tinyssh
+tinyssh-convert
 udiskie
 ufw
 unrar
