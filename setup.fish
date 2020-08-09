@@ -82,7 +82,7 @@ if $has_head
 end
 
 sudo ufw limit ssh
-sudo ufw enable
+yes | sudo ufw enable
 
 ################
 ### Spacevim ###
