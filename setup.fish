@@ -2,8 +2,14 @@
 
 set source_dir (dirname (readlink -m (status --current-filename)))
 
-set enable_services systemctl --now enable
+############
+### Vars ###
+############
+set enable_services sudo systemctl --now enable
 set install_packages yay -Syu --needed --noeditmenu --nodiffmenu --noconfirm
+
+set is_arch_based type -q pacman
+set has_head test -n "$DISPLAY"
 
 ###########
 ### Git ###
@@ -15,22 +21,24 @@ curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_
 ################
 ### Packages ###
 ################
-sudo pacman -Syu --needed --noconfirm yay
+if $is_arch_based
+    sudo pacman -Syu --needed --noconfirm yay
 
-$install_packages (cat $source_dir/packages/base)
+    $install_packages (cat $source_dir/packages/base)
 
-if test -n "$DISPLAY"
-    $install_packages (cat $source_dir/packages/gui  $source_dir/packages/dev)
+    if $has_head
+        $install_packages (cat $source_dir/packages/gui  $source_dir/packages/dev)
 
-    set VGA (lspci | grep VGA)
-    switch $VGA
-        case "*AMD*"
-            $install_packages amdgpu-fan radeon-profile-daemon-git amdvlk lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
-            $enable_services amdgpu-fan.service radeon-profile-daemon.service
-        case "*NVIDIA*"
-            $install_packages nvidia nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
-        case '*'
-            echo -n "Unknown graphics card"
+        set VGA (lspci | grep VGA)
+        switch $VGA
+            case "*AMD*"
+                $install_packages amdgpu-fan radeon-profile-daemon-git amdvlk lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+                $enable_services amdgpu-fan.service radeon-profile-daemon.service
+            case "*NVIDIA*"
+                $install_packages nvidia nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+            case '*'
+                echo -n "Unknown graphics card"
+        end
     end
 end
 
@@ -68,7 +76,7 @@ $enable_services docker.service
 
 $enable_services sshd.service
 
-if test -n "$DISPLAY"
+if $has_head
     $enable_services syncthing@$USER.service
     $enable_services --user onedrive.service
 end
@@ -94,5 +102,5 @@ if test -e $spacemacs
     git -C $spacemacs pull
 else
     git clone https://github.com/syl20bnr/spacemacs $spacemacs
-    systemctl --user enable emacs
+    $enable_services emacs
 end
