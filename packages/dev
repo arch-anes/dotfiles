@@ -16,6 +16,7 @@ jdk-openjdk
 jetbrains-toolbox
 lld
 lldb
+net-tools
 ninja
 nmap
 openocd
