@@ -6,7 +6,7 @@ set source_dir (dirname (readlink -m (status --current-filename)))
 ### Vars ###
 ############
 set enable_services sudo systemctl --now enable
-set install_packages yay -Syu --needed --noeditmenu --nodiffmenu --noconfirm
+set install_packages yay -Syu --needed --noeditmenu --nodiffmenu --noconfirm --sudoloop
 
 set is_arch_based type -q pacman
 set has_head test -n "$DISPLAY"
