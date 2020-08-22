@@ -2,7 +2,6 @@ ansible
 arduino-avr-core
 arm-none-eabi-gdb
 base-devel
-bfg
 clang
 cmake
 emacs
@@ -21,7 +20,6 @@ nmap
 openocd
 perf
 picocom
-plantuml
 python-pip
 saleae-logic
 sourcetrail
