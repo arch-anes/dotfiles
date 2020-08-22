@@ -1,7 +1,6 @@
 ansible
 arduino-avr-core
 arm-none-eabi-gdb
-aspnet-runtime
 base-devel
 bfg
 clang
