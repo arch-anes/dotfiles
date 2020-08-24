@@ -1,0 +1,7 @@
+arduino-avr-core
+arm-none-eabi-gdb
+gcc-arm-none-eabi-bin
+openocd
+picocom
+saleae-logic
+stm32cubemx

@@ -1,12 +1,9 @@
 ansible
-arduino-avr-core
-arm-none-eabi-gdb
 base-devel
 clang
 cmake
 emacs
 firefox-developer-edition
-gcc-arm-none-eabi-bin
 gdb
 ghidra
 gitkraken
@@ -17,13 +14,9 @@ lldb
 net-tools
 ninja
 nmap
-openocd
 perf
-picocom
 python-pip
-saleae-logic
 sourcetrail
-stm32cubemx
 valgrind
 visual-studio-code-bin
 yarn
