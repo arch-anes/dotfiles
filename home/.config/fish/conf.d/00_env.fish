@@ -6,6 +6,9 @@ set -xg ANDROID_HOME $HOME/Android/Sdk
 set -xg PATH $PATH $ANDROID_HOME/tools
 set -xg PATH $PATH $ANDROID_HOME/platform-tools
 
+# Flutter & Dart
+set -xg PATH $PATH $HOME/.pub-cache/bin
+
 # Vim
 set -xg SPACEVIMDIR $HOME/.config/spacevim/
 set -xg PATH $PATH $HOME/.SpaceVim/bin
