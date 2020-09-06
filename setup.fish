@@ -27,6 +27,8 @@ if $is_arch_based
     $install_packages (cat $source_dir/packages/base)
 
     if $has_head
+        curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import -
+
         $install_packages (cat $source_dir/packages/gui  $source_dir/packages/dev)
 
         set VGA (lspci | grep VGA)
