@@ -20,7 +20,7 @@ alias pcbcom='picocom /dev/ttyACM0 -b 921600 --imap lfcrlf'
 alias broken-ln='find -xtype l -print'
 alias docker-prune='docker system prune --all --volumes'
 alias lvl='echo $SHLVL'
-alias sort-dir='find ./ -type f -exec sort -o {} {} \;'
+alias sort-dir='find . -type f ! -path \'*/.git/*\' -exec sort -o {} {} \;'
 alias update-node='yarn global upgrade'
 alias watchdir='inotifywait -r -m . --format "%w%f %e"'
 
