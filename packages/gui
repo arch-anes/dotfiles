@@ -2,6 +2,7 @@ albert
 chromium
 chromium-widevine
 discord
+ffmpeg-compat-57
 firefox
 keepassxc
 kitty
@@ -10,8 +11,11 @@ mpv
 onlyoffice
 pavucontrol
 slack-desktop
+spotify
 tdrop
+teams
 thunderbird
 tigervnc
 tk
 xournalpp
+zoom
