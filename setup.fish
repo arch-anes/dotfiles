@@ -17,12 +17,10 @@ set has_head test -n "$DISPLAY"
 if $is_arch_based
     sudo pacman -Syu --needed --noconfirm yay
 
-    $install_packages (cat $source_dir/packages/base)
-
     if $has_head
         curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import -
 
-        $install_packages (cat $source_dir/packages/gui  $source_dir/packages/dev)
+        $install_packages (cat $source_dir/packages/*)
 
         set VGA (lspci | grep VGA)
         switch $VGA
@@ -34,6 +32,8 @@ if $is_arch_based
             case '*'
                 echo -n "Unknown graphics card"
         end
+    else
+        $install_packages (cat $source_dir/packages/base)
     end
 end
 
