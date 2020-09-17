@@ -95,14 +95,3 @@ if test -e $spacevim
 else
     curl -sLf https://spacevim.org/install.sh | bash
 end
-
-#################
-### Spacemacs ###
-#################
-set spacemacs "$HOME/.emacs.d"
-if test -e $spacemacs
-    git -C $spacemacs pull
-else
-    git clone https://github.com/syl20bnr/spacemacs $spacemacs
-    $enable_services emacs
-end

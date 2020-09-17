@@ -24,8 +24,6 @@ alias sort-dir='find . -type f ! -path \'*/.git/*\' -exec sort -o {} {} \;'
 alias update-node='yarn global upgrade'
 alias watchdir='inotifywait -r -m . --format "%w%f %e"'
 
-alias e='emacsclient -nw'
-alias ee='emacs -nw'
 alias du='du -h'
 alias df='df -h'
 alias ls='ls -A'
