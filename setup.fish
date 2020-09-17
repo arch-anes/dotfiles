@@ -62,7 +62,7 @@ omf install
 sudo rm -rf /etc/ssh/sshd_config
 set CONFIG_DIR $HOME/.config
 rm -rf $CONFIG_DIR/fish
-mkdir -p $HOME/.ssh
+mkdir -p $HOME/.ssh $CONFIG_DIR/onedrive
 
 stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir ^/dev/null >/dev/null
 stow home -t $HOME -R -d $source_dir
