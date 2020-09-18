@@ -8,6 +8,7 @@ set -xg PATH $PATH $ANDROID_HOME/platform-tools
 
 # Flutter & Dart
 set -xg PATH $PATH $HOME/.pub-cache/bin
+set -xg CHROME_EXECUTABLE chromium
 
 # Vim
 set -xg SPACEVIMDIR $HOME/.config/spacevim/
