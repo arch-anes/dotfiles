@@ -20,5 +20,8 @@ set -xg EDITOR nvim
 set -xg CHROME_BIN chromium
 set -xg PATH $PATH $HOME/.yarn/bin
 
+# Snap
+set -xg PATH $PATH /snap/bin
+
 # QEMU
 set -xg QEMU_AUDIO_DRV pa
