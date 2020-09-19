@@ -64,11 +64,13 @@ set CONFIG_DIR $HOME/.config
 rm -rf $CONFIG_DIR/fish
 mkdir -p $HOME/.ssh $CONFIG_DIR/onedrive
 
-stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir ^/dev/null >/dev/null
 stow home -t $HOME -R -d $source_dir
 sudo stow etc -t /etc -R -d $source_dir
 
-cat $source_dir/gnome-settings.ini | dconf load /
+if $has_head
+    stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir ^/dev/null >/dev/null
+    cat $source_dir/gnome-settings.ini | dconf load /
+end
 
 ################
 ### Services ###
