@@ -16,7 +16,7 @@ ninja
 nmap
 npm
 perf
-postman
+postman-bin
 python-pip
 sourcetrail
 valgrind
