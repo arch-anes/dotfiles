@@ -3,7 +3,6 @@ base-devel
 clang
 cmake
 emacs
-firefox-developer-edition
 gdb
 ghidra
 gitkraken
