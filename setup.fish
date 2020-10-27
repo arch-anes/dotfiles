@@ -70,6 +70,7 @@ sudo stow etc -t /etc -R -d $source_dir
 if $has_head
     stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir ^/dev/null >/dev/null
     cat $source_dir/gnome-settings.ini | dconf load /
+    sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 end
 
 ################
