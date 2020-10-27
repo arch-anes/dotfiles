@@ -1,6 +1,7 @@
 [user]
   email = ans.belfodil@gmail.com
   name = Anes Belfodil
+	signingkey = B584EA228B133FAF73ED0D0E7BDFAE29F1DE8EFE
 [credential]
   helper = /usr/lib/git-core/git-credential-libsecret
 [alias]
@@ -23,3 +24,5 @@
   recurse = true
 [pull]
 	rebase = merges
+[commit]
+	gpgSign = true
