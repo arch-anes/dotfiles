@@ -17,8 +17,8 @@ set -xg CHROME_EXECUTABLE chromium
 # Vim
 set -xg SPACEVIMDIR $HOME/.config/spacevim/
 set -xg PATH $PATH $HOME/.SpaceVim/bin
-set -xg VISUAL nvim
-set -xg EDITOR nvim
+set -xg VISUAL vim
+set -xg EDITOR vim
 
 # Node
 set -xg CHROME_BIN chromium
