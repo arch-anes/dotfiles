@@ -1,0 +1,13 @@
+apt-transport-https
+ca-certificates
+curl
+fish
+git
+gnupg-agent
+neovim
+python3-pip
+rsync
+software-properties-common
+stow
+vifm
+wget

@@ -1,3 +1,47 @@
+###########
+### ENV ###
+###########
+
+# Fish
+set -xg fish_prompt_pwd_dir_length 0
+
+# Go
+set -xg PATH $PATH $HOME/go/bin
+
+# Dotnet
+set -xg PATH $PATH $HOME/.dotnet/tools
+set -xg DOTNET_CLI_TELEMETRY_OPTOUT 1
+
+# Android
+set -xg ANDROID_HOME $HOME/Android/Sdk
+set -xg PATH $PATH $ANDROID_HOME/tools
+set -xg PATH $PATH $ANDROID_HOME/platform-tools
+
+# Flutter & Dart
+set -xg PATH $PATH $HOME/.pub-cache/bin
+set -xg CHROME_EXECUTABLE chromium
+
+# Vim
+set -xg SPACEVIMDIR $HOME/.config/spacevim/
+set -xg PATH $PATH $HOME/.SpaceVim/bin
+set -xg VISUAL vim
+set -xg EDITOR vim
+
+# Node
+set -xg CHROME_BIN chromium
+set -xg PATH $PATH $HOME/.yarn/bin
+
+# Snap
+set -xg PATH $PATH /snap/bin
+
+# QEMU
+set -xg QEMU_AUDIO_DRV pa
+
+
+###############
+### Aliases ###
+###############
+
 # Arch Linux
 alias cleanup='yay -Yc && yay -Scc'
 alias fix-pacman-db='sudo rm /var/lib/pacman/db.lck'
