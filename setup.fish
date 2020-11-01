@@ -41,7 +41,6 @@ end
 ### Git ###
 ###########
 stow hooks -t $source_dir/.git/hooks -R -d $source_dir
-git -C $source_dir submodule update --init --recursive
 curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
 
 #############
