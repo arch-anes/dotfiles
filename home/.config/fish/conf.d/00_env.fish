@@ -1,6 +1,10 @@
 # Go
 set -xg PATH $PATH $HOME/go/bin
 
+# Dotnet
+set -xg PATH $PATH $HOME/.dotnet/tools
+set -xg DOTNET_CLI_TELEMETRY_OPTOUT 1
+
 # Android
 set -xg ANDROID_HOME $HOME/Android/Sdk
 set -xg PATH $PATH $ANDROID_HOME/tools

@@ -2,6 +2,7 @@ ansible
 base-devel
 clang
 cmake
+dotnet-sdk
 emacs
 gdb
 ghidra
