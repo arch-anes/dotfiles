@@ -5,6 +5,7 @@ busybox
 cowsay
 docker-compose
 fish
+fuse-zip
 git
 htop
 inotify-tools
