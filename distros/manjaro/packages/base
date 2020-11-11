@@ -4,6 +4,7 @@ bind
 busybox
 cowsay
 docker-compose
+ethtool
 fish
 fuse-zip
 git
