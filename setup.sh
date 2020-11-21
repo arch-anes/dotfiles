@@ -59,6 +59,7 @@ $enable_services sshd.service
 if [ $has_head ]; then
     $enable_services syncthing@$USER.service
     $enable_services --user onedrive.service
+    $enable_services --user randwall.service
 fi
 
 sudo ufw limit ssh
