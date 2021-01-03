@@ -54,10 +54,6 @@ alias update='yay -Syu --devel --needed --noeditmenu --nodiffmenu --sudoloop'
 alias yolo='git commit -m (shuf -n 1 $HOME/.cache/commit_messages.txt)'
 alias swag='git add --all && yolo && git pull && git push'
 
-# Embedded dev
-alias listports='dmesg | grep tty'
-alias pcbcom='picocom /dev/ttyACM0 -b 921600 --imap lfcrlf'
-
 # Other
 alias broken-ln='find -xtype l -print'
 alias docker-prune='docker system prune --all --volumes'
