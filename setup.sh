@@ -6,6 +6,7 @@ source_dir=$(dirname "$(readlink -f "$0")")
 ### Vars ###
 ############
 has_head="$DISPLAY"
+is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
 export enable_services="systemctl --now enable"
 
 ################
@@ -40,7 +41,7 @@ fi
 #############
 ### Shell ###
 #############
-chsh -s /usr/bin/fish
+chsh -s `which fish`
 
 if [ -d "$HOME/.local/share/omf" ]; then
     fish -c "omf install"
@@ -51,19 +52,21 @@ fi
 ################
 ### Services ###
 ################
-sudo gpasswd -a $USER docker
-$enable_services docker.service
+if [ ! "$is_in_docker" ]; then
+    sudo gpasswd -a $USER docker
+    $enable_services docker.service
 
-$enable_services sshd.service
+    $enable_services sshd.service
 
-if [ $has_head ]; then
-    $enable_services syncthing@$USER.service
-    $enable_services --user onedrive.service
-    $enable_services --user randwall.service
+    sudo ufw limit ssh
+    yes | sudo ufw enable
+
+    if [ $has_head ]; then
+        $enable_services syncthing@$USER.service
+        $enable_services --user onedrive.service
+        $enable_services --user randwall.service
+    fi
 fi
-
-sudo ufw limit ssh
-yes | sudo ufw enable
 
 ################
 ### Spacevim ###

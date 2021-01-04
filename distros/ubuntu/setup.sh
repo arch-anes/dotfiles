@@ -8,8 +8,15 @@ fi
 
 source_dir=$(dirname "$(readlink -f "$0")")
 
-sudo apt update && sudo sudo apt upgrade -y
-sudo apt install -y $(cat $source_dir/packages/base)
+sudo apt update && sudo apt install -y $(cat $source_dir/packages/base)
+
+sudo ln -nfs /usr/lib/openssh/sftp-server /usr/lib/ssh/sftp-server
+
+is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
+if [ "$is_in_docker" ]; then
+    echo "Inside a Docker container. Skipping Docker package installation."
+    exit 0
+fi
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
@@ -30,11 +37,6 @@ armv7l)
     ;;
 esac
 
-
-sudo apt update
-
-sudo apt install -y $(cat $source_dir/packages/*)
+sudo apt update && sudo apt install -y $(cat $source_dir/packages/docker)
 
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-
-sudo ln -nfs /usr/lib/openssh/sftp-server /usr/lib/ssh/sftp-server
