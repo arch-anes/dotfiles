@@ -15,15 +15,11 @@ export enable_services="systemctl --now enable"
 $source_dir/distros/manjaro/setup.sh
 $source_dir/distros/ubuntu/setup.sh
 
-###########
-### Git ###
-###########
-stow hooks -t $source_dir/.git/hooks -R -d $source_dir
-curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
-
 ##############
 ### Config ###
 ##############
+curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
+
 config_dir=$HOME/.config
 rm -rf $config_dir/vifm
 sudo rm -rf /etc/ssh/sshd_config /etc/amdgpu-fan.yml
