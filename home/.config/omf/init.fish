@@ -50,6 +50,9 @@ alias listpkg='expac --timefmt="%Y-%m-%d %T" "%l  %w\t%-20n\t%10d" (pacman -Qq) 
 alias remove='yay -Rsn'
 alias update='yay -Syu --devel --needed --noeditmenu --nodiffmenu --sudoloop'
 
+# dotfiles
+alias update-dotfiles='curl -L https://raw.githubusercontent.com/arch-anes/dotfiles/master/install.sh | bash'
+
 # Git
 alias yolo='git commit -m (shuf -n 1 $HOME/.cache/commit_messages.txt)'
 alias swag='git add --all && yolo && git pull && git push'
