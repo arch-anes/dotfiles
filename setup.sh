@@ -1,10 +1,10 @@
 #!/bin/bash
 
-source_dir=$(dirname "$(readlink -f "$0")")
-
 ############
 ### Vars ###
 ############
+source_dir=$(dirname "$(readlink -f "$0")")
+
 has_head="$DISPLAY"
 is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
 export enable_services="systemctl --now enable"
