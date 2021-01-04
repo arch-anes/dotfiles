@@ -25,8 +25,8 @@ rm -rf $config_dir/vifm
 sudo rm -rf /etc/ssh/sshd_config /etc/amdgpu-fan.yml
 mkdir -p $HOME/.ssh $config_dir/onedrive
 
-stow home -t $HOME -R -d $source_dir
-sudo stow etc -t /etc -R -d $source_dir
+stow home -t $HOME -R -d $source_dir --adopt
+sudo stow etc -t /etc -R -d $source_dir --adopt
 
 if [ $has_head ]; then
     stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir >/dev/null 2>&1
