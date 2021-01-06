@@ -23,7 +23,7 @@ curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_
 config_dir=$HOME/.config
 rm -rf $config_dir/vifm
 sudo rm -rf /etc/ssh/sshd_config /etc/amdgpu-fan.yml
-mkdir -p $HOME/.ssh $config_dir/onedrive
+mkdir -p $HOME/.ssh
 
 stow home -t $HOME -R -d $source_dir --adopt
 sudo stow etc -t /etc -R -d $source_dir --adopt
@@ -59,7 +59,6 @@ if [ ! "$is_in_docker" ]; then
 
     if [ $has_head ]; then
         $enable_services syncthing@$USER.service
-        $enable_services --user onedrive.service
         $enable_services --user randwall.service
     fi
 fi
