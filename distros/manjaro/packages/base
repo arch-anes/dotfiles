@@ -20,7 +20,6 @@ pacutils
 rsync
 sshfs
 stow
-syncthing
 thefuck
 tinyssh
 tinyssh-convert
