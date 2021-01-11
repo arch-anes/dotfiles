@@ -58,7 +58,6 @@ if [ ! "$is_in_docker" ]; then
     yes | sudo ufw enable
 
     if [ $has_head ]; then
-        $enable_services syncthing@$USER.service
         $enable_services --user randwall.service
     fi
 fi
