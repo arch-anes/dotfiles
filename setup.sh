@@ -15,6 +15,9 @@ export enable_services="systemctl --now enable"
 $source_dir/distros/manjaro/setup.sh
 $source_dir/distros/ubuntu/setup.sh
 
+mkdir -p ~/.terminfo/x
+wget 'https://github.com/kovidgoyal/kitty/blob/master/terminfo/x/xterm-kitty?raw=true' -qO ~/.terminfo/x/xterm-kitty
+
 ##############
 ### Config ###
 ##############
