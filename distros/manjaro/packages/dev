@@ -5,6 +5,7 @@ cmake
 dotnet-sdk
 gdb
 ghidra
+gita-git
 gitkraken
 jdk-openjdk
 jetbrains-toolbox
