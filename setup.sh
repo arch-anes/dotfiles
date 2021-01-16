@@ -45,7 +45,7 @@ chsh -s `which fish`
 if [ -d "$HOME/.local/share/omf" ]; then
     fish -c "omf install"
 else
-    curl -L https://get.oh-my.fish | fish
+    curl -L https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 fi
 
 ################
