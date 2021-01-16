@@ -25,11 +25,13 @@ curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_
 
 config_dir=$HOME/.config
 rm -rf $config_dir/vifm
-sudo rm -rf /etc/ssh/sshd_config /etc/amdgpu-fan.yml
 mkdir -p $HOME/.ssh
-
 stow home -t $HOME -R -d $source_dir --adopt
-sudo stow etc -t /etc -R -d $source_dir --adopt
+
+if [ ! "$is_in_docker" ]; then
+    sudo rm -rf /etc/ssh/sshd_config /etc/amdgpu-fan.yml
+    sudo stow etc -t /etc -R -d $source_dir --adopt
+fi
 
 if [ $has_head ]; then
     stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir >/dev/null 2>&1
