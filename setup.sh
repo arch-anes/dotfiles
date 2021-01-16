@@ -42,7 +42,7 @@ fi
 #############
 ### Shell ###
 #############
-chsh -s `which fish`
+sudo chsh -s `which fish` $USER
 
 if [ -d "$HOME/.local/share/omf" ]; then
     fish -c "omf install"
