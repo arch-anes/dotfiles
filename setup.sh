@@ -42,13 +42,11 @@ fi
 #############
 ### Shell ###
 #############
-sudo chsh -s `which fish` $USER
+sudo chsh -s $(which fish) $USER
 
-if [ -d "$HOME/.local/share/omf" ]; then
-    fish -c "omf install"
-else
-    curl -L https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-fi
+wget -q https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install
+fish install --noninteractive --yes
+rm -f install
 
 ################
 ### Services ###
