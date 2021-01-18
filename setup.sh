@@ -26,6 +26,7 @@ curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_
 config_dir=$HOME/.config
 rm -rf $config_dir/vifm
 mkdir -p $HOME/.ssh
+mkdir -p "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg" "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/resource"
 stow home -t $HOME -R -d $source_dir --adopt
 
 if [ ! "$is_in_docker" ]; then
@@ -34,7 +35,6 @@ if [ ! "$is_in_docker" ]; then
 fi
 
 if [ $has_head ]; then
-    stow csgo -t "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo" -R -d $source_dir >/dev/null 2>&1
     cat $source_dir/gnome-settings.ini | dconf load /
     sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 fi
