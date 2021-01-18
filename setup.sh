@@ -68,9 +68,4 @@ fi
 ################
 ### Spacevim ###
 ################
-spacevim="$HOME/.SpaceVim"
-if [ -d "$spacevim" ]; then
-    git -C $spacevim pull
-else
-    curl -sLf https://spacevim.org/install.sh | bash
-fi
+curl -sLf https://spacevim.org/install.sh | bash
