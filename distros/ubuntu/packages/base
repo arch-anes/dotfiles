@@ -1,4 +1,5 @@
 curl
+ethtool
 fish
 git
 neovim
