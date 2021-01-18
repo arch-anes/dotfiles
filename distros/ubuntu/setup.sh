@@ -9,6 +9,7 @@ fi
 source_dir=$(dirname "$(readlink -f "$0")")
 
 sudo apt update && sudo apt install -y $(cat $source_dir/packages/base)
+sudo pip3 install thefuck
 
 sudo ln -nfs /usr/lib/openssh/sftp-server /usr/lib/ssh/sftp-server
 
