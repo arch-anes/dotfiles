@@ -29,7 +29,7 @@ mkdir -p $HOME/.ssh
 stow home -t $HOME -R -d $source_dir --adopt
 
 if [ ! "$is_in_docker" ]; then
-    sudo rm -rf /etc/ssh/sshd_config /etc/amdgpu-fan.yml
+    sudo rm -rf /etc/ssh/sshd_config
     sudo stow etc -t /etc -R -d $source_dir --adopt
 fi
 

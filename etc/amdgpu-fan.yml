@@ -1,8 +1,0 @@
-#Fan Control Matrix. [<Temp in C>,<Fanspeed in %>]
-speed_matrix:
-- [0, 0]
-- [30, 10]
-- [45, 20]
-- [60, 35]
-- [80, 100]
-

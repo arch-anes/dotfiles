@@ -19,8 +19,7 @@ gpg --keyserver pool.sks-keyservers.net --recv-keys B4322F04D67658D8
 VGA="$(lspci | grep VGA)"
 case "$VGA" in
 *AMD*)
-    $install_packages amdgpu-fan radeon-profile-daemon-git
-    $enable_services amdgpu-fan.service radeon-profile-daemon.service
+    $install_packages corectrl
     ;;
 *NVIDIA*)
     $install_packages nvidia-settings
