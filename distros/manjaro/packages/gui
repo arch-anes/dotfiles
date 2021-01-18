@@ -1,5 +1,3 @@
-
-caprine
 chromium
 chromium-widevine
 ffmpeg-compat-57
@@ -12,6 +10,7 @@ nextcloud-client
 onlyoffice
 pavucontrol
 randwall-bin
+signal-desktop
 slack-desktop
 spotify
 tdrop
