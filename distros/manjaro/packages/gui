@@ -1,5 +1,6 @@
 chromium
 chromium-widevine
+ferdi
 ffmpeg-compat-57
 firefox
 keepassxc
@@ -11,7 +12,6 @@ onlyoffice
 pavucontrol
 randwall-bin
 signal-desktop
-slack-desktop
 spotify
 tdrop
 thunderbird
