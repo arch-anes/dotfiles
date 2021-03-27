@@ -7,7 +7,8 @@ gdb
 ghidra
 gita-git
 gitkraken
-jdk-openjdk
+jdk11-openjdk
+jdk8-openjdk
 jetbrains-toolbox
 lld
 lldb

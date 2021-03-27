@@ -31,3 +31,5 @@ esac
 
 $remove_packages vi
 $install_packages $(cat $source_dir/packages/*)
+
+sudo archlinux-java set java-8-openjdk/jre
