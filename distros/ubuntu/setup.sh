@@ -8,6 +8,8 @@ fi
 
 source_dir=$(dirname "$(readlink -f "$0")")
 
+sudo apt update && sudo apt upgrade -y
+
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
 sudo apt update && sudo apt install -y $(cat $source_dir/packages/base)
