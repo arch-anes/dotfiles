@@ -13,6 +13,7 @@ sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 sudo apt update && sudo apt install -y $(cat $source_dir/packages/base)
 sudo pip3 install thefuck
 
+sudo mkdir -p /usr/lib/ssh/
 sudo ln -nfs /usr/lib/openssh/sftp-server /usr/lib/ssh/sftp-server
 
 is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
