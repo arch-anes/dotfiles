@@ -72,6 +72,10 @@ alias yolo='git commit -m (shuf -n 1 $HOME/.cache/commit_messages.txt)'
 alias swag='git add --all && yolo && git pull && git push'
 alias find-git-repos="find . -type d -exec test -e '{}/.git' ';' -print -prune"
 
+# nnn
+alias n='nnn -dHQex'
+alias vifm='n'
+
 # Other
 alias broken-ln='find -xtype l -print'
 alias docker-prune='docker system prune --all --volumes'

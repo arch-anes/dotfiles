@@ -15,6 +15,7 @@ megatools
 mkinitcpio-systemd-tool
 neovim
 neovim-symlinks
+nnn
 open-fuse-iso
 pacutils
 rsync
@@ -26,7 +27,6 @@ tinyssh-convert
 ttf-fira-code
 ufw
 usbip
-vifm
 wol
 words
 yay
