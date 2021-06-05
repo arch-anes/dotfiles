@@ -37,6 +37,8 @@ set -xg PATH $PATH /snap/bin
 # QEMU
 set -xg QEMU_AUDIO_DRV pa
 
+# nnn
+set -xg NNN_BMS "d:$HOME/Documents;D:$HOME/Downloads;c:$HOME/.config;g:$HOME/Documents/git;n:$HOME/Documents/Nextcloud"
 
 ###############
 ### Aliases ###
