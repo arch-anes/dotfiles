@@ -24,6 +24,7 @@ wget 'https://github.com/kovidgoyal/kitty/blob/master/terminfo/x/xterm-kitty?raw
 curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
 
 config_dir=$HOME/.config
+mkdir -p $config_dir
 mkdir -p $HOME/.ssh
 mkdir -p "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg" "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/resource"
 stow home -t $HOME -R -d $source_dir --adopt
