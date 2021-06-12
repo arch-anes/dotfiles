@@ -2,6 +2,7 @@ curl
 ethtool
 fish
 git
+lm-sensors
 neovim
 net-tools
 nnn
