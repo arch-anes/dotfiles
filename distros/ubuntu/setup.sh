@@ -18,6 +18,7 @@ sudo pip3 install thefuck
 sudo mkdir -p /usr/lib/ssh/
 sudo ln -nfs /usr/lib/openssh/sftp-server /usr/lib/ssh/sftp-server
 
+### Docker
 is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
 if [ "$is_in_docker" ]; then
     echo "Inside a Docker container. Skipping Docker package installation."
@@ -46,3 +47,8 @@ esac
 sudo apt update && sudo apt install -y $(cat $source_dir/packages/docker)
 
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
+### VpnCloud
+echo "deb https://repo.ddswd.de/deb stable main" | sudo tee /etc/apt/sources.list.d/vpncloud.list
+wget https://repo.ddswd.de/deb/public.key -qO - | sudo apt-key add
+sudo apt update && sudo apt install -y vpncloud
