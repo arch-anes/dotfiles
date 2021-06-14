@@ -86,6 +86,7 @@ alias sort-dir='find . -type f ! -path \'*/.git/*\' -exec sort -o {} {} \;'
 alias watchdir='inotifywait -r -m . --format "%w%f %e"'
 alias list-ports='sudo netstat -tulpn'
 alias bootstrap-python='python -m venv .venv && source .venv/bin/activate.fish && pip install -r requirements.txt'
+alias fix-fn-keys='sudo rtcwake -m mem -s 2'
 
 alias du='du -h'
 alias df='df -h'
