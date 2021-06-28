@@ -44,26 +44,39 @@ set -xg NNN_BMS "d:$HOME/Documents;D:$HOME/Downloads;c:$HOME/.config;g:$HOME/Doc
 ### Aliases ###
 ###############
 
-# Arch Linux
-set is_arch_based (cat /etc/os-release | grep arch)
-if test -n "$is_arch_based"
-    alias cleanup='yay -Yc && yay -Scc'
-    alias fix-pacman-db='sudo rm /var/lib/pacman/db.lck'
-    alias gensrcinfo='makepkg --printsrcinfo > .SRCINFO'
-    alias listpkg='expac --timefmt="%Y-%m-%d %T" "%l  %w\t%-20n\t%10d" (pacman -Qq) | sort -n'
-    alias remove='yay -Rsn'
-    alias update='yay -Y --gendb && yay -Syu --devel --needed --noeditmenu --nodiffmenu --sudoloop'
-    alias install='update'
+set is_linux (uname -s | grep Linux)
+set is_macos (uname -s | grep Darwin)
+
+if test -n "$is_linux"
+    # Arch Linux
+    set is_arch_based (cat /etc/os-release | grep arch)
+    if test -n "$is_arch_based"
+        alias cleanup='yay -Yc && yay -Scc'
+        alias fix-pacman-db='sudo rm /var/lib/pacman/db.lck'
+        alias gensrcinfo='makepkg --printsrcinfo > .SRCINFO'
+        alias listpkg='expac --timefmt="%Y-%m-%d %T" "%l  %w\t%-20n\t%10d" (pacman -Qq) | sort -n'
+        alias remove='yay -Rsn'
+        alias update='yay -Y --gendb && yay -Syu --devel --needed --noeditmenu --nodiffmenu --sudoloop'
+        alias install='update'
+    end
+
+    # Debian
+    set is_debian_based (cat /etc/os-release | grep debian)
+    if test -n "$is_debian_based"
+        alias cleanup='sudo apt autoremove --purge'
+        alias listpkg='apt list --installed'
+        alias remove='sudo apt remove'
+        alias update='sudo apt update && sudo apt upgrade'
+        alias install='sudo apt update && sudo apt install'
+    end
 end
 
-# Debian
-set is_debian_based (cat /etc/os-release | grep debian)
-if test -n "$is_debian_based"
-    alias cleanup='sudo apt autoremove --purge'
-    alias listpkg='apt list --installed'
-    alias remove='sudo apt remove'
-    alias update='sudo apt update && sudo apt upgrade'
-    alias install='sudo apt update && sudo apt install'
+if test -n "$is_macos"
+    alias cleanup='brew cleanup --prune=all'
+    alias listpkg='brew list'
+    alias remove='brew uninstall'
+    alias update='brew update'
+    alias install='brew install'
 end
 
 # dotfiles
