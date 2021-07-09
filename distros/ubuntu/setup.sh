@@ -48,11 +48,6 @@ sudo apt update && sudo apt install -y $(cat $source_dir/packages/docker)
 
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
-### VpnCloud
-echo "deb https://repo.ddswd.de/deb stable main" | sudo tee /etc/apt/sources.list.d/vpncloud.list
-wget https://repo.ddswd.de/deb/public.key -qO - | sudo apt-key add
-sudo apt update && sudo apt install -y vpncloud
-
 ### EC2 specific
 is_ec2_instance=$(sudo dmidecode --string system-uuid | head -c 3 | grep ec2)
 if [ "$is_ec2_instance" ]; then
