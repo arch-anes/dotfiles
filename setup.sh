@@ -40,8 +40,8 @@ mkdir -p $HOME/.ssh
 mkdir -p "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg" "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/resource"
 stow home -t $HOME -R -d $source_dir --adopt
 
-if [ ! "$is_in_docker" ]; then
-    if [ $is_linux ]; then
+if [ $is_linux ]; then
+    if [ ! $is_in_docker ]; then
         sudo rm -rf /etc/ssh/sshd_config
     fi
     sudo stow etc -t /etc -R -d $source_dir --adopt
