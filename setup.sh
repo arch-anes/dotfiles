@@ -69,6 +69,8 @@ if [ ! "$is_in_docker" ]; then
         sudo gpasswd -a $USER docker
         $enable_services docker.service
 
+        $enable_services avahi-daemon.service
+
         $enable_services sshd.service
 
         sudo ufw limit ssh
