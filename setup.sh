@@ -8,9 +8,11 @@ source_dir=$(pushd $(dirname $0) >/dev/null && pwd && popd >/dev/null)
 is_linux="$(uname -s | grep Linux)"
 is_macos="$(uname -s | grep Darwin)"
 
-has_head="$DISPLAY"
-is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
-export enable_services="systemctl --now enable"
+if [ $is_linux ]; then
+    has_head="$DISPLAY"
+    is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
+    export enable_services="systemctl --now enable"
+fi
 
 ################
 ### Packages ###
