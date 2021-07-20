@@ -47,9 +47,3 @@ esac
 sudo apt update && sudo apt install -y $(cat $source_dir/packages/docker)
 
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-
-### EC2 specific
-is_ec2_instance=$(sudo dmidecode --string system-uuid | head -c 3 | grep ec2)
-if [ "$is_ec2_instance" ]; then
-    sudo cp -f $source_dir/scripts/S01-leave-swarm-on-terminate.sh /etc/rc0.d/
-fi

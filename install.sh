@@ -1,5 +1,6 @@
 #!/bin/bash
 
+[ "$(cat /etc/os-release | grep amzn)" ] && sudo yum install -y unzip
 [ "$(cat /etc/os-release | grep manjaro)" ] && sudo pacman -Syu --needed --noconfirm unzip
 [ "$(cat /etc/os-release | grep ubuntu)" ] && sudo apt update && sudo apt install -y unzip
 
