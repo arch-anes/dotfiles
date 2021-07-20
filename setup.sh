@@ -77,10 +77,10 @@ if [ ! "$is_in_docker" ]; then
 
         sudo ufw limit ssh
         yes | sudo ufw enable
-    fi
 
-    if [ $has_head ]; then
-        $enable_services --user randwall.service
+        if [ $has_head ]; then
+            $enable_services --user randwall.service
+        fi
     fi
 fi
 
