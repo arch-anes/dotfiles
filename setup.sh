@@ -26,12 +26,14 @@ if [ $is_macos ]; then
     $source_dir/distros/macos/setup.sh
 fi
 
-mkdir -p ~/.terminfo/x
-wget 'https://github.com/kovidgoyal/kitty/blob/master/terminfo/x/xterm-kitty?raw=true' -qO ~/.terminfo/x/xterm-kitty
-
 ##############
 ### Config ###
 ##############
+
+if [ $is_linux ]; then
+    mkdir -p ~/.terminfo/x && wget 'https://github.com/kovidgoyal/kitty/blob/master/terminfo/x/xterm-kitty?raw=true' -qO ~/.terminfo/x/xterm-kitty
+fi
+
 curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
 
 config_dir=$HOME/.config
