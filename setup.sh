@@ -29,17 +29,13 @@ fi
 ##############
 ### Config ###
 ##############
-
 if [ $is_linux ]; then
     mkdir -p ~/.terminfo/x && wget 'https://github.com/kovidgoyal/kitty/blob/master/terminfo/x/xterm-kitty?raw=true' -qO ~/.terminfo/x/xterm-kitty
 fi
 
 curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
 
-config_dir=$HOME/.config
-mkdir -p $config_dir
-mkdir -p $HOME/.ssh
-mkdir -p "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg" "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/resource"
+mkdir -p $HOME/.config $HOME/.ssh "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/"{cfg,resource}
 stow home -t $HOME -R -d $source_dir --adopt
 
 if [ $is_linux ]; then
@@ -47,10 +43,8 @@ if [ $is_linux ]; then
         sudo rm -rf /etc/ssh/sshd_config
     fi
     sudo stow etc -t /etc -R -d $source_dir --adopt
-fi
 
-if [ $has_head ]; then
-    if [ $is_linux ]; then
+    if [ $has_head ]; then
         cat $source_dir/gnome-settings.ini | dconf load /
         sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
     fi
