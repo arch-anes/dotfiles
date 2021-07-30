@@ -6,7 +6,6 @@ dotnet-sdk
 gdb
 ghidra
 gita-git
-gitkraken
 jdk11-openjdk
 jdk8-openjdk
 lld
