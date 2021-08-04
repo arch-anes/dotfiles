@@ -72,7 +72,7 @@ if [ ! "$is_in_docker" ]; then
 
         $enable_services sshd.service
 
-        sudo ufw limit ssh
+        sudo ufw allow ssh
         yes | sudo ufw enable
 
         if [ $has_head ]; then
