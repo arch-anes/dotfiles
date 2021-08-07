@@ -17,3 +17,9 @@ sudo pip3 install thefuck
 
 sudo mkdir -p /usr/lib/ssh/
 sudo ln -nfs /usr/lib/openssh/sftp-server /usr/lib/ssh/sftp-server
+
+if [ ! "$is_in_docker" ]; then
+    sudo apt install -y resolvconf
+    echo 'nameserver 1.1.1.1' | sudo tee /etc/resolvconf/resolv.conf.d/head
+    $restart_services resolvconf
+fi

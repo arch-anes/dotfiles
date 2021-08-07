@@ -10,8 +10,9 @@ is_macos="$(uname -s | grep Darwin)"
 
 if [ $is_linux ]; then
     has_head="$DISPLAY"
-    is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
+    export is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
     export enable_services="systemctl --now enable"
+    export restart_services="systemctl restart"
 fi
 
 ################
@@ -40,7 +41,7 @@ mkdir -p $HOME/.config $HOME/.ssh "$HOME/.local/share/Steam/steamapps/common/Cou
 stow home -t $HOME -R -d $source_dir --adopt
 
 if [ $is_linux ]; then
-    if [ ! $is_in_docker ]; then
+    if [ ! "$is_in_docker" ]; then
         sudo rm -rf /etc/ssh/sshd_config
     fi
     sudo stow etc -t /etc -R -d $source_dir --adopt
