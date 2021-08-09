@@ -5,6 +5,7 @@ fish
 git
 lm-sensors
 neovim
+netcat
 net-tools
 nnn
 python3-dev
