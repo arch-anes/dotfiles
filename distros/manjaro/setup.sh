@@ -33,3 +33,6 @@ $remove_packages vi
 $install_packages $(cat $source_dir/packages/*)
 
 sudo archlinux-java set java-8-openjdk/jre
+
+sudo gpasswd -a $USER docker
+$enable_services docker.service

@@ -66,9 +66,6 @@ rm -f install
 ################
 if [ ! "$is_in_docker" ]; then
     if [ $is_linux ]; then
-        sudo gpasswd -a $USER docker
-        $enable_services docker.service
-
         $enable_services avahi-daemon.service
 
         $enable_services sshd.service
