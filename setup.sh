@@ -10,7 +10,7 @@ is_macos="$(uname -s | grep Darwin)"
 
 if [ $is_linux ]; then
     has_head="$DISPLAY"
-    export is_in_docker=$(awk -F/ '$2 == "docker"' /proc/self/cgroup)
+    export is_in_docker=$(test -e /.dockerenv && echo yes)
     export enable_services="systemctl --now enable"
     export restart_services="systemctl restart"
 fi
