@@ -1,5 +1,8 @@
 #!/bin/bash
 
+############
+### Vars ###
+############
 is_amazon="$(cat /etc/os-release | grep amzn)"
 if [ ! "$is_amazon" ]; then
     echo "Not Amazon Linux. Skipping package installation."
@@ -8,6 +11,9 @@ fi
 
 source_dir=$(dirname "$(readlink -f "$0")")
 
+################
+### Packages ###
+################
 sudo yum update -y
 
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
