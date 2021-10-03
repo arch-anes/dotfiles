@@ -1,6 +1,7 @@
 base-devel
 ghidra
 gita-git
+git-lfs
 jdk11-openjdk
 jdk8-openjdk
 net-tools

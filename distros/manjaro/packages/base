@@ -20,6 +20,7 @@ neovim-symlinks
 nnn
 open-fuse-iso
 pacutils
+pdfgrep
 rsync
 sshfs
 stow
@@ -33,3 +34,4 @@ wireguard-tools
 wol
 words
 yay
+youtube-dl
