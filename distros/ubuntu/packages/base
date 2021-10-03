@@ -3,7 +3,6 @@ curl
 ethtool
 fish
 git
-kitty-terminfo
 lm-sensors
 neovim
 netcat

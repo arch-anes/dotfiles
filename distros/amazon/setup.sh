@@ -23,5 +23,3 @@ sudo yum-config-manager --add-repo https://download.opensuse.org/repositories/sh
 sudo yum install -y $(cat $source_dir/packages/base)
 
 sudo pip3 install thefuck
-
-sudo wget https://github.com/kovidgoyal/kitty/raw/master/terminfo/x/xterm-kitty -qO /usr/share/terminfo/x/xterm-kitty

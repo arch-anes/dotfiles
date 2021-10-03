@@ -3,8 +3,8 @@ chromium-widevine
 ferdi-bin
 ffmpeg-compat-57
 firefox
+guake
 keepassxc
-kitty
 krita
 mpv
 mullvad-vpn-bin
@@ -21,7 +21,6 @@ randwall-bin
 rdesktop
 signal-desktop
 spotify
-tdrop
 teamviewer
 thunderbird
 tigervnc
