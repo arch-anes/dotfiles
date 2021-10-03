@@ -4,7 +4,6 @@ archivemount
 avahi
 bind
 busybox
-cowsay
 docker-compose
 ethtool
 fish
