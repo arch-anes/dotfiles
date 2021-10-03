@@ -13,6 +13,9 @@ noisetorch-bin
 obs-studio
 onlyoffice
 pavucontrol
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
 popcorntime-bin
 randwall-bin
 rdesktop
