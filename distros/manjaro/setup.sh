@@ -12,7 +12,7 @@ fi
 source_dir=$(dirname "$(readlink -f "$0")")
 config_dir="$source_dir/config"
 
-install_packages="yay -Syu --needed --noeditmenu --nodiffmenu --noconfirm --sudoloop"
+install_packages="yay -Syu --needed --noeditmenu --nodiffmenu --sudoloop"
 remove_packages="yay -Rs --noconfirm"
 
 ################
@@ -26,10 +26,10 @@ gpg --keyserver pool.sks-keyservers.net --recv-keys B4322F04D67658D8
 VGA="$(lspci | grep VGA)"
 case "$VGA" in
 *AMD*)
-    $install_packages corectrl
+    $install_packages --noconfirm corectrl
     ;;
 *NVIDIA*)
-    $install_packages nvidia-settings
+    $install_packages --noconfirm nvidia-settings
     ;;
 *)
     echo "Unknown graphics card."
@@ -39,7 +39,7 @@ esac
 $remove_packages vi
 $remove_packages manjaro-pulse pulseaudio-equalizer pulseaudio-zeroconf
 
-$install_packages $(cat $source_dir/packages/*)
+yes | $install_packages $(cat $source_dir/packages/*)
 
 ##############
 ### Config ###
