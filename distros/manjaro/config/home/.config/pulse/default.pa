@@ -1,0 +1,7 @@
+# Taken from https://miyacogbf.github.io/mlgb/only-game-sound/ and https://www.reddit.com/r/archlinux/comments/nwicio/virtual_sink_in_pipewire/
+
+# First, load system-wide default setting
+# The path of system-wide setting file may differ from your system, please check yours
+.include /etc/pulse/default.pa
+
+load-module module-remap-sink sink_name=OBSSink
