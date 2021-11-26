@@ -2,6 +2,7 @@ curl
 ethtool
 fish
 git
+htop
 neovim
 net-tools
 nnn
