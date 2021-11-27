@@ -2,13 +2,13 @@ base-devel
 ghidra
 gita-git
 git-lfs
+insomnia-bin
 jdk11-openjdk
 jdk8-openjdk
 net-tools
 nmap
 npm
 perf
-postman-bin
 python-pip
 sourcetrail
 visual-studio-code-bin
