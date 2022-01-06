@@ -6,6 +6,7 @@ bind
 busybox
 docker
 docker-compose
+downgrade
 ethtool
 fish
 fuse-zip
