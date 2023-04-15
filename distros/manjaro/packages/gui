@@ -4,6 +4,7 @@ ferdium-bin
 ffmpeg-compat-57
 firefox
 foliate
+freerdp
 guake
 keepassxc
 krita
@@ -21,7 +22,7 @@ pipewire-jack
 pipewire-pulse
 popcorntime-bin
 randwall-bin
-rdesktop
+remmina
 signal-desktop
 spotify
 teamviewer
