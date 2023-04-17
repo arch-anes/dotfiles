@@ -91,7 +91,7 @@ alias swag='git add --all && yolo && git pull && git push'
 alias find-git-repos="find . -type d -exec test -e '{}/.git' ';' -print -prune"
 
 # nnn
-alias n='nnn -dHQex'
+alias n='nnn -dHQexTe'
 alias vifm='n'
 
 # Other
