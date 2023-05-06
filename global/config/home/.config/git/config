@@ -14,7 +14,7 @@
 [url "https://github.com/abelfodil/"]
   insteadOf = me:
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.config/git/ignore
 [diff "bin"]
   textconv = hexdump -v -C
 [rerere]
