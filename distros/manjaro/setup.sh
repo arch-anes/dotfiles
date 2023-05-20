@@ -36,8 +36,6 @@ case "$VGA" in
     ;;
 esac
 
-$remove_packages manjaro-pulse pulseaudio-equalizer pulseaudio-zeroconf
-
 yes | $install_packages $(cat $source_dir/packages/*)
 
 sudo ln -s /usr/bin/helix /usr/bin/hx
@@ -58,8 +56,6 @@ sudo gpasswd -a $USER docker
 ################
 ### Services ###
 ################
-systemctl --now enable --user pipewire-pulse.service
-
 sudo systemctl --now enable docker.service
 
 systemctl --now enable --user randwall.service
