@@ -3,8 +3,7 @@ ghidra
 gita-git
 git-lfs
 insomnia-bin
-jdk11-openjdk
-jdk8-openjdk
+jdk-openjdk
 net-tools
 nmap
 npm

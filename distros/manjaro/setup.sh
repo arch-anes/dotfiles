@@ -53,7 +53,6 @@ sudo stow etc -t /etc -R -d $config_dir --adopt
 cat "$config_dir/gnome-settings.ini" | dconf load /
 sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 
-sudo archlinux-java set java-8-openjdk/jre
 sudo gpasswd -a $USER docker
 
 ################
