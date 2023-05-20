@@ -36,10 +36,11 @@ case "$VGA" in
     ;;
 esac
 
-$remove_packages vi
 $remove_packages manjaro-pulse pulseaudio-equalizer pulseaudio-zeroconf
 
 yes | $install_packages $(cat $source_dir/packages/*)
+
+sudo ln -s /usr/bin/helix /usr/bin/hx
 
 ##############
 ### Config ###

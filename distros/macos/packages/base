@@ -1,6 +1,7 @@
 coreutils
 curl
 fish
+helix
 neovim
 nnn
 rsync

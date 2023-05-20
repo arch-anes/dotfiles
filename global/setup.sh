@@ -28,8 +28,6 @@ wget -q https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/insta
 fish install --noninteractive --yes
 rm -f install
 
-curl -sLf https://spacevim.org/install.sh | bash
-
 ################
 ### Services ###
 ################

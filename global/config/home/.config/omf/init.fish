@@ -21,11 +21,9 @@ set -xg PATH $PATH $ANDROID_HOME/platform-tools
 set -xg PATH $PATH $HOME/.pub-cache/bin
 set -xg CHROME_EXECUTABLE chromium
 
-# Vim
-set -xg SPACEVIMDIR $HOME/.config/spacevim/
-set -xg PATH $PATH $HOME/.SpaceVim/bin
-set -xg VISUAL vim
-set -xg EDITOR vim
+# Editor
+set -xg VISUAL helix
+set -xg EDITOR helix
 
 # Node
 set -xg CHROME_BIN chromium
