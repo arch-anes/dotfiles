@@ -16,7 +16,7 @@ helix
 htop
 inotify-tools
 lazydocker
-megatools
+megatools-bin
 mkinitcpio-systemd-tool
 neovim
 neovim-symlinks
