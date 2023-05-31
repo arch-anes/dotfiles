@@ -14,9 +14,10 @@ source_dir=$(dirname "$(readlink -f "$0")")
 ################
 ### Packages ###
 ################
-sudo add-apt-repository -y ppa:maveonair/helix-editor
-
 sudo apt update && sudo apt upgrade -y
+sudo apt install -y software-properties-common
+
+sudo add-apt-repository -y ppa:maveonair/helix-editor
 
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
