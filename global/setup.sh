@@ -36,6 +36,7 @@ if [ ! "$is_in_docker" ]; then
         sudo systemctl --now enable avahi-daemon.service
 
         sudo systemctl --now enable sshd.service
+        sudo systemctl --now enable ssh.service
 
         sudo ufw allow ssh
         yes | sudo ufw enable
