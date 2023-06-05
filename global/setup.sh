@@ -13,13 +13,13 @@ mkdir -p $HOME/.config $HOME/.ssh
 
 curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
 
-stow home -t $HOME -R -d $config_dir --adopt
+stow home -t $HOME -R -d $config_dir
 
 if [ $is_linux ]; then
     if [ ! "$is_in_docker" ]; then
         sudo rm -rf /etc/ssh/sshd_config
     fi
-    sudo stow etc -t /etc -R -d $config_dir --adopt
+    sudo stow etc -t /etc -R -d $config_dir
 fi
 
 sudo chsh $USER -s $(which fish)

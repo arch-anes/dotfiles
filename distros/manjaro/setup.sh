@@ -44,9 +44,9 @@ sudo ln -s /usr/bin/helix /usr/bin/hx
 ### Config ###
 ##############
 mkdir -p $HOME/.config $HOME/.local "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/"{cfg,resource}
-stow home -t $HOME -R -d $config_dir --adopt
+stow home -t $HOME -R -d $config_dir
 
-sudo stow etc -t /etc -R -d $config_dir --adopt
+sudo stow etc -t /etc -R -d $config_dir
 
 cat "$config_dir/gnome-settings.ini" | dconf load /
 sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
