@@ -43,7 +43,7 @@ sudo ln -s /usr/bin/helix /usr/bin/hx
 ##############
 ### Config ###
 ##############
-mkdir -p $HOME/.config $HOME/.local "$HOME/.local/share/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/"{cfg,resource}
+mkdir -p $HOME/.config $HOME/.local
 stow home -t $HOME -R -d $config_dir
 
 sudo stow etc -t /etc -R -d $config_dir
