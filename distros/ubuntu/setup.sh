@@ -10,6 +10,7 @@ if [ ! "$is_ubuntu" ]; then
 fi
 
 source_dir=$(dirname "$(readlink -f "$0")")
+config_dir="$source_dir/config"
 
 ################
 ### Packages ###
@@ -23,3 +24,8 @@ sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
 sudo apt update && sudo apt install -y $(cat $source_dir/packages/base)
 sudo pip3 install thefuck
+
+##############
+### Config ###
+##############
+sudo stow etc -t /etc -R -d $config_dir
