@@ -16,9 +16,6 @@ curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_
 stow home -t $HOME -R -d $config_dir
 
 if [ $is_linux ]; then
-    if [ ! "$is_in_docker" ]; then
-        sudo rm -rf /etc/ssh/sshd_config
-    fi
     sudo stow etc -t /etc -R -d $config_dir
 fi
 
