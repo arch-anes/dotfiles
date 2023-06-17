@@ -29,3 +29,4 @@ sudo pip3 install thefuck
 ### Config ###
 ##############
 sudo stow etc -t /etc -R -d $config_dir
+sudo chown -R root:root $config_dir/etc/sudoers.d
