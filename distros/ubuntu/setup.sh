@@ -23,8 +23,3 @@ sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
 sudo apt update && sudo apt install -y $(cat $source_dir/packages/base)
 sudo pip3 install thefuck
-
-##############
-### Config ###
-##############
-sudo mkdir -p /usr/lib/ssh/ && sudo ln -nfs /usr/lib/openssh/sftp-server /usr/lib/ssh/sftp-server
