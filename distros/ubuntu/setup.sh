@@ -19,6 +19,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y software-properties-common
 
 sudo add-apt-repository -y ppa:maveonair/helix-editor
+sudo add-apt-repository -y ppa:fish-shell/release-3
 
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
