@@ -6,19 +6,19 @@
 set -xg fish_prompt_pwd_dir_length 0
 
 # Go
-set -xg PATH $PATH $HOME/go/bin
+fish_add_path -a $HOME/go/bin
 
 # Dotnet
-set -xg PATH $PATH $HOME/.dotnet/tools
+fish_add_path -a $HOME/.dotnet/tools
 set -xg DOTNET_CLI_TELEMETRY_OPTOUT 1
 
 # Android
 set -xg ANDROID_HOME $HOME/Android/Sdk
-set -xg PATH $PATH $ANDROID_HOME/tools
-set -xg PATH $PATH $ANDROID_HOME/platform-tools
+fish_add_path -a $ANDROID_HOME/tools
+fish_add_path -a $ANDROID_HOME/platform-tools
 
 # Flutter & Dart
-set -xg PATH $PATH $HOME/.pub-cache/bin
+fish_add_path -a $HOME/.pub-cache/bin
 set -xg CHROME_EXECUTABLE chromium
 
 # Editor
@@ -27,13 +27,13 @@ set -xg EDITOR helix
 
 # Node
 set -xg CHROME_BIN chromium
-set -xg PATH $PATH $HOME/.yarn/bin
+fish_add_path -a $HOME/.yarn/bin
 
 # Snap
-set -xg PATH $PATH /snap/bin
+fish_add_path -a /snap/bin
 
 #  webinstall.dev
-set -xg PATH $PATH $HOME/.local/bin
+fish_add_path -a $HOME/.local/bin
 
 # QEMU
 set -xg QEMU_AUDIO_DRV pa
