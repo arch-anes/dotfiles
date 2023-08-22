@@ -94,7 +94,6 @@ alias vifm='n'
 
 # Other
 alias broken-ln='find -xtype l -print'
-alias docker-prune='docker system prune --all --volumes'
 alias lvl='echo $SHLVL'
 alias sortdir='find -type f ! -path \'*/.git/*\' -exec sort -o {} {} \; -path'
 alias watchdir='inotifywait -r -m . --format "%w%f %e"'
