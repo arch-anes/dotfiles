@@ -96,12 +96,13 @@ alias vifm='n'
 alias broken-ln='find -xtype l -print'
 alias docker-prune='docker system prune --all --volumes'
 alias lvl='echo $SHLVL'
-alias sort-dir='find -type f ! -path \'*/.git/*\' -exec sort -o {} {} \; -path'
+alias sortdir='find -type f ! -path \'*/.git/*\' -exec sort -o {} {} \; -path'
 alias watchdir='inotifywait -r -m . --format "%w%f %e"'
-alias list-ports='sudo netstat -tulpn'
+alias lsprt='sudo netstat -tulpn'
+alias dspses="echo $XDG_SESSION_TYPE"
 alias bootstrap-python='python -m venv .venv && source .venv/bin/activate.fish && pip install -r requirements.txt'
-alias display_session_type="echo $XDG_SESSION_TYPE"
 
+# System utilities
 alias du='du -h'
 alias df='df -h'
 alias ls='ls -A'
