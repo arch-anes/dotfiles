@@ -38,8 +38,6 @@ esac
 
 yes | $install_packages $(cat $source_dir/packages/*)
 
-sudo ln -s /usr/bin/helix /usr/bin/hx
-
 ##############
 ### Config ###
 ##############
