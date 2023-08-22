@@ -57,3 +57,5 @@ sudo gpasswd -a $USER docker
 sudo systemctl --now enable docker.service
 
 systemctl --now enable --user randwall.service
+
+systemctl --now enable --user pipewire-pulse
