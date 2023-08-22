@@ -76,7 +76,7 @@ if test -n "$is_macos"
     alias cleanup='brew cleanup --prune=all'
     alias listpkg='brew list'
     alias remove='brew uninstall'
-    alias update='brew update'
+    alias update='brew update && brew upgrade'
     alias install='brew install'
 end
 
