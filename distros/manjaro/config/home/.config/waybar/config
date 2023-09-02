@@ -1,0 +1,118 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": [
+        "custom/packages",
+        "custom/package-updates",
+        "clock",
+        // "mpd",
+        "custom/weather"
+    ],
+    "modules-right": [
+        "custom/keyboard-layout",
+        "backlight",
+        "pulseaudio",
+        "network",
+        // "network#vpn",
+        "battery",
+        "tray"
+    ],
+    "sway/mode": {
+        "tooltip": false,
+        "format": " {}"
+    },
+    "tray": {
+        "tooltip": false,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip": false,
+        "interval": 1,
+        "format": "{:%A, %B %d %Y %T}"
+    },
+    "battery": {
+        "tooltip": false,
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "tooltip": false,
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "network#vpn": {
+        "interface": "tun0",
+        "format": ""
+    },
+    "pulseaudio": {
+        "tooltip": false,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "backlight": {
+        "tooltip": false,
+        "format": "{percent}% {icon}",
+        "format-icons": [""],
+        "on-scroll-down": "light -A 5",
+        "on-scroll-up": "light -U 5"
+    },
+    "custom/weather": {
+        "tooltip": false,
+        "format": "{} ",
+        "interval": 600,
+        "exec": "weather",
+        "exec-if": "ping goo.gle -c1"
+    },
+    "custom/packages": {
+        "tooltip": false,
+        "format": "{} ",
+        "interval": 600,
+        "exec": "yay -Qq | wc -l "
+    },
+    "custom/package-updates": {
+        "tooltip": false,
+        "format": "{} ",
+        "interval": 600,
+        "exec": "checkupdates 2> /dev/null | wc -l",
+        "exec-if": "ping archlinux.org -c1"
+    },
+    "custom/keyboard-layout": {
+        "tooltip": false,
+        "format": "{} ",
+        "exec": "~/.config/waybar/modules/keyboard_layout_monitor"
+    },
+    "mpd": {
+        "format": "{stateIcon}",
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    }
+}
