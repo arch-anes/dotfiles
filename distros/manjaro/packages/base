@@ -17,7 +17,9 @@ helixbinhx
 htop
 inotify-tools
 lazydocker
+libva-mesa-driver
 megatools-bin
+mesa-vdpau
 mkinitcpio-systemd-tool
 neovim
 neovim-symlinks
