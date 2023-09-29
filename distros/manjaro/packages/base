@@ -8,6 +8,7 @@ docker
 docker-compose
 downgrade
 ethtool
+fdupes
 fish
 fuse-zip
 git
