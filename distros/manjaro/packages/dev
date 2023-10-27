@@ -7,6 +7,7 @@ insomnia-bin
 jdk-openjdk
 net-tools
 nmap
+nodejs
 npm
 perf
 python-pip
