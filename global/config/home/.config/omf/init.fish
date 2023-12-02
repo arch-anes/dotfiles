@@ -22,8 +22,8 @@ fish_add_path -a $HOME/.pub-cache/bin
 set -xg CHROME_EXECUTABLE chromium
 
 # Editor
-set -xg VISUAL helix
-set -xg EDITOR helix
+set -xg VISUAL hx
+set -xg EDITOR hx
 
 # Node
 set -xg CHROME_BIN chromium
