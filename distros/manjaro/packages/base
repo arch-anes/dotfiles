@@ -5,6 +5,7 @@ avahi
 bind
 busybox
 docker
+docker-buildx
 docker-compose
 downgrade
 ethtool
