@@ -99,7 +99,7 @@ alias sortdir='find -type f ! -path \'*/.git/*\' -exec sort -o {} {} \; -path'
 alias watchdir='inotifywait -r -m . --format "%w%f %e"'
 alias lsprt='sudo netstat -tulpn'
 alias dspses="echo $XDG_SESSION_TYPE"
-alias bootstrap-python='python -m venv .venv && source .venv/bin/activate.fish && pip install -r requirements.txt'
+alias bootstrap-python='python -m venv .venv --system-site-packages && source .venv/bin/activate.fish && pip install -r requirements.txt'
 
 # System utilities
 alias du='du -h'
