@@ -22,7 +22,9 @@ lazydocker
 libva-mesa-driver
 megatools-bin
 mesa-vdpau
-mkinitcpio-systemd-tool
+mkinitcpio-netconf
+mkinitcpio-tinyssh
+mkinitcpio-utils
 neovim
 neovim-symlinks
 nnn
