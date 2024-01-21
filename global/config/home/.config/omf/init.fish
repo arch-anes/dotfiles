@@ -57,7 +57,7 @@ if test -n "$is_linux"
         alias gensrcinfo='makepkg --printsrcinfo > .SRCINFO'
         alias listpkg='expac --timefmt="%Y-%m-%d %T" "%l  %w\t%-20n\t%10d" (pacman -Qq) | sort -n'
         alias remove='yay -Rsn'
-        alias update='yay -Y --gendb && yay -Syu --devel --needed --noeditmenu --nodiffmenu --sudoloop'
+        alias update='yay -Y --gendb && yay -Syu --devel --needed --editmenu=false --diffmenu=false --sudoloop'
         alias install='update'
     end
 
