@@ -12,7 +12,7 @@ fi
 source_dir=$(dirname "$(readlink -f "$0")")
 config_dir="$source_dir/config"
 
-install_packages="yay -Syu --needed --editmenu=false --diffmenu=false --nocleanmenu --sudoloop"
+install_packages="yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop"
 remove_packages="yay -Rs --noconfirm"
 
 ################
