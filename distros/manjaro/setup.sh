@@ -12,8 +12,6 @@ fi
 source_dir=$(dirname "$(readlink -f "$0")")
 config_dir="$source_dir/config"
 
-install_packages="yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop"
-
 ################
 ### Packages ###
 ################
@@ -25,17 +23,18 @@ curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg  | gpg 
 VGA="$(lspci | grep VGA)"
 case "$VGA" in
 *AMD*)
-    $install_packages --noconfirm corectrl
+    video_package=corectrl
     ;;
 *NVIDIA*)
-    $install_packages --noconfirm nvidia-settings
+    video_package=nvidia-settings
     ;;
 *)
+    video_package=""
     echo "Unknown graphics card."
     ;;
 esac
 
-yes | $install_packages $(cat $source_dir/packages/*)
+yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop $video_package $(cat $source_dir/packages/*)
 
 ##############
 ### Config ###
