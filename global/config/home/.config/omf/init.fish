@@ -42,6 +42,14 @@ set -xg QEMU_AUDIO_DRV pa
 set -xg NNN_BMS "d:$HOME/Documents;D:$HOME/Downloads;c:$HOME/.config;g:$HOME/Documents/git;n:$HOME/Documents/Nextcloud"
 
 ###############
+### Init ###
+###############
+
+if type -q zoxide
+    zoxide init fish | source
+end
+
+###############
 ### Aliases ###
 ###############
 
