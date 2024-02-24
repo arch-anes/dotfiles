@@ -19,8 +19,8 @@ install_packages="yay -Syu --needed --editmenu=false --diffmenu=false --cleanmen
 ################
 sudo pacman -Syu --needed --noconfirm yay
 
-gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 8FD3D9A8D3800305A9FFF259D1742AD60D811D58
-gpg --keyserver pool.sks-keyservers.net --recv-keys B4322F04D67658D8
+# Spotigy GPG
+curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg  | gpg --import -
 
 VGA="$(lspci | grep VGA)"
 case "$VGA" in
