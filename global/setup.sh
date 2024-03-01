@@ -21,9 +21,7 @@ fi
 
 sudo chsh $USER -s $(which fish)
 
-wget -q https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install
-fish install --noninteractive --yes
-rm -f install
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | NONINTERACTIVE=1 ASSUME_YES=1 fish
 
 ################
 ### Services ###
