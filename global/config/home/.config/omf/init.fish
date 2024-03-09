@@ -47,6 +47,7 @@ set -xg NNN_BMS "d:$HOME/Documents;D:$HOME/Downloads;c:$HOME/.config;g:$HOME/Doc
 
 if type -q zoxide
     zoxide init fish | source
+    abbr -a cd z
 end
 
 ###############
