@@ -31,5 +31,5 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 ##############
 ### Config ###
 ##############
-sudo stow etc -t /etc -R -d $config_dir
 sudo chown -R root:root $config_dir/etc/sudoers.d
+sudo stow etc -t /etc -R -d $config_dir
