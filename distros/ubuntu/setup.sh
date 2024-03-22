@@ -15,6 +15,8 @@ config_dir="$source_dir/config"
 ################
 ### Packages ###
 ################
+export DEBIAN_FRONTEND=noninteractive
+
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y software-properties-common
 
