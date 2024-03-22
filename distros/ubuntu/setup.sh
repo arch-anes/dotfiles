@@ -17,15 +17,15 @@ config_dir="$source_dir/config"
 ################
 export DEBIAN_FRONTEND=noninteractive
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install -y software-properties-common
+sudo -E apt update && sudo -E apt upgrade -y
+sudo -E apt install -y software-properties-common
 
-sudo add-apt-repository -y ppa:maveonair/helix-editor
-sudo add-apt-repository -y ppa:fish-shell/release-3
+sudo -E add-apt-repository -y ppa:maveonair/helix-editor
+sudo -E add-apt-repository -y ppa:fish-shell/release-3
 
-sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
+sudo -E apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
-sudo apt update && sudo apt install -y $(cat $source_dir/packages/base)
+sudo -E apt update && sudo -E apt install -y $(cat $source_dir/packages/base)
 sudo pip3 install thefuck
 
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
