@@ -6,6 +6,12 @@
 source_dir=$(pushd $(dirname $0) >/dev/null && pwd && popd >/dev/null)
 config_dir="$source_dir/config"
 
+is_linux="$(uname -s | grep Linux)"
+
+if [ $is_linux ]; then
+    is_in_docker=$(test -e /.dockerenv && echo yes)
+fi
+
 ##############
 ### Config ###
 ##############
