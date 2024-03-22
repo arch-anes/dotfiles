@@ -10,7 +10,6 @@ if [ $is_linux ]; then
 fi
 
 if [ $is_linux ]; then
-    $source_dir/distros/amazon/setup.sh
     $source_dir/distros/manjaro/setup.sh
     $source_dir/distros/ubuntu/setup.sh
 fi
