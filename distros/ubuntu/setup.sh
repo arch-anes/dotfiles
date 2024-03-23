@@ -28,6 +28,8 @@ sudo -E apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 sudo -E apt update && sudo -E apt install -y $(cat $source_dir/packages/base)
 sudo pip3 install thefuck
 
+curl -Ssf https://pkgx.sh | sh
+
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 
 ##############
