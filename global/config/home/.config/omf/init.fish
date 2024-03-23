@@ -32,9 +32,6 @@ fish_add_path -a $HOME/.yarn/bin
 # Snap
 fish_add_path -a /snap/bin
 
-#  webinstall.dev
-fish_add_path -a $HOME/.local/bin
-
 # QEMU
 set -xg QEMU_AUDIO_DRV pa
 
