@@ -1,6 +1,8 @@
 blender
+blender-plugin-cad-sketcher-git
 cura-bin
 kicad
 kicad-library
 kicad-library-3d
+python-toml
 saleae-logic
