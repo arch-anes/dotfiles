@@ -1,6 +1,7 @@
 coreutils
 curl
 fish
+git
 helix
 lazygit
 neovim
