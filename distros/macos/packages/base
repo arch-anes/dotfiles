@@ -2,6 +2,7 @@ coreutils
 curl
 fish
 helix
+lazygit
 neovim
 nnn
 rsync
