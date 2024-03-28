@@ -17,5 +17,3 @@ source_dir=$(pushd $(dirname $0) >/dev/null && pwd && popd >/dev/null)
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install $(cat $source_dir/packages/*)
-
-sudo pip3 install thefuck
