@@ -82,8 +82,6 @@ end
 alias update-dotfiles='curl -L https://raw.githubusercontent.com/arch-anes/dotfiles/master/install.sh | bash'
 
 # Git
-alias yolo='git commit -m (shuf -n 1 $HOME/.cache/commit_messages.txt)'
-alias swag='git add --all && yolo && git pull && git push'
 alias find-git-repos="find -type d -exec test -e '{}/.git' ';' -print -prune -path"
 
 # nnn

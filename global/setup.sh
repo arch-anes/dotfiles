@@ -17,8 +17,6 @@ fi
 ##############
 mkdir -p $HOME/.config $HOME/.ssh
 
-curl -sLf https://raw.githubusercontent.com/ngerakines/commitment/master/commit_messages.txt -o $HOME/.cache/commit_messages.txt
-
 stow home -t $HOME -R -d $config_dir
 
 if [ $is_linux ]; then
