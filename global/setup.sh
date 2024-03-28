@@ -29,6 +29,8 @@ sudo chsh $USER -s $(which fish)
 
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | NONINTERACTIVE=1 ASSUME_YES=1 fish
 
+rm -rf $HOME/.config/nvim && git clone https://github.com/NvChad/starter $HOME/.config/nvim --single-branch
+
 ################
 ### Services ###
 ################
