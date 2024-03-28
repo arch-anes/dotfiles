@@ -5,8 +5,8 @@ ffmpeg4.4
 firefox
 foliate
 freerdp
-guake
 keepassxc
+kitty
 krita
 lib32-pipewire-jack 
 manjaro-gnome-settings
@@ -27,6 +27,7 @@ randwall-bin
 remmina
 signal-desktop
 spotify
+tdrop-git
 teamviewer
 thunderbird
 tigervnc
