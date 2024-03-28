@@ -6,5 +6,6 @@ neovim
 nnn
 rsync
 stow
+tmux
 wget
 zoxide
