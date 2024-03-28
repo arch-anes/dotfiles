@@ -37,6 +37,7 @@ set -xg QEMU_AUDIO_DRV pa
 
 # nnn
 set -xg NNN_BMS "d:$HOME/Documents;D:$HOME/Downloads;c:$HOME/.config;g:$HOME/Documents/git;n:$HOME/Documents/Nextcloud"
+set -xg NNN_PLUG 'p:preview-tui;d:diffs;r:gitroot;e:suedit'
 
 ###############
 ### Aliases ###
@@ -86,7 +87,7 @@ alias swag='git add --all && yolo && git pull && git push'
 alias find-git-repos="find -type d -exec test -e '{}/.git' ';' -print -prune -path"
 
 # nnn
-alias n='nnn -dHQexTe'
+alias n='nnn -adHQexTePp'
 alias vifm='n'
 
 # Other
