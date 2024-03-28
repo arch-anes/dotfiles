@@ -32,6 +32,7 @@ nnn
 open-fuse-iso
 pacutils
 pdfgrep
+ripgrep
 rsync
 sshfs
 stow

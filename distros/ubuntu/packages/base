@@ -11,6 +11,7 @@ net-tools
 network-manager
 nnn
 python3-pip
+ripgrep
 stow
 tmux
 wget

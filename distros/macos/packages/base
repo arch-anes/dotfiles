@@ -6,6 +6,7 @@ helix
 lazygit
 neovim
 nnn
+ripgrep
 rsync
 stow
 tmux
