@@ -91,7 +91,7 @@ alias vifm='n'
 # Other
 alias broken-ln='find -xtype l -print'
 alias lvl='echo $SHLVL'
-alias sortdir='find -type f ! -path \'*/.git/*\' -exec sort -o {} {} \; -path'
+alias sortdir='find -type f ! -path "*/.git/*" -exec sort -o {} {} \; -path'
 alias watchdir='inotifywait -r -m . --format "%w%f %e"'
 alias lsprt='sudo netstat -tulpn'
 alias dspses="echo $XDG_SESSION_TYPE"
