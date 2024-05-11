@@ -57,3 +57,8 @@ sudo systemctl --now enable docker.service
 systemctl --now enable --user randwall.service
 
 systemctl --now enable --user pipewire-pulse
+
+################
+### Firewall ###
+################
+sudo ufw allow 12034 comment rquickshare
