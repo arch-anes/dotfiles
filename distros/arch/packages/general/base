@@ -21,7 +21,6 @@ inotify-tools
 lazydocker
 lazygit
 libva-mesa-driver
-megatools-bin
 mesa-vdpau
 neovim
 neovim-symlinks
@@ -42,5 +41,4 @@ wireguard-tools
 wol
 words
 yay
-youtube-dl
 zoxide
