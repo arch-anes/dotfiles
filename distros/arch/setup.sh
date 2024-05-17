@@ -23,22 +23,22 @@ curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg  | gpg 
 VGA="$(lspci | grep VGA)"
 case "$VGA" in
 *AMD*)
-    video_package=corectrl
+    video_packages="corectrl amdvlk lib32-amdvlk vulkan-radeon lib32-vulkan-radeon"
     ;;
 *NVIDIA*)
-    video_package=nvidia-settings
+    video_packages="nvidia-settings nvidia-utils lib32-nvidia-utils"
     ;;
 *)
-    video_package=""
+    video_packages=""
     echo "Unknown graphics card."
     ;;
 esac
 
-yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop $video_package $(cat $source_dir/packages/general/*)
+yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop $video_packages $(cat $source_dir/packages/general/*)
 
 is_manjaro="$(cat /etc/os-release | grep manjaro)"
 if [ $is_manjaro ]; then
-    yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop $video_package $(cat $source_dir/packages/manjaro/*)
+    yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop $(cat $source_dir/packages/manjaro/*)
 fi
 
 ##############
