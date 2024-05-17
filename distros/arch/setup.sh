@@ -34,7 +34,12 @@ case "$VGA" in
     ;;
 esac
 
-yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop $video_package $(cat $source_dir/packages/*)
+yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop $video_package $(cat $source_dir/packages/general/*)
+
+is_manjaro="$(cat /etc/os-release | grep manjaro)"
+if [ $is_manjaro ]; then
+    yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --sudoloop $video_package $(cat $source_dir/packages/manjaro/*)
+fi
 
 ##############
 ### Config ###

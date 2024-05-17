@@ -23,9 +23,6 @@ lazygit
 libva-mesa-driver
 megatools-bin
 mesa-vdpau
-mkinitcpio-netconf
-mkinitcpio-tinyssh
-mkinitcpio-utils
 neovim
 neovim-symlinks
 nnn
@@ -37,8 +34,6 @@ rsync
 sshfs
 stow
 thefuck
-tinyssh
-tinyssh-convert
 tmux
 ttf-fira-code
 ufw

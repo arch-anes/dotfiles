@@ -1,0 +1,5 @@
+mkinitcpio-netconf
+mkinitcpio-tinyssh
+mkinitcpio-utils
+tinyssh
+tinyssh-convert
