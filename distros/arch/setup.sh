@@ -3,9 +3,9 @@
 ############
 ### Vars ###
 ############
-is_manjaro="$(cat /etc/os-release | grep manjaro)"
-if [ ! "$is_manjaro" ]; then
-    echo "Not Manjaro. Skipping package installation."
+is_arch="$(cat /etc/os-release | grep ID_LIKE=arch)"
+if [ ! "$is_arch" ]; then
+    echo "Not Arch-like. Skipping package installation."
     exit 0
 fi
 
