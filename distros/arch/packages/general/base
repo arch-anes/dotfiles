@@ -24,6 +24,8 @@ libva-mesa-driver
 mesa-vdpau
 neovim
 neovim-symlinks
+net-tools
+nmap
 nnn
 open-fuse-iso
 pacutils
