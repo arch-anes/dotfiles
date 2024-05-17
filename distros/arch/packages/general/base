@@ -18,6 +18,7 @@ helix
 helixbinhx
 htop
 inotify-tools
+jq
 lazydocker
 lazygit
 libva-mesa-driver
