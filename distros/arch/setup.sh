@@ -3,7 +3,7 @@
 ############
 ### Vars ###
 ############
-is_arch="$(cat /etc/os-release | grep ID_LIKE=arch)"
+is_arch="$(cat /etc/os-release | grep ID_LIKE | grep arch)"
 if [ ! "$is_arch" ]; then
     echo "Not Arch-like. Skipping package installation."
     exit 0

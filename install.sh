@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ "$(cat /etc/os-release | grep ID_LIKE=arch)" ] && sudo pacman -Syu --needed --noconfirm unzip
+[ "$(cat /etc/os-release | grep ID_LIKE | grep arch)" ] && sudo pacman -Syu --needed --noconfirm unzip
 [ "$(cat /etc/os-release | grep ubuntu)" ] && sudo apt update && sudo apt install -y unzip
 
 config_dir="$HOME/.config"
