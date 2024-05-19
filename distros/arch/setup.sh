@@ -36,7 +36,7 @@ case "$VGA" in
     ;;
 esac
 
-yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --removemake --sudoloop $video_packages $(cat $source_dir/packages/general/*)
+yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --removemake --sudoloop $video_packages $(cat $source_dir/packages/*)
 
 ##############
 ### Config ###
