@@ -38,11 +38,6 @@ esac
 
 yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --removemake --sudoloop $video_packages $(cat $source_dir/packages/general/*)
 
-is_manjaro="$(cat /etc/os-release | grep manjaro)"
-if [ $is_manjaro ]; then
-    yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --removemake --sudoloop $(cat $source_dir/packages/manjaro/*)
-fi
-
 ##############
 ### Config ###
 ##############
