@@ -54,6 +54,8 @@ sudo gpasswd -a $USER docker
 ################
 ### Services ###
 ################
+sudo systemctl disable --now NetworkManager-wait-online.service
+
 sudo systemctl --now enable docker.service
 
 systemctl --now enable --user randwall.service
