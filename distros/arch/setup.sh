@@ -23,7 +23,7 @@ curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg  | gpg 
 VGA="$(lspci | grep VGA)"
 case "$VGA" in
 *AMD*)
-    video_packages="corectrl amdvlk lib32-amdvlk vulkan-radeon lib32-vulkan-radeon"
+    video_packages="corectrl amdvlk lib32-amdvlk vulkan-radeon lib32-vulkan-radeon amdgpu_top"
     ;;
 *NVIDIA*)
     video_packages="nvidia-settings nvidia-utils lib32-nvidia-utils"
