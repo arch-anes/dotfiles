@@ -9,5 +9,6 @@ nodejs
 npm
 perf
 python-pip
+rustup
 visual-studio-code-bin
 yarn
