@@ -17,6 +17,8 @@ config_dir="$source_dir/config"
 ################
 sudo pacman -Syu --needed --noconfirm yay
 
+yay -Rs --noconfirm firewalld
+
 # Spotigy GPG
 curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg  | gpg --import -
 
