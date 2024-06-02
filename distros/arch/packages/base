@@ -37,6 +37,7 @@ ripgrep
 rsync
 sshfs
 stow
+termdbms-git
 thefuck
 tmux
 ufw
