@@ -2,6 +2,7 @@ android-tools
 android-udev
 archivemount
 avahi
+bat
 bind
 busybox
 docker
