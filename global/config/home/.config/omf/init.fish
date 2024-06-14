@@ -42,14 +42,6 @@ set -xg NNN_PLUG 'p:preview-tui;d:diffs;r:gitroot;e:suedit'
 set is_linux (uname -s | grep Linux)
 set is_macos (uname -s | grep Darwin)
 
-if test -n "$is_linux"
-    if systemctl --user is-active --quiet gcr-ssh-agent.socket
-        set -xg SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
-    else
-        set --erase SSH_AUTH_SOCK
-    end
-end
-
 ###############
 ### Aliases ###
 ###############
