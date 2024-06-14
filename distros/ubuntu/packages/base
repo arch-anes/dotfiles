@@ -11,7 +11,7 @@ netcat-openbsd
 net-tools
 network-manager
 nnn
-python3-pip
+pipx
 ripgrep
 stow
 tmux
