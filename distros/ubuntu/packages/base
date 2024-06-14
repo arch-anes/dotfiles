@@ -7,7 +7,7 @@ git
 helix
 lm-sensors
 neovim
-netcat
+netcat-openbsd
 net-tools
 network-manager
 nnn
