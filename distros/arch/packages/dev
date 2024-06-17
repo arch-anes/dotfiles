@@ -1,5 +1,6 @@
 arch-install-scripts
 base-devel
+dive
 ghidra
 gita-git
 git-lfs
