@@ -5,6 +5,7 @@ ethtool
 fish
 git
 helix
+iperf3
 lm-sensors
 neovim
 netcat-openbsd
