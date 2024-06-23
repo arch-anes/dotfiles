@@ -13,6 +13,7 @@ net-tools
 network-manager
 nnn
 pipx
+python-is-python3
 ripgrep
 stow
 tmux
