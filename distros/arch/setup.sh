@@ -51,6 +51,14 @@ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sl
 
 sudo gpasswd -a $USER docker
 
+is_endeavour="$(cat /etc/os-release | grep endeavouros)"
+if [ "$is_endeavour" ]; then
+    # Fix for https://forum.endeavouros.com/t/fix-for-having-to-enter-password-twice-when-booting-with-encrypted-swap-partition/39122
+    sudo rm -f /etc/dracut.conf.d/calamares-luks.conf 
+    sudo reinstall-kernels
+    sudo rm -f /etc/crypttab
+fi
+
 ################
 ### Services ###
 ################
