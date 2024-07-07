@@ -66,6 +66,7 @@ sudo systemctl disable --now NetworkManager-wait-online.service
 
 sudo systemctl --now enable docker.service
 sudo systemctl --now enable cronie.service
+sudo systemctl --now enable bluetooth.service
 
 systemctl --now enable --user randwall.service
 systemctl --now enable --user pipewire-pulse
