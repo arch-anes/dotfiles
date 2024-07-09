@@ -26,6 +26,7 @@ languagetool
 lazydocker
 lazygit
 libva-mesa-driver
+lshw
 mesa-vdpau
 neovim
 neovim-symlinks
