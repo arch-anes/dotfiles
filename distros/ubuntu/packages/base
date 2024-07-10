@@ -6,6 +6,7 @@ fish
 git
 helix
 iperf3
+iputils-ping
 lm-sensors
 neovim
 netcat-openbsd
