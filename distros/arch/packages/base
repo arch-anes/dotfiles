@@ -22,6 +22,7 @@ helixbinhx
 htop
 inotify-tools
 jq
+kernel-modules-hook
 languagetool
 lazydocker
 lazygit
