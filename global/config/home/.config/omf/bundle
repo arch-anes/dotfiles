@@ -1,6 +1,5 @@
 package autovenv
 package https://github.com/jhillyerd/plugin-git
 package remove_host
-package thefuck
 theme bobthefish
 theme default

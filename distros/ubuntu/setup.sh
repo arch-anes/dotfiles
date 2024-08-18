@@ -26,7 +26,6 @@ sudo -E add-apt-repository -y ppa:fish-shell/release-3
 sudo -E apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
 sudo -E apt update && sudo -E apt install -y $(cat $source_dir/packages/base)
-sudo PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install --include-deps thefuck
 
 curl -Ssf https://pkgx.sh | sh
 
