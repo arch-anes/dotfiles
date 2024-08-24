@@ -56,7 +56,6 @@ if [ "$is_endeavour" ]; then
     # Fix for https://forum.endeavouros.com/t/fix-for-having-to-enter-password-twice-when-booting-with-encrypted-swap-partition/39122
     sudo rm -f /etc/dracut.conf.d/calamares-luks.conf 
     sudo reinstall-kernels
-    sudo rm -f /etc/crypttab
 fi
 
 ################
