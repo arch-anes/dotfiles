@@ -106,6 +106,15 @@ alias lspci='lspci -nnk'
 
 alias :q="exit"
 
+#################
+### Functions ###
+#################
+
+function rcam -d "Remotely connect to a webcam via SSH"
+    # source: https://unix.stackexchange.com/a/117352
+    ssh $argv[1] ffmpeg -an -f video4linux2 -s 1920x1080 -i /dev/video0 -r 10 -b:v 500k -f matroska -loglevel warning - | ffplay -f matroska /dev/stdin -loglevel warning
+end
+
 ###############
 ### Init ###
 ###############
