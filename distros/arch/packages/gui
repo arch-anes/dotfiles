@@ -37,3 +37,5 @@ virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
 wireplumber
+wl-clipboard
+xclip
