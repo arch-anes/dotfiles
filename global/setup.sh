@@ -30,6 +30,11 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
 
 rm -rf $HOME/.config/nvim && git clone https://github.com/NvChad/starter $HOME/.config/nvim --single-branch
+# https://github.com/NvChad/starter/issues/39
+if [ "$(nvim --version | grep 'NVIM v' | awk -F'.' '{print $2}')" -lt "10" ]; then
+    echo "Applying NvChad workaround for nvim < 0.10"
+    git -C $HOME/.config/nvim reset --hard 0c7d9cefa99b01a6dadff495fd91ae52a15e756a
+fi
 
 ################
 ### Services ###
