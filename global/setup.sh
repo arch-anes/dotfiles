@@ -41,8 +41,6 @@ fi
 ################
 if [ ! "$is_in_docker" ]; then
     if [ $is_linux ]; then
-        sudo systemctl --now enable avahi-daemon.service
-
         sudo systemctl --now enable sshd.service
         sudo systemctl --now enable ssh.service
 
