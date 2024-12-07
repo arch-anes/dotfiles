@@ -46,9 +46,6 @@ stow home -t $HOME -R -d $config_dir
 
 sudo stow etc -t /etc -R -d $config_dir
 
-cat "$config_dir/gnome-settings.ini" | dconf load /
-sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
-
 sudo gpasswd -a $USER docker
 
 is_endeavour="$(cat /etc/os-release | grep endeavouros)"
@@ -71,8 +68,3 @@ sudo systemctl enable linux-modules-cleanup.service
 systemctl --now enable --user randwall.service
 systemctl --now enable --user pipewire-pulse
 systemctl --now enable --user gcr-ssh-agent.socket
-
-################
-### Firewall ###
-################
-sudo ufw allow 12034 comment rquickshare

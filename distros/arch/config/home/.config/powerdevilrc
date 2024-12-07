@@ -1,0 +1,13 @@
+[AC][Display]
+DimDisplayIdleTimeoutSec=-1
+DimDisplayWhenIdle=false
+TurnOffDisplayIdleTimeoutWhenLockedSec=0
+
+[AC][SuspendAndShutdown]
+AutoSuspendAction=0
+
+[Battery][Display]
+TurnOffDisplayIdleTimeoutWhenLockedSec=0
+
+[LowBattery][Display]
+UseProfileSpecificDisplayBrightness=false

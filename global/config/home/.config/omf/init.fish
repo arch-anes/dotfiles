@@ -53,6 +53,10 @@ if test -n "$is_linux"
     # Arch Linux
     set is_arch_based (cat /etc/os-release | grep arch)
     if test -n "$is_arch_based"
+        # https://wiki.archlinux.org/title/KDE_Wallet#Using_the_KDE_Wallet_to_store_ssh_key_passphrases
+        set -xg SSH_ASKPASS_REQUIRE prefer
+        set -xg SSH_ASKPASS /usr/bin/ksshaskpass
+
         alias cleanup='yay -Yc && yay -Scc'
         alias fix-pacman-db='sudo rm /var/lib/pacman/db.lck'
         alias gensrcinfo='makepkg --printsrcinfo > .SRCINFO'
