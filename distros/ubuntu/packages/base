@@ -17,6 +17,7 @@ nnn
 pipx
 python-is-python3
 ripgrep
+sanoid
 stow
 tmux
 wget
