@@ -265,7 +265,7 @@ toggle do not disturb=none,,Toggle do not disturb
 _launch=Meta+Return
 
 [services][code.desktop]
-new-empty-window=Meta+C
+_launch=Meta+C
 
 [services][org.kde.spectacle.desktop]
 RecordWindow=none
