@@ -1,3 +1,5 @@
 #!/bin/bash
 
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if command -v /home/linuxbrew/.linuxbrew/bin/brew &> /dev/null; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
