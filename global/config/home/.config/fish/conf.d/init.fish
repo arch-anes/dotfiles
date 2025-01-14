@@ -30,6 +30,9 @@ set -xg EDITOR nvim
 set -xg CHROME_BIN chromium
 fish_add_path -a $HOME/.yarn/bin
 
+# Rust
+fish_add_path -a $HOME/.cargo/bin
+
 # Snap
 fish_add_path -a /snap/bin
 
