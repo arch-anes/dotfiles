@@ -14,6 +14,7 @@ dracut-crypt-ssh
 ethtool
 fdupes
 fish
+fisher
 fuse-zip
 git
 gnu-netcat
@@ -40,6 +41,7 @@ pdfgrep
 ripgrep
 rsync
 sshfs
+starship
 stow
 sysstat
 termdbms-git

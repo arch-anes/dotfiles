@@ -4,6 +4,7 @@
 
 # Fish
 set -xg fish_prompt_pwd_dir_length 0
+set -xg fish_greeting ""
 
 # Go
 fish_add_path -a $HOME/go/bin
@@ -126,6 +127,23 @@ end
 ###############
 ### Init ###
 ###############
+if status --is-login
+    if not type -q fisher
+        curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+    end
+
+    if type -q fisher; and test (fisher list | wc -l) -eq 0
+        fisher install jorgebucaran/fisher jhillyerd/plugin-git franciscolourenco/done gazorby/fish-abbreviation-tips
+    end
+end
+
+if not type -q starship
+    curl -sS https://starship.rs/install.sh | FORCE=1 sh
+end
+
+if type -q starship
+    starship init fish | source
+end
 
 if type -q zoxide
     zoxide init fish | source

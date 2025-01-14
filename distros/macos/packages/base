@@ -2,6 +2,7 @@ bat
 coreutils
 curl
 fish
+fisher
 git
 helix
 lazygit
@@ -9,6 +10,7 @@ neovim
 nnn
 ripgrep
 rsync
+starship
 stow
 tmux
 wget
