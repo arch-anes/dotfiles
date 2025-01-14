@@ -127,6 +127,10 @@ end
 ###############
 ### Init ###
 ###############
+if type -q /home/linuxbrew/.linuxbrew/bin/brew
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+end
+
 if status --is-login
     # Check if fisher has 0 plugins or 1 plugin (fisher itself)
     if type -q fisher; and test (fisher list | wc -l) -eq 0 -o (fisher list | wc -l) -eq 1

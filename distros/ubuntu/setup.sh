@@ -18,22 +18,13 @@ config_dir="$source_dir/config"
 export DEBIAN_FRONTEND=noninteractive
 
 sudo -E apt update && sudo -E apt upgrade -y
-sudo -E apt install -y software-properties-common
+sudo -E apt install -y $(cat $source_dir/packages/ubuntu)
 
-sudo -E add-apt-repository -y ppa:maveonair/helix-editor
-sudo -E add-apt-repository -y ppa:fish-shell/release-3
+NONINTERACTIVE=1 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+brew install $(cat $source_dir/packages/brew)
 
-sudo -E apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
-
-sudo -E apt update && sudo -E apt install -y $(cat $source_dir/packages/base)
-
-curl -Ssf https://pkgx.sh | sh
-
-curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-
-fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
-
-curl -sS https://starship.rs/install.sh | FORCE=1 sh
+sudo ln -s /home/linuxbrew/.linuxbrew/bin/fish /usr/bin/fish
 
 ##############
 ### Config ###

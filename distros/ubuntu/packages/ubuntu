@@ -1,10 +1,10 @@
 apcupsd
 bat
+build-essential
 curl
 ethtool
-fish
+file
 git
-helix
 iperf3
 iputils-ping
 kitty-terminfo
@@ -15,9 +15,11 @@ net-tools
 network-manager
 nnn
 pipx
+procps
 python-is-python3
 ripgrep
 sanoid
+software-properties-common
 stow
 tmux
 wget
