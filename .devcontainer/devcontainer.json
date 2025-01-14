@@ -1,0 +1,22 @@
+{
+	"name": "Homer operator devcontainer",
+	"image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04",
+	"remoteUser": "vscode",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"dotfiles.repository": "",
+				"dotfiles.targetPath": "",
+				"dotfiles.installCommand": ""
+			},
+			"extensions": [
+				"redhat.vscode-yaml",
+				"visualstudioexptteam.vscodeintellicode",
+				"mads-hartmann.bash-ide-vscode",
+				"bmalehorn.vscode-fish",
+				"DavidWang.ini-for-vscode",
+				"tamasfe.even-better-toml"
+			]
+		}
+	}
+}
