@@ -128,17 +128,10 @@ end
 ### Init ###
 ###############
 if status --is-login
-    if not type -q fisher
-        curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
-    end
-
-    if type -q fisher; and test (fisher list | wc -l) -eq 0
+    # Check if fisher has 0 plugins or 1 plugin (fisher itself)
+    if type -q fisher; and test (fisher list | wc -l) -eq 0 -o (fisher list | wc -l) -eq 1
         fisher install jorgebucaran/fisher jhillyerd/plugin-git franciscolourenco/done gazorby/fish-abbreviation-tips
     end
-end
-
-if not type -q starship
-    curl -sS https://starship.rs/install.sh | FORCE=1 sh
 end
 
 if type -q starship

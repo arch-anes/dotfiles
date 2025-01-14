@@ -31,6 +31,10 @@ curl -Ssf https://pkgx.sh | sh
 
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 
+fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+
+curl -sS https://starship.rs/install.sh | FORCE=1 sh
+
 ##############
 ### Config ###
 ##############
