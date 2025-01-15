@@ -131,7 +131,7 @@ end
 ### Init ###
 ###############
 if type -q /home/linuxbrew/.linuxbrew/bin/brew
-    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
 end
 
 if status --is-login
