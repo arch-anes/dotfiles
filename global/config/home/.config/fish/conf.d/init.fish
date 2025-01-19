@@ -101,7 +101,6 @@ abbr -a lzd lazydocker
 
 # nnn
 alias n='nnn -adHQexTePp'
-alias vifm='n'
 
 # Other
 alias broken-ln='find -xtype l -print'
