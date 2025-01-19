@@ -11,6 +11,7 @@ docker-buildx
 docker-compose
 downgrade
 dracut-crypt-ssh
+dust
 ethtool
 fdupes
 fish

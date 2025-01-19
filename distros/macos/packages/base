@@ -1,6 +1,7 @@
 bat
 coreutils
 curl
+dust
 fish
 fisher
 fzf

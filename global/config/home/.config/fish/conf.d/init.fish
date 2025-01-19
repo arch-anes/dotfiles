@@ -112,7 +112,7 @@ alias dspses="echo $XDG_SESSION_TYPE"
 alias bootstrap-python='python -m venv .venv --system-site-packages && source .venv/bin/activate.fish && pip install -r requirements.txt'
 
 # System utilities
-alias du='du -h'
+abbr -a du dust
 alias df='df -h'
 alias less='less -R'
 alias ls='ls -A'
