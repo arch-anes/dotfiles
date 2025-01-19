@@ -1,6 +1,7 @@
 bat
 coreutils
 curl
+duf
 dust
 fish
 fisher

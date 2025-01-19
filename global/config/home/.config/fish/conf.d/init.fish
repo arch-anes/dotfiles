@@ -113,7 +113,7 @@ alias bootstrap-python='python -m venv .venv --system-site-packages && source .v
 
 # System utilities
 abbr -a du dust
-alias df='df -h'
+abbr -a df duf
 alias less='less -R'
 alias ls='ls -A'
 alias rm='rm -i'
