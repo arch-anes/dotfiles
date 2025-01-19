@@ -27,7 +27,7 @@ sudo chsh $USER -s $(which fish)
 
 sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
 
-rm -rf $HOME/.config/nvim && git clone https://github.com/NvChad/starter $HOME/.config/nvim --single-branch
+rm -rf $HOME/.local/share/nvim $HOME/.config/nvim && git clone https://github.com/NvChad/starter $HOME/.config/nvim --single-branch
 # https://github.com/NvChad/starter/issues/39
 if [ "$(nvim --version | grep 'NVIM v' | awk -F'.' '{print $2}')" -lt "10" ]; then
     echo "Applying NvChad workaround for nvim < 0.10"
