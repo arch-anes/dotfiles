@@ -3,6 +3,7 @@ coreutils
 curl
 fish
 fisher
+fzf
 git
 helix
 lazygit
