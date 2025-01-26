@@ -16,15 +16,12 @@ libvncserver
 masterpdfeditor-free
 matcha-gtk-theme
 nextcloud-client
-nordvpn-bin
 obs-studio
-onlyoffice-bin
 pavucontrol
 pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
-popcorntime-bin
 randwall-bin
 remmina
 signal-desktop
@@ -35,9 +32,6 @@ thunderbird
 tigervnc
 timeshift
 ttf-fira-code
-virt-manager
-virtualbox-host-dkms
-virt-viewer
 wireplumber
 wl-clipboard
 xclip
