@@ -1,56 +1,74 @@
-[column]
-  ui = auto
-[branch]
-  sort = -committerdate
-[tag]
-  sort = version:refname
-[user]
-  email = ans.belfodil@gmail.com
-  name = Anes Belfodil
-	signingkey = B584EA228B133FAF73ED0D0E7BDFAE29F1DE8EFE
-[credential]
-  helper = /usr/lib/git-core/git-credential-libsecret
-[help]
-  autocorrect = prompt
 [alias]
+  logl = log --oneline --decorate --graph
+  make-new-repo = filter-branch --prune-empty --subdirectory-filter # [subdir] -- [REF]
+  pristine = clean -ffxd
   pushall = !git remote | xargs -L1 git push --all
   retrack = !git rm -r --cached . && git add .
   rclone = clone --recurse-submodules
-  logl = log --oneline --decorate --graph
-  pristine = clean -ffxd
-  make-new-repo = filter-branch --prune-empty --subdirectory-filter # [subdir] -- [REF]
-[url "https://github.com/abelfodil/"]
-  insteadOf = me:
+
+[branch]
+  sort = -committerdate
+
+[column]
+  ui = auto
+
+[commit]
+  gpgSign = true
+  verbose = true
+
 [core]
   excludesfile = ~/.config/git/ignore
-[diff "bin"]
-  textconv = hexdump -v -C
-[rerere]
-	enabled = true
-	autoupdate = true
-[submodule]
-  recurse = true
+
+[credential]
+  helper = /usr/lib/git-core/git-credential-libsecret
+
 [diff]
   algorithm = histogram
   colorMoved = plain
   mnemonicPrefix = true
   renames = true
-[push]
-  default = simple
-  autoSetupRemote = true
-  followTags = true
+
+[diff "bin"]
+  textconv = hexdump -v -C
+
 [fetch]
+  all = true
   prune = true
   pruneTags = true
-  all = true
+
+[help]
+  autocorrect = prompt
+
+[merge]
+  conflictstyle = zdiff3
+
 [pull]
-	rebase = merges
+  rebase = merges
+
+[push]
+  autoSetupRemote = true
+  default = simple
+  followTags = true
+
 [rebase]
   autoSquash = true
   autoStash = true
   updateRefs = true
-[merge]
-  conflictstyle = zdiff3 
-[commit]
-	gpgSign = true
-  verbose = true
+
+[rerere]
+  autoupdate = true
+  enabled = true
+
+[submodule]
+  recurse = true
+
+[tag]
+  sort = version:refname
+
+[url "https://github.com/abelfodil/"]
+  insteadOf = me:
+
+[user]
+  email = ans.belfodil@gmail.com
+  name = Anes Belfodil
+  signingkey = B584EA228B133FAF73ED0D0E7BDFAE29F1DE8EFE
