@@ -1,9 +1,17 @@
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
 [user]
   email = ans.belfodil@gmail.com
   name = Anes Belfodil
 	signingkey = B584EA228B133FAF73ED0D0E7BDFAE29F1DE8EFE
 [credential]
   helper = /usr/lib/git-core/git-credential-libsecret
+[help]
+  autocorrect = prompt
 [alias]
   pushall = !git remote | xargs -L1 git push --all
   retrack = !git rm -r --cached . && git add .
@@ -22,7 +30,27 @@
 	autoupdate = true
 [submodule]
   recurse = true
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
 [pull]
 	rebase = merges
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[merge]
+  conflictstyle = zdiff3 
 [commit]
 	gpgSign = true
+  verbose = true
