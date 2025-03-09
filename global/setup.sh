@@ -25,6 +25,9 @@ fi
 
 sudo chsh $USER -s $(which fish)
 
+# Trigger fisher dependencies installation
+fish -l -c "exit"
+
 rm -rf $HOME/.config/nnn/plugins && sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
 
 rm -rf $HOME/.local/share/nvim $HOME/.config/nvim && git clone https://github.com/NvChad/starter $HOME/.config/nvim --single-branch
