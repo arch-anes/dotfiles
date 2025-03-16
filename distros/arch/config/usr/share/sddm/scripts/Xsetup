@@ -1,0 +1,5 @@
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+
+xset +dpms
+xset dpms 5 5 5
