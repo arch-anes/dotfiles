@@ -1,0 +1,6 @@
+polkit.addRule(function(action, subject) {
+    // Allow the 'ubuntu' user to perform any action without authentication
+    if (subject.user === "ubuntu") {
+        return polkit.Result.YES;
+    }
+});

@@ -39,5 +39,4 @@ fi
 ##############
 ### Config ###
 ##############
-sudo chown -R root:root $config_dir/etc/sudoers.d
 sudo stow etc -t /etc -R -d $config_dir
