@@ -46,6 +46,8 @@ stow home -t $HOME -R -d $config_dir
 
 sudo stow etc -t /etc -R -d $config_dir
 
+cat "$config_dir/gnome-settings.ini" | dconf load /
+
 sudo gpasswd -a $USER docker
 
 is_endeavour="$(cat /etc/os-release | grep endeavouros)"
