@@ -1,0 +1,14 @@
+[Unit]
+Description=Noisetorch Noise Cancelling
+After=pipewire.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/usr/bin/noisetorch -i -s %i -t 95
+ExecStop=/usr/bin/noisetorch -u
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
