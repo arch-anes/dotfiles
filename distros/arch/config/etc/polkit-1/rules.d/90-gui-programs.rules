@@ -1,0 +1,13 @@
+polkit.addRule(function (action, subject) {
+    if (
+        (action.id == 'org.corectrl.helper.init' ||
+            action.id == 'org.corectrl.helperkiller.init' ||
+            action.id == 'in.teejeetech.pkexec.timeshift' ||
+            action.id == 'in.teejeetech.pkexec.timeshift-gtk') &&
+        subject.local == true &&
+        subject.active == true &&
+        subject.isInGroup('wheel')
+    ) {
+        return polkit.Result.YES;
+    }
+});
