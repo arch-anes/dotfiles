@@ -52,6 +52,8 @@ sudo ln -nsf /usr/lib/mozilla/native-messaging-hosts /usr/lib/librewolf/native-m
 
 sudo gpasswd -a $USER docker
 
+sudo gpasswd -a $USER plugdev
+
 ################
 ### Services ###
 ################
