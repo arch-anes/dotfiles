@@ -264,6 +264,9 @@ toggle do not disturb=none,,Toggle do not disturb
 [services][Dropdown Terminal.desktop]
 _launch=Meta+Return
 
+[services][Dropdown Terminal Fullscreen.desktop]
+_launch=Meta+Shift+Return
+
 [services][code.desktop]
 _launch=Meta+C
 

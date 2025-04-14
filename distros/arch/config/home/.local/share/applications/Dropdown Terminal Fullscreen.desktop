@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Dropdown Terminal Fullscreen
+Comment=Kitty dropdown terminal fullscreen
+Exec=tdrop -h 100% -n tdrop_terminal -mtaA  -s dropdown kitty --class tdrop_terminal
+Icon=kitty
+Terminal=False
+Type=Application
+StartupNotify=False
+Categories=Development;

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Dropdown Terminal
 Comment=Kitty dropdown terminal
-Exec=tdrop -n tdrop_terminl -mtaA -s dropdown kitty --class tdrop_terminal
+Exec=tdrop -h 50% -n tdrop_terminal -mtaA  -s dropdown kitty --class tdrop_terminal
 Icon=kitty
 Terminal=False
 Type=Application
