@@ -55,6 +55,13 @@ sudo gpasswd -a $USER docker
 sudo gpasswd -a $USER plugdev
 
 ################
+### Firewall ###
+################
+
+sudo ufw allow 1714:1764/udp comment "KDE Connect"
+sudo ufw allow 1714:1764/tcp comment "KDE Connect"
+
+################
 ### Services ###
 ################
 sudo systemctl disable --now NetworkManager-wait-online.service
