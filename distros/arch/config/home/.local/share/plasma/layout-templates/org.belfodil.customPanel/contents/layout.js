@@ -39,7 +39,7 @@ panel.addWidget('org.kde.plasma.showdesktop');
 iconTasksWidget.currentConfigGroup = ['General'];
 iconTasksWidget.writeConfig('indicateAudioStreams', false);
 iconTasksWidget.writeConfig('launchers', [
-    'applications:librewolf.desktop',
+    'applications:firefox.desktop',
     'applications:code.desktop',
     'applications:org.mozilla.Thunderbird.desktop',
     'applications:ferdium.desktop',

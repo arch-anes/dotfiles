@@ -4,6 +4,7 @@ chromium
 chromium-widevine
 ferdium-bin
 ffmpeg4.4
+firefox
 foliate
 freerdp
 gcr-4
@@ -12,7 +13,6 @@ kdeconnect
 keepassxc
 kitty
 krita
-librewolf-bin
 libvncserver
 masterpdfeditor-free
 matcha-gtk-theme
