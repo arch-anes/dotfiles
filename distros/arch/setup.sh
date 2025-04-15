@@ -46,10 +46,6 @@ stow home -t $HOME -R -d $config_dir
 
 sudo stow etc -t /etc -R -d $config_dir
 
-# KDE + LibreWolf integration fix
-ln -nsf $HOME/.mozilla/native-messaging-hosts $HOME/.librewolf/native-messaging-hosts
-sudo ln -nsf /usr/lib/mozilla/native-messaging-hosts /usr/lib/librewolf/native-messaging-hosts
-
 sudo gpasswd -a $USER docker
 
 sudo gpasswd -a $USER plugdev
