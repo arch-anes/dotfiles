@@ -63,6 +63,7 @@ sudo ufw allow 1714:1764/tcp comment "KDE Connect"
 sudo systemctl disable --now NetworkManager-wait-online.service
 
 sudo systemctl --now enable docker.service
+sudo systemctl --now enable cups.service
 sudo systemctl --now enable cronie.service
 sudo systemctl --now enable bluetooth.service
 sudo systemctl enable linux-modules-cleanup.service

@@ -6,6 +6,7 @@ archlinux-contrib
 bat
 bind
 busybox
+cups
 docker
 docker-buildx
 docker-compose
@@ -47,6 +48,7 @@ sshfs
 starship
 stow
 sysstat
+system-config-printer
 termdbms-git
 tmux
 ufw
