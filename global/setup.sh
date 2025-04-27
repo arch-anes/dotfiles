@@ -15,7 +15,7 @@ fi
 ##############
 ### Config ###
 ##############
-mkdir -p $HOME/.config $HOME/.ssh
+mkdir -p $HOME/.config/fish/conf.d $HOME/.ssh
 
 stow home -t $HOME -R -d $config_dir
 
