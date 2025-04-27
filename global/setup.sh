@@ -20,6 +20,7 @@ mkdir -p $HOME/.config/fish/conf.d $HOME/.ssh
 stow home -t $HOME -R -d $config_dir
 
 if [ $is_linux ]; then
+    sudo rm -f /etc/apcupsd/apcupsd.conf
     sudo stow etc -t /etc -R -d $config_dir
 fi
 
