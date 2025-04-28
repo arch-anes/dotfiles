@@ -33,6 +33,7 @@ lazydocker
 lazygit
 libva-mesa-driver
 lshw
+memtest86+-efi
 mesa-vdpau
 neovim
 neovim-symlinks
