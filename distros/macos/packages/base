@@ -3,11 +3,18 @@ coreutils
 curl
 duf
 dust
+duti
 fish
 fisher
+fswatch
 fzf
 git
+git-lfs
+harfbuzz
 helix
+htop
+jq
+lazydocker
 lazygit
 neovim
 nnn
@@ -17,4 +24,5 @@ starship
 stow
 tmux
 wget
+yabai
 zoxide
