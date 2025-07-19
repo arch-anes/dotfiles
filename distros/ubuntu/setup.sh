@@ -9,6 +9,8 @@ if [ ! "$is_ubuntu" ]; then
     exit 0
 fi
 
+is_in_docker=$(test -e /.dockerenv && echo yes)
+
 source_dir=$(dirname "$(readlink -f "$0")")
 config_dir="$source_dir/config"
 
@@ -30,3 +32,10 @@ sudo ln -s /home/linuxbrew/.linuxbrew/bin/fish /usr/bin/fish
 ### Config ###
 ##############
 sudo stow etc -t /etc -R -d $config_dir
+
+################
+### Services ###
+################
+if [ ! "$is_in_docker" ]; then
+    sudo systemctl --now enable zfs-load-key.service
+fi
