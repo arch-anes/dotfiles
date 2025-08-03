@@ -136,6 +136,15 @@ function rcam -d "Remotely connect to a webcam via SSH"
     ssh $argv[1] ffmpeg -an -f video4linux2 -s 1920x1080 -i /dev/video0 -r 10 -b:v 500k -f matroska -loglevel warning - | ffplay -f matroska /dev/stdin -loglevel warning
 end
 
+function debug_shell_pod_container -d "Run a debug busybox shell into a pod's container"
+    if test (count $argv) -ne 2
+        echo "Usage: debug_shell_pod_container <pod> <container>"
+        return 1
+    end
+
+    sudo kubectl debug -n default --image=busybox -it "$argv[1]" --target="$argv[2]" -- sh
+end
+
 ###############
 ### Init ###
 ###############
