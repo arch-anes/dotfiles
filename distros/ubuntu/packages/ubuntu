@@ -9,7 +9,6 @@ iperf3
 iputils-ping
 kitty-terminfo
 lm-sensors
-neovim
 netcat-openbsd
 net-tools
 network-manager
