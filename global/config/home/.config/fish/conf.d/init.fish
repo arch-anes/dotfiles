@@ -23,8 +23,8 @@ fish_add_path -a $HOME/.pub-cache/bin
 set -xg CHROME_EXECUTABLE chromium
 
 # Editor
-set -xg VISUAL nvim
-set -xg EDITOR nvim
+set -xg VISUAL (which nvim)
+set -xg EDITOR (which nvim)
 
 # Node
 set -xg CHROME_BIN chromium
