@@ -1,3 +1,30 @@
+############
+### Init ###
+############
+if type -q /home/linuxbrew/.linuxbrew/bin/brew
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
+end
+
+if status --is-login
+    # Check if fisher has 0 plugins or 1 plugin (fisher itself)
+    if type -q fisher; and test (fisher list | wc -l) -eq 0 -o (fisher list | wc -l) -eq 1
+        fisher install jorgebucaran/fisher jhillyerd/plugin-git franciscolourenco/done gazorby/fish-abbreviation-tips
+    end
+end
+
+if type -q starship
+    starship init fish | source
+end
+
+if type -q fzf
+    fzf --fish | source
+end
+
+if type -q zoxide
+    zoxide init fish | source
+    abbr -a cd z
+end
+
 ###########
 ### ENV ###
 ###########
@@ -143,31 +170,4 @@ function debug_shell_pod_container -d "Run a debug busybox shell into a pod's co
     end
 
     sudo kubectl debug -n default --image=busybox -it "$argv[1]" --target="$argv[2]" -- sh
-end
-
-###############
-### Init ###
-###############
-if type -q /home/linuxbrew/.linuxbrew/bin/brew
-    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
-end
-
-if status --is-login
-    # Check if fisher has 0 plugins or 1 plugin (fisher itself)
-    if type -q fisher; and test (fisher list | wc -l) -eq 0 -o (fisher list | wc -l) -eq 1
-        fisher install jorgebucaran/fisher jhillyerd/plugin-git franciscolourenco/done gazorby/fish-abbreviation-tips
-    end
-end
-
-if type -q starship
-    starship init fish | source
-end
-
-if type -q fzf
-    fzf --fish | source
-end
-
-if type -q zoxide
-    zoxide init fish | source
-    abbr -a cd z
 end
