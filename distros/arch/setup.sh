@@ -66,6 +66,7 @@ sudo systemctl --now enable docker.service
 sudo systemctl --now enable cups.service
 sudo systemctl --now enable cronie.service
 sudo systemctl --now enable bluetooth.service
+sudo systemctl --now enable paccache.timer
 sudo systemctl enable linux-modules-cleanup.service
 
 systemctl --now enable --user randwall.service
