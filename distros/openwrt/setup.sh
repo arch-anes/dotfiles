@@ -14,4 +14,4 @@ source_dir=$(dirname "$(readlink -f "$0")")
 ################
 ### Packages ###
 ################
-opkg update && opkg install $(cat $source_dir/packages/ubuntu)
+opkg update && opkg install $(cat $source_dir/packages/base)
