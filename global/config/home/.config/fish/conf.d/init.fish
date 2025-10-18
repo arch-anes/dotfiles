@@ -129,6 +129,9 @@ abbr -a lzd lazydocker
 # nnn
 alias n='nnn -adHQexTePp'
 
+# brew
+alias brew_update='brew update && brew upgrade'
+
 # Other
 alias broken-ln='find -xtype l -print'
 alias lvl='echo $SHLVL'
