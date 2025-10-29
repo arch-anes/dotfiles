@@ -15,3 +15,8 @@ source_dir=$(dirname "$(readlink -f "$0")")
 ### Packages ###
 ################
 opkg update && opkg install $(cat $source_dir/packages/base)
+
+################
+### Services ###
+################
+tailscale up --advertise-exit-node --accept-dns=false --accept-routes --advertise-routes=173.176.247.0/24,192.168.1.0/24
