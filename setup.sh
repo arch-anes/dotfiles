@@ -2,10 +2,8 @@
 
 source_dir=$(pushd "$(dirname "$0")" >/dev/null && pwd && popd >/dev/null || exit)
 
-"$source_dir"/distros/arch/setup.sh
-"$source_dir"/distros/openwrt/setup.sh
-"$source_dir"/distros/ubuntu/setup.sh
-
-"$source_dir"/distros/macos/setup.sh
+for setup in "$source_dir"/distros/*/setup.sh; do
+  "$setup"
+done
 
 "$source_dir"/global/setup.sh
