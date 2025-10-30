@@ -36,19 +36,19 @@ case "$VGA" in
     ;;
 esac
 
-yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --removemake --sudoloop $video_packages $(cat $source_dir/packages/*)
+yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --removemake --sudoloop "$video_packages" "$(cat "$source_dir"/packages/*)"
 
 ##############
 ### Config ###
 ##############
-mkdir -p $HOME/.config $HOME/.local
-stow home -t $HOME -R -d $config_dir
+mkdir -p "$HOME"/.config "$HOME"/.local
+stow home -t "$HOME" -R -d "$config_dir"
 
-sudo stow etc -t /etc -R -d $config_dir
+sudo stow etc -t /etc -R -d "$config_dir"
 
-sudo gpasswd -a $USER docker
+sudo gpasswd -a "$USER" docker
 
-sudo gpasswd -a $USER plugdev
+sudo gpasswd -a "$USER" plugdev
 
 ################
 ### Firewall ###
