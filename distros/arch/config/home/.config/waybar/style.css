@@ -1,0 +1,78 @@
+@define-color primary #d9d8d8;
+@define-color accent #ffd204;
+@define-color urgent #ee2e24;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Sans;
+    font-size: 13px;
+    box-shadow: none;
+    text-shadow: none;
+    transition-duration: 0s;
+}
+
+window {
+    color: @primary;
+    background: rgba(35, 31, 32, 0.75);
+}
+
+window#waybar {
+    color: @primary;
+    background: rgba(35, 31, 32, 0.85);
+}
+
+#workspaces {
+    margin: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: rgba(217, 216, 216, 0.5);
+}
+
+#workspaces button.visible {
+    color: @primary;
+}
+
+#workspaces button.focused {
+    border-top: 1px solid @primary;
+}
+
+#workspaces button.urgent {
+    color: @urgent;
+}
+
+#mode,
+#battery,
+#network,
+#pulseaudio,
+#idle_inhibitor,
+#backlight,
+#mpd,
+#clock,
+#custom-keyboard-layout,
+#custom-packages,
+#custom-package-updates,
+#custom-weather {
+    margin: 0px 6px 0px 10px;
+    min-width: 25px;
+    border-bottom: 1px solid @primary;
+}
+
+#clock {
+    min-width: 140px;
+}
+
+#battery.warning {
+    color: @accent;
+}
+
+#battery.critical,
+#network.vpn.disconnected {
+    color: @urgent;
+}
+
+#battery.charging {
+    color: @primary;
+}

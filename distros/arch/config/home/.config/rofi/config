@@ -1,0 +1,13 @@
+!-----------------------------------------------------------------------
+!                         rofi gruvbox colors 
+!-----------------------------------------------------------------------
+
+rofi.color-enabled: true
+rofi.color-window: #1d2120, #1d2120, #458588
+rofi.color-normal: #1d2120, #ebdbb2, #1d2120, #458588, #1d2120
+rofi.color-active: #1d2120, #ebdbb2, #1d2120, #458588, #1d2120
+rofi.color-urgent: #1d2120, #69584E, #1d2120, #69584E, #ebdbb2
+rofi.show-icons: true
+rofi.hide-scrollbar: true
+rofi.modi: window,run,ssh,drun
+rofi.font: Roboto Mono Bold 16
