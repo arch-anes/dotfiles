@@ -1,6 +1,8 @@
 arch-install-scripts
 base-devel
+desktop-wakatime-bin
 dive
+electron32-bin
 ghidra
 gita-git
 git-lfs
