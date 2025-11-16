@@ -16,4 +16,4 @@ source_dir=$(pushd "$(dirname "$0")" >/dev/null && pwd && popd >/dev/null || exi
 ################
 NONINTERACTIVE=1 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install "$(cat "$source_dir"/packages/*)"
+brew install $(cat "$source_dir"/packages/*)
