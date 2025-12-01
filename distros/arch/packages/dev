@@ -10,6 +10,7 @@ insomnia-bin
 iperf3
 jdk-openjdk
 jetbrains-toolbox
+kiro-cli-bin
 nodejs
 npm
 perf
