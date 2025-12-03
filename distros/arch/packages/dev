@@ -16,5 +16,6 @@ npm
 perf
 python-pip
 rustup
+uv
 visual-studio-code-bin
 yarn
