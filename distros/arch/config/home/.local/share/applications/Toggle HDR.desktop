@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=kscreen-doctor output.13ac78aa-c981-4008-8247-d08ad7b7540c.hdr.toggle
+Name=Toggle HDR
+NoDisplay=true
+StartupNotify=false
+Type=Application
+X-KDE-GlobalAccel-CommandShortcut=true

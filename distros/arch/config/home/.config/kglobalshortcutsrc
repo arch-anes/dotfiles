@@ -270,6 +270,9 @@ _launch=Meta+Shift+Return
 [services][code.desktop]
 _launch=Meta+C
 
+[services][Toggle HDR.desktop]
+_launch=Ctrl+Alt+H
+
 [services][org.kde.spectacle.desktop]
 RecordWindow=none
 
