@@ -41,7 +41,7 @@ yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --re
 ##############
 ### Config ###
 ##############
-mkdir -p "$HOME"/.config "$HOME"/.local
+mkdir -p "$HOME"/.config "$HOME"/.local/share/plasma/layout-templates "$HOME"/.local/share/applications
 stow home -t "$HOME" -R -d "$config_dir"
 
 sudo stow etc -t /etc -R -d "$config_dir"
