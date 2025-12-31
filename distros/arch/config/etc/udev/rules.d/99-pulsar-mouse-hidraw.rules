@@ -1,0 +1,6 @@
+SUBSYSTEM=="hidraw", \
+ATTRS{idVendor}=="3710", \
+ATTRS{idProduct}=="5406", \
+MODE="0660", \
+GROUP="input", \
+SYMLINK+="hidraw-pulsar-mouse"
