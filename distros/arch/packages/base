@@ -45,6 +45,8 @@ pacutils
 pdfgrep
 ripgrep
 rsync
+scx-scheds
+scx-tools
 sshfs
 starship
 stow
