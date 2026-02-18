@@ -122,6 +122,7 @@ alias update-dotfiles='curl -L https://raw.githubusercontent.com/arch-anes/dotfi
 # Git
 alias find-git-repos="find -type d -exec test -e '{}/.git' ';' -print -prune -path"
 abbr -a lzg lazygit
+abbr -a gpf git push --force-with-lease
 
 # Docker 
 abbr -a lzd lazydocker
