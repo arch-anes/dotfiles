@@ -1,6 +1,10 @@
 ############
 ### Init ###
 ############
+if test -f /opt/anaconda/etc/fish/conf.d/conda.fish
+    source /opt/anaconda/etc/fish/conf.d/conda.fish
+end
+
 if type -q /home/linuxbrew/.linuxbrew/bin/brew
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
 end
