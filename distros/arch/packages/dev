@@ -14,6 +14,7 @@ kiro-cli-bin
 nodejs
 npm
 perf
+python-huggingface-hub
 python-pip
 rustup
 uv
