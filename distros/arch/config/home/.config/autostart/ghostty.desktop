@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Ghostty (background)
+Comment=Keeps ghostty running so the quick-terminal global shortcut works
+Exec=ghostty --initial-window=false
+Terminal=false
+NoDisplay=true
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-phase=2

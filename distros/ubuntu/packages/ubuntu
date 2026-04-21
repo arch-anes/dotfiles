@@ -7,7 +7,6 @@ file
 git
 iperf3
 iputils-ping
-kitty-terminfo
 lm-sensors
 netcat-openbsd
 net-tools

@@ -10,6 +10,16 @@ Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Switch to Last-Used Ke
 Switch to Next Keyboard Layout=Meta+Space,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
+[com.mitchellh.ghostty]
+LOGO+Return=none,Meta+Return,toggle_quick_terminal
+SHIFT+LOGO+Return=none,Meta+Shift+Return,toggle_fullscreen
+_k_friendly_name=Ghostty
+
+[ghostty]
+LOGO+Return=Meta+Return,Meta+Return,toggle_quick_terminal
+SHIFT+LOGO+Return=Meta+Shift+Return,Meta+Shift+Return,toggle_fullscreen
+_k_friendly_name=ghostty
+
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
@@ -260,12 +270,6 @@ stop current activity=Meta+S,Meta+S,Stop Current Activity
 switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
-
-[services][Dropdown Terminal.desktop]
-_launch=Meta+Return
-
-[services][Dropdown Terminal Fullscreen.desktop]
-_launch=Meta+Shift+Return
 
 [services][code.desktop]
 _launch=Meta+C

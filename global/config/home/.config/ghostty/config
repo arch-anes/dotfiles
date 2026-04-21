@@ -1,0 +1,15 @@
+font-family = Fira Code
+
+theme = Afterglow
+
+window-decoration = none
+confirm-close-surface = false
+quit-after-last-window-closed = false
+quick-terminal-position = top
+quick-terminal-size = 50%
+quick-terminal-animation-duration = 0
+quick-terminal-screen = mouse
+command = tmux new-session -A -s main
+
+keybind = global:super+enter=toggle_quick_terminal
+keybind = super+shift+enter=toggle_fullscreen
