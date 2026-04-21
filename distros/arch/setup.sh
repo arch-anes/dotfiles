@@ -15,28 +15,30 @@ config_dir="$source_dir/config"
 ################
 ### Packages ###
 ################
-sudo pacman -Syu --needed --noconfirm yay
+if [ -z "$SKIP_INSTALL" ]; then
+    sudo pacman -Syu --needed --noconfirm yay
 
-yay -Rs --noconfirm firewalld
+    yay -Rs --noconfirm firewalld
 
-# Spotigy GPG
-curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg  | gpg --import -
+    # Spotigy GPG
+    curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg  | gpg --import -
 
-VGA="$(lspci | grep VGA)"
-case "$VGA" in
-*AMD*)
-    video_packages="corectrl vulkan-radeon lib32-vulkan-radeon amdgpu_top nvtop"
-    ;;
-*NVIDIA*)
-    video_packages="nvidia-settings nvidia-utils lib32-nvidia-utils nvtop"
-    ;;
-*)
-    video_packages="nvtop"
-    echo "Unknown graphics card."
-    ;;
-esac
+    VGA="$(lspci | grep VGA)"
+    case "$VGA" in
+    *AMD*)
+        video_packages="corectrl vulkan-radeon lib32-vulkan-radeon amdgpu_top nvtop"
+        ;;
+    *NVIDIA*)
+        video_packages="nvidia-settings nvidia-utils lib32-nvidia-utils nvtop"
+        ;;
+    *)
+        video_packages="nvtop"
+        echo "Unknown graphics card."
+        ;;
+    esac
 
-yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --removemake --sudoloop $video_packages $(cat "$source_dir"/packages/*)
+    yes | yay -Syu --needed --editmenu=false --diffmenu=false --cleanmenu=false --removemake --sudoloop $video_packages $(cat "$source_dir"/packages/*)
+fi
 
 ##############
 ### Config ###
