@@ -17,8 +17,3 @@ source_dir=$(dirname "$(readlink -f "$0")")
 if [ -z "$SKIP_INSTALL" ]; then
     opkg update && opkg install $(cat "$source_dir"/packages/base)
 fi
-
-################
-### Services ###
-################
-tailscale up --advertise-exit-node --accept-dns=false --accept-routes --advertise-routes=173.176.247.0/24,192.168.1.0/24
