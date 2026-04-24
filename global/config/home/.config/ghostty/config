@@ -9,6 +9,7 @@ quick-terminal-position = top
 quick-terminal-size = 50%
 quick-terminal-animation-duration = 0
 quick-terminal-screen = mouse
+shell-integration = fish
 command = tmux new-session -A -s main
 
 keybind = global:super+enter=toggle_quick_terminal
