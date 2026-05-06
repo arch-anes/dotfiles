@@ -9,6 +9,6 @@ kde-system-meta
 kde-utilities-meta
 kwalletcli
 phonon-qt5-gstreamer
-plasma5-integration
 plasma-meta
+plasma5-integration
 tesseract-data-eng
