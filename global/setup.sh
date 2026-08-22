@@ -38,6 +38,12 @@ if [ "$(nvim --version | grep 'NVIM v' | awk -F'.' '{print $2}')" -lt "10" ]; th
     git -C "$HOME"/.config/nvim reset --hard 0c7d9cefa99b01a6dadff495fd91ae52a15e756a
 fi
 
+while read -r skill; do
+    if [ -n "$skill" ]; then
+        npx skills add -g -y "$skill"
+    fi
+done < "$source_dir/packages/skills"
+
 ################
 ### Services ###
 ################
