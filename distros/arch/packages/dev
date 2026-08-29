@@ -2,6 +2,7 @@ arch-install-scripts
 base-devel
 desktop-wakatime-bin
 dive
+elan-lean
 electron32-bin
 ghidra
 gita-git
