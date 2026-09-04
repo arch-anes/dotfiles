@@ -34,10 +34,3 @@ fi
 ### Config ###
 ##############
 sudo stow etc -t /etc -R -d "$config_dir"
-
-################
-### Services ###
-################
-if [ ! "$is_in_docker" ]; then
-    sudo systemctl --now enable zfs-load-key.service
-fi
