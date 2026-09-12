@@ -25,6 +25,7 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+qalculate-gtk
 randwall-bin
 remmina
 rustdesk-bin
