@@ -40,7 +40,7 @@ iconTasksWidget.currentConfigGroup = ['General'];
 iconTasksWidget.writeConfig('indicateAudioStreams', false);
 iconTasksWidget.writeConfig('launchers', [
     'applications:firefox.desktop',
-    'applications:code.desktop',
+    'applications:com.microsoft.VSCode.desktop',
     'applications:org.mozilla.Thunderbird.desktop',
     'applications:ferdium.desktop',
     'applications:spotify.desktop',
