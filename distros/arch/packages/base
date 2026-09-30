@@ -53,6 +53,7 @@ system-config-printer
 termdbms-git
 tldr
 tmux
+tpm2-tools
 ufw
 usbip
 wireguard-tools
